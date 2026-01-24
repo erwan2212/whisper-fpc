@@ -1,1 +1,0 @@
-ffmpeg -i "%1" -ac 1 -ar 16000 -af "highpass=f=100, lowpass=f=12000, afftdn=nf=-30, equalizer=f=200:t=q:w=1:g=-6, equalizer=f=350:t=q:w=1:g=-4, acompressor=threshold=-20dB:ratio=4:attack=5:release=100:makeup=6, loudnorm=I=-16:LRA=7:TP=-1" output_fix.wav

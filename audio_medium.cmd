@@ -1,1 +1,0 @@
-ffmpeg -i "%1" -ac 1 -ar 16000 -af "afftdn=nf=-20, loudnorm=I=-23:LRA=7:TP=-2" output_medium.wav

@@ -5,3 +5,4 @@ backup/
 *.exe
 .dll
 *.txt
+*.cmd

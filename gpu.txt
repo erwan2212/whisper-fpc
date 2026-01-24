@@ -1,1 +1,0 @@
-whisper-cli.exe -m "../ggml-base.bin" -f "../output.wav" -osrt --language fr --max-context 50 --beam-size 3 --temperature 0 --temperature-inc 0.2 --threads 8 --split-on-word
