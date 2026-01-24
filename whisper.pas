@@ -351,7 +351,7 @@ begin
   Moins bon pour voix rapides / bruit
   }
 
-  result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  result := whisper_full_default_params(longint(WHISPER_SAMPLING_GREEDY)); //
 
   result.temperature := 0.0;
   result.temperature_inc := 0.0;
