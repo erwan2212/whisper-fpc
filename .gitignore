@@ -1,0 +1,6 @@
+lib/
+backup/
+*.wav
+*.bin
+*.exe
+.dll

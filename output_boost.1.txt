@@ -1,0 +1,860 @@
+ Il y a un premier découpage en ce moment qui est en train de se faire avec Maroc.
+ Là je parle de la France.
+ Il fait pas partie de Schenker-France, le Maroc que l'on voit.
+ - Je fais la partie de Schenker-France juste après. - Ça marche, ok.
+ Du coup, ça veut dire que ça c'est la première étape au 1er avril.
+ Donc au 1er avril, on a toujours les 4 structures juridiques,
+ - mais on a Schenker-France vider de tous les RNC et toute la contract-log. - Oui.
+ - DSV, contract-log, DSV, RNC, leur entité juridique actuelle. - Oui, complète.
+ - Avec toutes les activités. - Oui.
+ - Et DSVRU. L'opération... - Le changement pour nous, au 1er avril en tant que thème,
+ - puisqu'on reste chez Schenker-France. - Oui.
+ - Et maintenant, j'en viens sur l'étape d'après. - Ok.
+ - D'un point de vue juridique, la Coquille Schenker-France reste chez Schenker-France. - Elle est 10 bisous.
+ 311, 789, 456, le RCS.
+ Les sirètes des agences qui vont être outes.
+ Le petit sujet, je sais que les sirètes, mais on va discuter des implications après.
+ On va discuter des implications après, mais en effet, la Coquille juridique Schenker,
+ les 4 entités restent au 1er avril, Schenker-France, DSVRU, DSV contract-log, DSVRU.
+ Ensuite, donc ça va se préparer un peu avant le 1er avril forcément,
+ on va préparer ce qui va s'appliquer à une fusion entre DSVRU et Schenker-France,
+ parce que la cible, c'est l'arrivée à 3 entités.
+ Donc une fois qu'on aura réglé le sujet DSV contract-log et DSVRU ici,
+ par la scission, on va faire une troisième opération qui est la fusion absorption,
+ où là, c'est Schenker-France qui va absorber DSVRU, donc c'est pas juridiquement, c'est pas une chose.
+ - Non. Donc DSVRU va disparaître. - D'accord.
+ Schenker-France va accueillir tout l'actif et le passive de DSVRU.
+ Donc ça veut dire que là aussi, Schenker-France demain va changer sa dénomination et devenir DSVRU.
+ Donc en fait, le 319789456 va rester, va être Schenker-France, renommé DSVRU.
+ Le DSVRU d'actuel va disparaître. D'accord.
+ Ok, DSVRU de recenser avec un autre numéro, il est terminé.
+ - Terminé. Donc il y a terminé peut-être chez... - Donc vous aujourd'hui, si la question c'est d'appréhender le boulot
+ sur les deux côtés, tant côté DSV que côté Schenker, c'est ce que je comprends.
+ Donc en effet, un des sujets qui va avoir une conséquence chez vous, c'est que tout le DSVRU,
+ tout ce qui est contrat, potentiellement dans le terminet IT signé avec DSVRU, il n'existera plus.
+ Il sera automatiquement transféré à l'authentité. Donc là, il vous avait peut-être des...
+ avec certains prestataires des choses à régler.
+ Ça veut dire aussi que l'entité payée ne sera plus la même.
+ Donc ça, c'est la relation peut-être côté finance, mais ça veut aussi dire ça.
+ C'est si DSVRU disparaît, référencé en compte, ça devrait être Schenker France
+ pour les prestataires IT de DSVRU, par exemple. DSVRU va disparaître, va être intégrée à Schenker France.
+ Tout se fait normalement automatiquement.
+ - Si la partie... Certes, ça va être Schenker Center qui va intémer donc, qui va arriver chez Schenker France au premier mai.
+ - Là, tu parles des fonctions support. - Oui, nous c'est des fonctions support qui...
+ Là, je parlais des activités. Les fonctions support, ce qui est prévu, adapté au premier mai,
+ c'est que toutes les fonctions support, c'est ce qu'on est en train de discuter des instances,
+ soumis à l'avis du CSE, toutes les fonctions support soient attachées à DSVRU de demain,
+ qui sera, qui est donc Schenker France.
+ Donc, imaginons qu'au niveau de l'IT, quand les DSVRU de... ils ont signé un contrat avec un partenaire, un fournisseur,
+ demain, quand ils vont arriver chez nous, ça va être recrut dans notre giron.
+ Oui, IT France, je peux même voir DSVRU de machin ça. IT France, c'est habituel, sans support France,
+ il faudrait qu'on change ce contrat pour dire.
+ - Donc, l'impact sur les contrats. - Oui.
+ En fait, tous les contrats, dans ces opérations que ça soit l'assission ou la fusion,
+ il y a le transfert automatique d'un point de vue interne, je ne parle pas d'un point de vue co-contractant,
+ de notre point de vue anoui, tout est légalement automatique, c'est-à-dire qu'aujourd'hui,
+ par exemple, avec des clients, on a encore des contrats à entêtres chez Nkressa.
+ Alors que chez Nkressa n'existe plus depuis 2015.
+ Le Chanel, qui est un contrat historique de 2011, il est au nom de Schenker et ça, il l'est toujours.
+ En fait, l'opération juridique en elle-même rend automatique le transfert.
+ Il n'y a pas besoin de renommer, de refaire les contrats et heureusement,
+ parce que sinon, c'est-à-dire que nos beaux, on mettraient tout sur la table aussi.
+ Donc, en fait, et si demain, il y a besoin de justifier en quoi vous venez au droit de Schenker et ça,
+ c'est les traités de scission, l'historique de, ce qu'on appelle le corporet qui vient justifier auprès du co-contractant,
+ que aujourd'hui, Schenker et ça, c'est Schenker France.
+ Donc en fait, tout est automatique.
+ Le seul problème qu'on a, le seul problème qu'on a, le seul problème qu'on a sur ce sujet automatique,
+ c'est que les co-contractants, et nous aussi, à l'inverse,
+ on essaye de se verrouiller dans les contrats sur ce type de changement.
+ Parce qu'on ne sait jamais à qui ça va changer.
+ Je prends un exemple.
+ Imaginons qu'on travaille avec un fournisseur et qu'il est racheté par Daxer.
+ Peut-être qu'on n'a plus envie de bosser avec ce fournisseur-là.
+ Donc dans les contrats, qu'est-ce qu'on retrouve ?
+ On retrouve tout un tas de clauses qui prévoient que s'il y a des changements d'actionnaires,
+ il faut une information ou il faut un agrément.
+ Sans agrément, c'est la fin du contrat.
+ Donc on prévoit tout un tas de ces clauses-là, ils existent.
+ Le parti prix qui a été fait, et ce n'est pas commun à Schenker, c'est classif en ce qui est fait.
+ On ne peut pas parcourir tout le contrat qui est pris dans la boutique.
+ Déjà, il faudrait les recenser, qu'on soit sur tous les avoir.
+ Et surtout qu'il y a la majeure partie des contracteurs et ils s'en foutent.
+ Alors, ils s'en foutent, mais néanmoins Jacques a fait l'exercice.
+ Enfin, je retrouve des traces là-dessus, peut-être que tu les as amélie.
+ Sur les aspects de licences, par exemple.
+ Jacques avait contacté l'ensemble de nos co-contracteurs, fournisseurs ici,
+ en leur demandant est-ce que le fait de changer de nom avait un impact.
+ La plupart répondent non, ça passe.
+ Quelques-uns, avec un répondu, ben oui, il faudra payer déjà pour faire la manip.
+ Aucun ne s'y est opposé, mais par contre, certains en profitent, effectivement,
+ et c'était contractuel de nous dire que cette opération va vous coûter de l'argent.
+ Donc 99,9% sur les 10 000 contrats de l'entreprise, ils s'en foutent.
+ Sur certaines relations spécifiques, c'est plus problématique.
+ D'où l'exercice de cartographie.
+ C'est que nous, je redis qu'on peut me guider le propos.
+ Mais c'est à chaque service, essayez de se dire, c'est quoi mes relations clés qui peuvent poser problème.
+ Parce que si je vais à la douane, forcément, si je ne vais pas voir l'administration des douanes,
+ je vais la réexpliquer le bar d'aile, et demain, il se retrouve à déclarer sur des RCS différents des trucs.
+ C'est la douane qui est problématique parce qu'ils ont des impréhens, ils sont donné.
+ Plein de problématiques, j'ai pris cet exemple là.
+ Je donne un autre exemple, l'immobilier.
+ Autant, le bailleur d'agent, il s'en fout, que ça soit pu porté par DS Vero,
+ mais que ça soit Jean-Claire France, je n'en sais rien, il s'en fout.
+ Par contre, je prends l'institutionnel, qui est la convention du PDM public à l'aéroport de Roissy.
+ Lui, il a 3 mois dans son contrat, c'est du domaine public.
+ Si tu ne l'as pas informé 3 mois avant, fais l'exercice d'agrément.
+ Le Georgie, quand il se rend compte que ce n'est plus le même payer, ce n'est plus Jean-Claire France mais DSVR ANSI,
+ il m'attend, c'est quoi ça ? Moi, je te résidis ton contrat.
+ Voilà, le type de relation sensible que l'entreprise peut avoir.
+ La finance, les banques, c'est pareil.
+ Si ce sujet ne s'anticite pas, les banques c'est des institutionnels, ils prennent les contrats à la lettre.
+ Il ne faut pas générer surtout, il faut essayer, par une communication plutôt générale.
+ C'est pour ça que ce qui a été fait, normalement, c'est que l'idée s'est faite, l'idée s'est faite par Laurent.
+ Cette semaine, l'idée, c'est d'adresser au panel de partenaires de l'entreprise, une com-générale,
+ qui permet d'amorcer après en silo des com un peu plus ciblés, par en plus de mobilier des débailleurs,
+ de la douane vis-à-vis de leur contratant, etc., quelque chose de plus ciblé pour traiter les spécificités.
+ Nous, le truc qu'on pourrait avoir, si on a un fournisseur un peu pointilleux, qui pourrait dire, ok, je vous ai rendu une licence au mi-le-chamqueur, 100 000 euros.
+ En premier, je vous en prends une au long des ex, 100 000 euros.
+ Une autre ou alors ils peuvent aller aussi se servir des clauses des contrats.
+ Les clauses des contrats pour dire attendez, c'est une clause de résiliation parce que je n'ai pas agréé.
+ Donc, on ouvre la discussion. Ok, je suis ok pour que vous résiliez. Par contre, le tarif qui était de 100, je veux qu'il soit à 120, c'est ça.
+ Et ça, c'est les effets de bord. Si on ne les anticipe pas et que, forcément, si on anticipe, qu'est-ce qu'il se passe ?
+ Il y a un dialogue plutôt constructif qui se crée. Si on est suffisamment à l'avance, en plus, le mec, il sait peut-être qu'on peut résilier.
+ Il peut-être qu'il peut y avoir des changements de bord, donc changer de prestataire.
+ Donc le gars, il est plutôt intéressé surtout par garder la relation. Donc, les discussions sont tout de suite plus faciles.
+ Par contre, il se retrouve de refaites accomplies. C'est lui qui est en position de force vis-à-vis du contrat.
+ Il sait qu'on est dans la merde et qu'on est dans la fragilité, il va nous aligner. Et ça, c'est pareil pour les noyés, c'est pareil pour tout.
+ Typiquement, l'éditeur d'Ingren qui aujourd'hui est HCL, elle nous avait gratté un petit peu déjà en disant que vous allez bientôt changer de nom.
+ C'est vrai bien qu'on se parle. Vu le type d'éditeur et les galères à négocier avec eux, HCL, je ne serais pas étonné que là-dessus nous en bête.
+ En disant que vous n'êtes plus dans la même boîte, donc vous allez racheter une licence.
+ Ce n'est pas elle qui avait dit que ce ne serait pas étonné.
+ Alors, déjà elle l'avait dit. Mais je ne serais pas étonné que ça aille encore un peu plus loin.
+ Et l'IT, les clauses sont majoritairement horribles. Pourquoi ? Parce que vous êtes sur des prestas où souvent c'est les CGV.
+ Donc les CGV, on peut prendre les CGV à nous, c'est des trucs qui sont très unilatérales, ceinture bretelle, donc ils vont être tranquilles en fait.
+ Donc ils ont le pouvoir, ce type de profil. Les valeurs, c'est un peu différent parce que c'est un bail, donc ça fait léger d'un contrat, de discussion.
+ On a déjà pu essayer d'équilibrer les clauses avant. Là vous, vous avez le prix sur les CGV, en mon avis, changement de contrôle, les trucs, c'est tout simplement rime.
+ Moi, j'avais une question, au-delà du premier mail, ce sera des CGV à qui t'es réglé le nombre des CGV, va-t-il chez les CGV ? La fonction superactive, oui.
+ Sur ce que moi, je sais ce qui est prévu. Oui. Quand on a remis le contrat, parce que nous, on a souvent des contrats qu'on remise tous les trois mois.
+ On demandera donc à notre fournisseur qu'on ne tractera plus au nombre des chancre-français, mais au nombre des héros.
+ Alors il y a une bonne question qui est de dire, il y a deux points, je pense, sur ce sujet. Le premier point, c'est de se dire quelle est l'entité qui contracte.
+ Jusqu'à maintenant, tous les contrats que tu fais, tu les fais au nom de chancre-français, quand chancre-français va être nommé des héros, automatiquement, le changement il se fait.
+ Heureusement, quand on change les nominations, on n'a pas à revoir tous les contrats, c'est ce que j'ai dit tout à l'heure.
+ Les contrats qui sont finis avant. Par contre, il y a un gros sujet, et ça, je n'ai pas la réponse.
+ C'est demain, commençons à gérer la contractualisation pour ce qui sert une ou deux ou trois quantités.
+ Ça, je n'ai pas la réponse. C'est propre à chaque... Je donne un exemple sur ma partie, le plus essentiel qui est client.
+ Moi, aujourd'hui, j'ai un client qui traite de la route et de l'air ainsi. Je ne sais pas comment je dois faire avant ces chaînes cartes françaises.
+ Demain, qu'est-ce que je fais ? Est-ce qu'on fait la part d'OCA la plus importante et on fait signer l'une des entités ?
+ Mais après, il faut faire gaffe, parce que ça veut dire qu'il faut quand même autoriser votre entité à opérer.
+ Donc, je ne serais pas surpris que vous, dans votre logique, la question de demain. Vous avez un contrat à IT.
+ Qui est l'entité, elle sert ? Elle sert à l'activité route, elle sert à l'activité R&C, elle sert le contrat club.
+ Il y a une règle qui peut-être se dire si ça sert les trois, mais je ne dis n'importe quoi, ce n'est pas moi le dessiné.
+ Peut-être que ça se met sous des SVRO et après, il y a de la revacturation.
+ Si ça sert que l'R&C, le contrat, pourquoi je le mettrai au nombre des SVRO, je vais le mettre au nombre des SVRO.
+ Et honnêtement, je pense que c'est là où il va nous manquer de main une entité légal et juridique pour la Partie SSC.
+ J'ai travaillé dans beaucoup de grands groupes, il y avait toujours une entité légal et juridique.
+ Un chef de service center, je sais bien, je sais bien.
+ C'est fou, il déploie leur truc, tu n'as rien à dire.
+ Mais ça simplifie la vie, parce qu'au moins, tu as une entité à part qui peut prendre une facturation, prendre un contrat,
+ et derrière, sur des clés de répartition ou autre.
+ Donc là, effectivement, sur la partie contractuelle, c'est la partie qui va gratter le plus.
+ Il faudra bien qu'une entité légal et juridique porte le contrat.
+ Après, sur la clé de répartition, je suis moins inquiet.
+ Là, je vous invite à aller voir ce qui est fait dans les autres pays, les pratiques chez DSV,
+ puisque leur configuration entre les entités existe, donc il faut comment.
+ Alors moi, j'ai eu des surprises.
+ Sur la partie client, j'allais vous faire comment.
+ On ne s'est jamais posé la question, par contre.
+ Je suis au global, vous savez bien que c'est le premier fou que je veux.
+ Parce qu'en plus, si c'est au nom des SVRO, du RNC, ça veut dire que toi, tu ne seras plus qui qui signerais.
+ Alors oui, les représentants légaux, déjà.
+ Les représentants légaux, déjà, ils changent sur les contrats.
+ Aujourd'hui, il y en a une politique chez Nker France, c'est facile.
+ Frédéric plus Ceroin, je crois que c'est ça.
+ Demain, Frédéric est toujours chez Nker France, mais ça va changer, c'est François, normalement.
+ Il a prévenu une réunion d'information.
+ C'est normal, il va partir de son mandat, normalement, il ne devrait plus l'être.
+ C'est qu'il ne l'est pour assurer la continuité, etc.
+ Mais néanmoins, dans les signatures, on est en train de réfléchir.
+ La règle, c'est que le représentant légal, donc que le MB, ce qui pourrait être fait.
+ Ce qu'il faut savoir, c'est que dans la représentation des entités,
+ il y a un président qui est un fantôme, c'est à la fonction du groupe.
+ C'est souvent en fonction de la taille de la structure, soit le monde, soit le Europe, soit le cluster.
+ Et le MB, c'est lui qui prend tout, mais il est que le directeur général.
+ Néanmoins, l'idée, ou ce que nous demandons du groupe, c'est au moins d'avoir un détail signitaire.
+ Moi, je pense, mais ce n'est pas encore tranché.
+ Et des SV aujourd'hui en France ne font qu'un seul signitaire, le MB.
+ Moi, je pense que, vu la volumétrie, quand on va emmener le contrat à François ou à Éric ou à Syrie,
+ la question, c'est que comment ils sont sécurisés, que ça a été revu par le honneur du sujet.
+ Et pour moi, il y a deux solutions.
+ Soit ça veut dire qu'on borde avec un template administratif où il y a la signature du directeur haïtiste,
+ c'est le directeur haïtiste qui a habilité à remettre les contrats à signature de n'importe quoi.
+ C'est-à-dire que là, il sait, il y a une trappe bien précise, c'est signer le directeur haïtiste.
+ Derrière, il appose sa signature, son contrat.
+ Ça, c'est une option.
+ La deuxième option, c'était de conserver cette double signature,
+ d'avoir le directeur de la fonction ou du service qui enlite de la relation.
+ Et en deuxième signitaire, le directeur général, pour là, la partie représentation légale.
+ Aujourd'hui, on ne pencherait plus sur la première option,
+ qui est un template bien propre, où la personne peut dire aussi le contexte.
+ Voilà, c'est clean, ou tiens, il y a ce point-là.
+ Faire une petite...
+ Ça complète déjà.
+ Le signe offre. Exactement.
+ Moi, en tout cas, c'est ma préco.
+ Et d'avoir la signature du honneur, ce qui fait que,
+ si ça ne respecte pas ce format-là, le MD, il est sécurisé, signe pas.
+ Voilà.
+ Parce que de toute façon, si on ne fait que le MD,
+ on imagine que ça veut dire, sauvage, une tonne de sollicitations, comment eux,
+ ils ont la garantie, c'est ce que je suis en train de le dire, ils sont en train de s'en rendre compte,
+ comment ils savent ce qu'ils signent, parce que, bien sûr, ils n'estent pas.
+ Oui.
+ Ils ont le truc qui signe.
+ Mais comment ils ont la garantie que quelqu'un lui amène selon le bon process,
+ que c'est sécurisé, et ça, c'est un vrai sujet.
+ Et je ne parle même pas des signatures électroniques qui sont poussées par les co-contractants,
+ où c'est à la sauvage, ils nous demandent même pas les signataires,
+ ils mettent des mots comme ça, ça arrive sur les boîtes mails.
+ Alors voilà, il y a un vrai sujet de sécurité.
+ Et la difficulté pour François, c'est qu'en plus lui, son entité légal juridique va héberger SSC,
+ donc SSC va lui générer une certaine charge de travail supplémentaire par rapport aux autres MD.
+ Exactement.
+ Il a tout, l'IT déjà, il est comme générateur de...
+ La question sur chaque silo, vous qui est l'IT,
+ de se dire, OK, comment on fait pour les entités qu'on contracte tant de décontract?
+ Est-ce qu'on met tout sous des SVEROD du qu'on ne se pose jamais de questions,
+ même si c'est que RNC, et derrière, on sait qu'il y a la refactoration qui se fait bien,
+ ou alors, mais sauf qu'après François, il faut qu'il soit habilité pour parler des coups de RNC.
+ Il y a un autre sujet de structure, c'est que François qui l'héberge SSC, c'est une chose.
+ Et quand vous allez déclencher un coup que sur les RNC, le buying, il va y être de l'éric,
+ par contre, vous allez envoyer à François pour signature.
+ Mais ça, moi, je n'ai pas les réponses aujourd'hui, c'est des sujets qui sont...
+ Et on est d'accord que...
+ Et l'approche plutôt générale, il ne faut pas que pour la civilité.
+ Oui, et sachant qu'en fin de fois, ce n'est pas juste une problématique à IT,
+ ça va concerner la comptabilité, ça a le marketing, la douane,
+ ce n'est pas encore un PNL aujourd'hui, donc...
+ C'est une sécrétage, François, ça va être une sécrétage sur le développement.
+ Et justement, Frédéric, c'est pour ça qu'il y en a à parler réunion, c'est que c'est un vrai sujet,
+ parce qu'en fait, on se rend compte que l'idée, l'activité, Éric François,
+ Cyril, c'est l'actualité, par contre, c'est une idée, les comptes sont supports,
+ autant Frédéric, par son rôle le président, il l'avait, et sa présence au siège,
+ la proximité, il connaît, il sait ce qu'elle a dit, il sait ce qu'elle a arraché.
+ Voilà, donc il connaît comment tout ça fonctionne.
+ François, il ne sait pas ce qu'on lui demande, donc il y a un vrai sujet.
+ C'est pour ça qu'un moment Frédéric aussi, à la galette, à un moment, il a dit que peut-être qu'il y aurait quelqu'un
+ au niveau du service de Charles Sainteur, pour animer...
+ Avant, mais j'étais pas là.
+ Il a évoqué ça, Frédéric, dans l'après-midi.
+ Il va y avoir un représentant qui n'a pas l'égal, mais un représentant,
+ enfin, quelqu'un qui fasse bouillir après l'armite et position support du siège.
+ Puis l'AMD, sinon, ils ont tout le temps...
+ Le problème, c'est qu'ils ont une petite main d'art. Vous avez à vous adresser en AMD, vous avez trois interlocutaires.
+ Deux aussi, il va falloir que François fasse bouillir du temps.
+ Et c'est ce qui se passe aujourd'hui dans les organisations.
+ Les organisations qui ont avec ça, ils ont mon part.
+ Donc la question, c'est un vrai sujet.
+ Ils n'ont pas, ils ne vont pas le faire, ce que je peux comprendre.
+ Déjà, ils sont aujourd'hui désespérés par avoir assez de temps à commencer par les conseils de direction,
+ qu'on a du mal à mettre en place, c'est que ça trouve ça logique.
+ Mais je ne vois pas François dégager, ne serait-ce qu'une heure par semaine.
+ Pour effectivement l'idée, toutes les fonctions supportent.
+ Ils désagrégent, ils prennent leurs points, le nombre de sujets est colossal.
+ Tous les jours, il va avoir une sollicitation.
+ Mais là, ils sont déjà sur le sujet, parce que là, ils se rendent compte que qu'est-ce qu'une fonction support.
+ Parce que vos intégrations, vous êtes peut-être amis des côtés IT, ce que t'as été donné officiellement, etc.
+ Mais là, il y a plein d'autres fonctions aujourd'hui qui sont en attente.
+ Et ça veut dire qu'il faut être capable de dire ce que c'est avant, ce que c'est après,
+ de le gérer, de faire remonter au groupe quand ça ne va pas, etc.
+ C'est pour ça que je suis surpris, à défaut de créer une structure légal et juridique.
+ Je comprends les contraintes, les aspects.
+ Ce n'est pas sexy, en tout cas pour des décideurs qui n'ont pas envie d'aller sur ce terrain-là.
+ Mais à minima d'avoir, pourquoi pas, un responsable, on parle d'animateurs.
+ Mais en tout cas, une personne, directeur des fonctions support,
+ il y a beaucoup de boîtes, notamment dans le public, mais il a encore une chose.
+ Il y a une personne nommée, directeur des fonctions support.
+ Ce n'est pas un spécialisme marketing, ce n'est pas un spécialiste actif,
+ ce n'est pas un spécialiste finance, mais en tout cas, elle est légalement, effectivement,
+ légalement ou en tout cas d'un point de vue de responsabilité à la tête.
+ C'est pas le modèle des...
+ C'est pas le modèle... Oui, mais il n'y avait pas ça à l'heure.
+ En fait, je pense qu'il s'en fout.
+ Il y a 400 personnes à Montaigu.
+ En fait, je pense qu'il s'en fout.
+ C'est pas le modèle des aimes, il s'en fout.
+ En fait, ça, typiquement, c'est près de l'MD.
+ C'est l'MD qui sont représentants légaux, ils mettent la structure qu'ils souhaitent pour faire tourner la boutique.
+ Et derrière, il y a leur silo, groupe piano, groupe IT, groupe finance, groupe légal, groupe etc.
+ Ils ont leur silo, donc tu es animé par ton silo.
+ Par contre, savoir comment le pays tourne, c'est le problème des représentants légaux.
+ Donc c'est au MD de se mettre autour d'une table et de dire "tab, pour faire marcher la boutique demain, on a besoin de quoi".
+ Ce qui pourrait se passer, c'est qu'effectivement, il y a une personne qui est nommée en charge d'animer la communauté SSC
+ rapidement ce rôle d'animateur et il pourrait shifter vers tous les dossiers arrivent sur le numéro de cet animateur-là
+ avant qu'ils ne parlent pas de Valérie.
+ Moi, j'ai une autre question pour un peu plus, qui est à l'étude du terme.
+ C'est qu'aujourd'hui, dans d'autres systèmes d'information,
+ on a une société qui s'appelle Shanker France, la 006.
+ Demain, cette société Shanker France donne aux systèmes d'information 006. Est-ce qu'elle va mourir ?
+ Alors, où est-ce qu'on va faire ?
+ Ce système d'information, qu'est-ce qu'il s'appelle ?
+ Le nom de la société pour lequel, en fait...
+ Dans la structure administrative de la boîte ?
+ Oui, dans la structure administrative de Shanker.
+ Pour laquelle, sur laquelle on facture, on facture tout nos transports routes.
+ On fait toutes nos factures au nom de cette société 006.
+ Alors là, moi, je ne peux pas te répondre sur d'un point de vue.
+ Si ce compte-là est lié à l'entité juridique, pour moi, il ne devrait pas changer.
+ Donc il devrait être renommé ?
+ Renommé, renommé, mais restez, mais par contre ça, moi...
+ Alors, j'ai posé la question à la finance, j'ai l'impression qu'il faut une question guette.
+ J'ai l'outil, j'ai pas la réponse de comment ils vont...
+ Quelles conséquences ils vont prendre du fait que Shanker France reste ?
+ Est-ce que ça veut dire dans les...
+ Alors je ne sais pas comment vous appelez ça, mais dans le numéro où l'entité a efférencé,
+ dans tout, que ça soit IT, que ça soit finance, que ça soit...
+ Enfin, il y a des codes par entité.
+ Est-ce que ce code va changer à être renommé ?
+ Dans l'absolu, Shanker France...
+ Mais juridiquement...
+ Moi, je peux répondre que juridiquement, normalement...
+ Normalement, Shanker France devient DS0 de...
+ Et Shanker France, aujourd'hui, a été numéroté en titée R467.
+ Rode 467.
+ Et pour moi, c'est un numéro définitif.
+ Donc, est-ce que je sais pas qu'est-ce qu'il y a derrière ce Shanker 006,
+ mais si l'idée de ce Shanker 006, c'est le 399456,
+ plus le numéros antitrustique DSV R467,
+ c'est-à-dire pour moi, il n'y a pas de lieu que ça change.
+ Mais je...
+ Maintenant, juridiquement, quelles sont les impacts pour l'entreprise, je dirais,
+ qui va devenir DS0 de...
+ d'envoyer des documents à l'extérieur au nom de Shanker.
+ Enfin, est-ce qu'il y a Shanker ?
+ On l'a oublié à un logo, dans un point, et on en voit...
+ Je sais pas, juridiquement, non, c'est pas dramatique.
+ C'est un point de com et de marketing.
+ Le directeur juridique n'est-ce pas parti en plan ?
+ Non, en tout cas, je n'ai pas de responsabilité.
+ Non, je les répète en tant que logo qui partait de responsabilité.
+ Non, mais il n'y a pas de sujet par rapport à ça.
+ Il faut distinguer deux jours.
+ Par le rachat, la marque Shanker est transférée à DSV.
+ La marque Shanker est un actif de Shanker.
+ La marque Shanker est un actif de Shanker AG,
+ dont les marts ont été cédés à DSV.
+ C'est la Dutch Bands qui était la maison mère qui a cédé Shanker AG.
+ La Dutch Bands avait déposé la marque, bien sûr, au long de Shanker AG.
+ Donc tous les actifs de moi, ce que j'en sais,
+ Shanker AG ont été cédés en même temps que les participations plus.
+ Donc ça veut dire qu'aujourd'hui,
+ DSV a le droit d'utilisation de la marque.
+ Donc demain, ta question, c'est de dire,
+ si post-intégration, il y a un logo Shanker qui gravite,
+ Big B Shanker, on est toujours des B Shankers.
+ Db, c'est autre chose.
+ Db, c'est autre chose et ça faudrait revoucler avec Laurent les instructions qu'il a eues.
+ Je pense qu'il y a un seuil de tolérance, forcément.
+ C'est ça qui ne vont pas épurer tous les camions, tout ça.
+ Il y a tout le temps un truc qui traîne.
+ Je serais très surpris que DSV, dans ses négo d'intégration,
+ n'est pas prévu que le droit d'utilisation du logo d'Db
+ ne puisse pas subsister jusqu'à une période qui ne peut pas être
+ deux ans après le 1er mai.
+ Parce qu'en réalité, on n'a jamais eu le logo Shanker.
+ On parle de logo Shanker, j'entends ce que tu dis.
+ La marque Shanker et CD à DSV.
+ Ça, c'est plutôt rassurant et c'est bon à savoir.
+ Mais en fait, dans toute notre branding,
+ il y a toujours eu Db Shanker.
+ Je ne pense pas que... J'ai jamais vu un branding.
+ J'ai jamais vu un branding Shanker seulement.
+ Donc pour moi, le sujet, en fait, c'est quoi ?
+ Je prends la risque.
+ Le risque n'est pas vis-à-vis de notre client.
+ Le risque, c'est que db avant, au point de du doigt,
+ vous avez continu d'utiliser mon logo
+ alors qu'on est après la période que je ne connais pas
+ pour avoir avec Laurent David de Tolérance.
+ Vous avez utilisé ma marque à mon insu.
+ Parce qu'il y a un courrier qui parle.
+ Ça, c'est rassurant.
+ Mais par contre, sur la partie d'informations textuelles,
+ RCS et autres, ça, il faut parler aussi du coup...
+ Sur nos factures, sur nos documents,
+ il y a le logo, c'est une chose.
+ Ça, c'est du branding de la marque.
+ Mais il y a aussi effectivement des décirés d'RCS.
+ Là, il faut rabattage.
+ Mais non, ça change pas.
+ Attention.
+ Il y a des confusions, des fois, dans les numéros
+ et sans vouloir faire une Bible.
+ Le RCS, c'est les 9 premiers numéros
+ qui correspondent à l'enregistrement juridique
+ auprès du grève du tribunal de commerce de rattachement d'entre eux.
+ Donc, quand je dis 351, 756,
+ 351, 759, 456,
+ c'est le RCS du grève de la Roche Chaurion,
+ du siège social de Schenker-France.
+ Ensuite, chaque établissement pour la gestion administrative,
+ mais à ce qu'on appelle un sirète,
+ c'est-à-dire que ces 9 premiers chiffres ne changent pas
+ et on en rajoute 5.
+ Et là, chaque établissement, je connais pas celui du siège,
+ mais chaque est l'agence de boufferies, etc.
+ Selon un sirète.
+ Ce sirète, il n'a rien de juridique.
+ C'est-à-dire, aujourd'hui, les conditions pour qu'on ouvre un sirète,
+ c'est poussé par la IT,
+ surtout par les RH parce qu'ils veulent cender l'accidentologie par site,
+ ou d'autres choses, ou la paix.
+ Donc, en fait, ça, c'est un outil administratif.
+ Ce n'est pas un outil juridique.
+ Moi, l'entité juridique, elle ne change jamais.
+ C'est tout le temps Schenker-France.
+ Une fois que j'ai dit ça,
+ pour vous, c'est exactement.
+ Et moi, souvent, je me dis, oui, on n'a pas de sirètes,
+ mais un sirète, moi, juridique,
+ je n'exige pas de sirètes, il n'y a rien qui m'exige un sirète.
+ Une fois que j'ai dit ça,
+ c'est ce que je suis en train de pousser à l'immobilier.
+ Dans la session qu'on est en train de faire,
+ on a quand même un gros sujet,
+ parce qu'on bouge des effectifs,
+ on bouge du matériel,
+ on bouge des contrats.
+ Un site qui est multiactivité,
+ il n'a qu'un sirète aujourd'hui,
+ je ne suis pas content d'y apprendre.
+ Demain, ce sirète,
+ vu qu'on va bouger les chapeaux,
+ un site RNC
+ va basculer
+ sous un autre chapeau,
+ il ne peut pas garder le précédent sirète.
+ C'est impossible,
+ puisque les premiers neufs numéros
+ sont liés d'abord à la structure juridique.
+ Donc, ce que je dis,
+ c'est qu'il faut faire la liste de tous les sites.
+ Dans ces listes de sites,
+ il faut estampiller les activités qui sont présentes.
+ Ensuite, il faut se dire, demain,
+ est-ce que ces activités vont perdurer?
+ Donc, quels vont être les entités
+ qui vont avoir des activités dans ce site?
+ Et ensuite,
+ définir.
+ Alors, ça, ça ne vous regarde pas,
+ mais quel site juridique? Est-ce que ça va être
+ un buy direct avec le buyer? Est-ce que ça va être
+ la soulof contre un terme?
+ Et, autre sujet,
+ les sirètes.
+ Comment découpe administrativement le site?
+ Parce que, si sur un site, j'ai de la route et de l'RNC,
+ aujourd'hui,
+ Shankar France, on ne s'en fout, c'est qu'un sirète,
+ c'est qu'une main de boîte. Demain,
+ DSVR O de pour l'un va avoir un sirète.
+ S'il y a de l'RNC, il faudra créer
+ un RNC.
+ Il faudra deux sirètes pour
+ un site où il y a deux activités.
+ Il faudra deux sirètes.
+ Deux sirètes dans la soleur CS.
+ Non, deux RCS.
+ La raison, c'est qu'il y a deux RCS.
+ Il y a des sites.
+ Voilà, donc moi, par exemple, si on m'a dit,
+ il y a des sites blogs, aujourd'hui, qu'on pas de sirètes.
+ Des sites logistiques qui n'ont pas de sirètes.
+ C'est possible ça? Oui, parce qu'il y a du special
+ à la route, historiquement, qui était rattaché
+ à l'agence. Ah oui, donc ça passe sur la route.
+ Il y en a un sous la log de main.
+ Du coup, c'est la question.
+ Voilà, il faut ouvrir un sirète, etc.
+ Donc, bien sûr, le deux coupages des sirètes
+ est un vrai sujet
+ d'administration
+ qui dépend de la scission qui va être faite.
+ Donc du découpage par l'immobilier valider
+ par les AMD, qui vont après avoir
+ des conséquences sur la paix, sur vous.
+ Parce que vous, je crois que vous êtes aussi
+ sur les sirètes, il y avait chaud pour ouvrir
+ les mini-ranges et les mains des sirètes.
+ Il y a eu sur des discussions d'écran. Historiquement,
+ Chien-Cœur France ou Chien-Cœur Angérien,
+ je ne sais pas, on n'est pas bons sur les sirètes
+ parce qu'on nous demande souvent de vibrer
+ des lignes à sape pour une agence.
+ Et quand je demande à l'agence de l'IMO
+ "il est où mon sirète?"
+ J'en ai pas.
+ C'est poisson qui se m'en accuse.
+ En fait, le greffe, il peut accepter
+ une demande de sirètes que 30 jours
+ avant le type d'occupation.
+ Effective. Donc, j'ai un bail.
+ Le bail n'est pas signé parce que ça, c'est théorique.
+ Très souvent, on arrive à l'arrache.
+ Donc, le site, il est pris avant.
+ Et là, on nous dit "mais pourquoi on n'a pas de sirètes?"
+ Mais j'ai pas de type d'occupation signée.
+ Je ne peux pas faire ma démarche.
+ Ou alors des fois, on me dit "est-ce qu'il y a moyen
+ d'anticiper le sirète?" Non.
+ Je peux faire mes démarches que 30 jours
+ avant l'ouverture du site.
+ Et après, je suis tributaire de délai
+ d'enregistrement des greffes, de la formalité,
+ de la réception du LBIS.
+ Le LBIS, CABIS, c'est pour le RCS.
+ LBIS, c'est pour le numéro de sirètes.
+ C'est l'établissement solidaire.
+ C'est pas évident alors que la property d'histoire
+ nous demande de sirètes, parfois, jusqu'à 3 à 6 mois
+ avant pour pouvoir faire la commande.
+ Mais ça ne nous peut pas. On ne peut pas y répondre.
+ Sauf avoir un type d'occupation qui est d'atterre.
+ Parce que souvent, dans les sites,
+ ils peuvent avoir une période où ils n'exploitent pas,
+ mais ils nous prennent le bail pour s'installer, etc.
+ Ce qu'il faut, c'est la date de prise d'effet.
+ Peu importe qu'on exploite ou qu'on n'exploite pas.
+ Une loïse, ça ne marche pas. Une letter of intention, justement.
+ Non.
+ On va s'amuser le cas de sirètes.
+ Donc vous, par contre,
+ vous êtes tributaire du travail
+ que là, on a poussé avec nous
+ et qu'il doit après tout lister
+ avec la financeuse, ce que ça fait partie du travail de 6 ans.
+ Il y a une casse supplémentaire qui est de sirètes.
+ Alors, ça, les MD, je pense qu'ils n'ont pas encore la part de sirètes.
+ Sirètes, oui, je pense que oui.
+ Je pense que la partie sirètes,
+ il est important pour la partie route.
+ Et sur la partie route, dans l'absolu,
+ ça ne va pas changer.
+ Le RCS ne va pas changer.
+ Le sirètes, non. Le sirètes
+ d'une agence route ne va pas changer.
+ Sur les DSB Road.
+ Tous les DSB Road.
+ Et qu'il n'a pas encore entrepéré
+ l'éthique du masque.
+ Parce que changement de numéro de RCS.
+ Ça va les chambouilles, c'est quand même
+ à côté des DSB Road.
+ Il va faire des changements.
+ Bon, ils ont pas été 20 d'agences,
+ mais ça, ça dépend du nombre
+ de clients qu'il y en a.
+ Parce que le nombre de clients s'appuie, justement,
+ c'est la clé des changements,
+ souvent, entre
+ la facture de client.
+ C'est quoi ce qu'il y a de la facture ?
+ C'est le sirètes ou le RCS ?
+ Une facture de l'agence route.
+ Un sirètes, c'est une partie
+ d'un RCS.
+ Le sirètes tout seul, il ne marche pas.
+ C'est pour ça que ce travail
+ de digestion, de faire matcher
+ le rythme des opérations
+ des conséquences avec les implications
+ pour chaque service dans son écosystème.
+ C'est un travail qui dépend
+ du service concerné, parce que nous,
+ toutes les implications, nous, on peut raconter
+ l'histoire juridique, expliquer les conséquences.
+ Mais derrière, vous, dans votre quotidien,
+ dans vos outils,
+ ce que ça veut dire ou dans vos relations,
+ c'est impossible.
+ C'est pour ça que vous avez fait l'exercice.
+ Moi, ce que je pose, c'est que chaque service
+ doit faire ce brandy-storming
+ de, voilà, s'il comprend
+ les conséquences, pour s'interprimer, mais moi,
+ dans mon univers, ça veut dire bien ça. Il y a des trucs
+ dans les mailles du filet.
+ Mais au moins, les gros sujets.
+ Parce que c'est quand même 2 mains, hein,
+ ça veut dire...
+ ça veut dire...
+ OK.
+ Bon, on aura certainement
+ une question derrière.
+ Le périmètre Maroc.
+ Oui, ça va pas de moi.
+ C'est un polylit, là.
+ Alors, le Maroc,
+ donc là, on a fait tous les documents,
+ on a juste à les envoyer au Maroc, ça va y faire.
+ Donc, eux, il n'y a pas de conséquences
+ d'un point de vue juridique, déjà.
+ Il n'y a pas d'opérations juridiques
+ de structure.
+ Ils ont décidé le groupe de vider
+ l'activité RNC tout simplement
+ en l'arrêtant, et implicitement
+ en le réentend vers leur agent.
+ Après, ça y a un risque.
+ C'est une session de désir. Ça, c'est pas
+ de notre problème. C'est le groupe qui a décidé.
+ Donc, ça veut dire que le shaker Maroc
+ garde que la route. Aujourd'hui,
+ depuis le...
+ 9e novembre, vous prenez des centres de la route.
+ Toutes les activités ont été arrêtées.
+ Donc, c'est peut-être l'entraînement du CA,
+ qui reste.
+ Aujourd'hui, ce que nous, l'intégration...
+ Non, un peu logique.
+ Rattachée la route.
+ Planqué dans la route, c'est du spécial.
+ Ok, c'est du spécial.
+ Donc, ils sont que routes.
+ Ça veut dire que nous,
+ l'intégration du Maroc,
+ ça consiste uniquement
+ à renommer
+ les représentants l'ego.
+ Et là, je vois sur la question que tu posais.
+ Aujourd'hui, les représentants l'ego,
+ c'est pas ceux qui seront
+ dans 6 mois ou un an.
+ Pourquoi ? Le groupe,
+ capitalistiquement,
+ contrairement...
+ Là, on parle de la France. Donc, la France est rattachée
+ au même holding, etc. Par contre, le Maroc,
+ c'est un autre pays. Et donc, capitalistiquement,
+ ça devrait être rattaché directement
+ au Danemark. Comme la France est rattachée au Danemark.
+ Aujourd'hui, qui possède la France ?
+ Le Maroc,
+ c'est Schenker France,
+ et une part des défransonnés.
+ Donc, en fait, la France,
+ les entités françaises, Schenker France notamment,
+ possède le Maroc.
+ Dans l'organisation de demain,
+ tout va être vendu
+ pour être rattaché directement
+ au Danemark, parce que la France est de Maroc.
+ C'est deux pays.
+ Donc, le lien de rattachement ne doit pas passer par un autre pays.
+ Ça, par contre, ça a été dit, vu l'intégration France,
+ on ne veut pas télescoper ces opérations de session
+ par rapport à l'intégration France et la priorité.
+ Donc, ça, on verra au deuxième semestre.
+ Ça veut dire que Schenker France
+ reste toujours jusqu'à
+ ces opérations-là présidentes,
+ renommées, recombies,
+ présidentes du Maroc. Donc, aujourd'hui,
+ représentées par Frédéric Vallée en tant que présidente Schenker France.
+ Et le DG,
+ c'est Éric Tizy,
+ qui a donc le rôle de l'AMD
+ Rodeau.
+ Donc, on change le nom, on change la forme juridique,
+ mais ça, ça ne vous intéresse pas.
+ Donc, il faut que l'on actualise le statut
+ pour faire des trucs DSV.
+ Mais il n'y a pas d'impact
+ sur le numéro de Maroc.
+ Il y a une société qui s'appelle DSV Rode
+ qui est la même entité.
+ Comme Schenker France va devenir DSV Rode,
+ Schenker Maroc devient le premier février
+ des DSV Rode.
+ Non, il fait pas.
+ Il y aura, après, on verra,
+ enfin, du rôle de première semestre et ensuite après,
+ le deuxième semestre, quand ça passera sous la holding,
+ c'est de la réfecturation,
+ parce qu'aujourd'hui, ils utilisent une partie
+ de notre système d'information.
+ C'est une partie de nos informatiens,
+ une partie de nos licences.
+ Ça sera des conventions intra-groupe,
+ sauf que s'il n'y a plus la ligne directrice,
+ enfin, la ligne capitalistique avec la France,
+ sachant que le Maroc,
+ c'est le ceintur bretel
+ pour tous ces flux-là de monnaie,
+ il y a des conventions spécifiques France-Maroc.
+ Il n'y en a pas d'aide maroc Maroc.
+ Il y aura sûrement des gros sujets.
+ Mais ça, ça sera appréhendé
+ quand on se posera à apprendre chaque problème.
+ Quand on se posera
+ le sujet de la changement capitalistique,
+ on posera nous les conséquences que ça a.
+ Et notamment, ce sujet-là,
+ parce que le fils d'échange de Maroc...
+ Pour la petite histoire, parce qu'on ne paierait pas le Maroc,
+ imaginons que, pendant un temps donné, on est souples
+ parce qu'on ne paiera pas le Maroc,
+ la partie du premier mestre, c'est pour ça qu'il perd.
+ Oui, oui.
+ Tant qu'on est capitalistiquement réunis,
+ ça veut dire que la première semestre, ça passe,
+ le pro de deuxième semestre.
+ Je serais François Malasine, ça me pique un peu,
+ de devoir payer pour le Maroc.
+ Ça veut dire que dans les conditions de transfert
+ des participations de l'échange de France-Maroc,
+ François lui devra dire, attendez,
+ moi, j'ai quand même un sujet.
+ C'est qu'aujourd'hui, j'ai ces flux monétaires.
+ Demain, je change les lieux en capitalistique.
+ Il faut d'abord qu'il y ait les conventions réglementées
+ et que vous ayez les accords avec le fils d'échange
+ pour pouvoir que ça remonte tout en haut
+ et que ça redescend un peu.
+ Après, des cas qui nous redonnent,
+ ça sera toujours possible.
+ Par contre, des cas qui se référent
+ sur Maroc, des ESB,
+ ils sont anti-Afrique.
+ Ça, des articles de la bataille de Maroc,
+ qui n'ont pas un pire en Afrique,
+ ça a toujours été à leur raison des histoires
+ par le passé, ils ne veulent pas y retourner.
+ Donc là, je me demande bien
+ comment ça va être pris en compte tout.
+ Sauf qu'on couple les ponts étis d'ici là.
+ Oui.
+ Ça serait souhaitable.
+ Alors, je t'invite à référencer
+ sur ce sujet-là auprès de François
+ dans ton fils.
+ Je le fais régler Maroc.
+ Mais je vais continuer à le faire.
+ Ce deuxième semestre, les prévus qu'il y a capitalistiques
+ changent.
+ Donc, Chine-Cart-France et Dédé-Françolique
+ vont nous vendre la participation de Maroc.
+ OK.
+ Voilà.
+ Tout à raison.
+ Glockon, est-ce que c'est amené
+ à disparaître ?
+ Oui, il serait certain disparaître.
+ Mais en moins, je ne peux pas tenir
+ un discours qu'il faut continuer
+ à tenir nos pratiques.
+ Oui, ça, c'est ce qu'on fait.
+ Mais après, il y a un équipe global
+ au niveau des services support
+ qui est désolé.
+ Une merde, comme Glockon.
+ Bon, ça ne sent pas.
+ Même pire, peut-être que Glockon.
+ Ah non !
+ Mais par contre, ils ont envie
+ de, mais j'ai déjà eu ce sous
+ chez Chine-Cart et ça n'a rien fait.
+ Ils ont envie de doter
+ l'organisation des contrats.
+ Pas que du juridique, sur que les services
+ qui gèrent les contrats, d'un vrai outil.
+ Ce que ça sera fait, pas fait.
+ Moi, j'ai écouté ces cours.
+ C'était un gros manque pour l'organisation,
+ pas pour l'égole, c'est pour
+ l'administration des contrats dans les boîtes.
+ Moi, je produis ça depuis des années,
+ c'est pas un sous-juridique, c'est un sous-étonnisation.
+ On est léger, même avec Glockon,
+ qui n'est pas mal, mais c'est pas parfait.
+ Il n'y a pas de suivi,
+ c'est mal fait,
+ franchement il y a un moitié d'hélogène qui est triste.
+ C'est rien, c'est juste
+ pour cocher un truc dodique parce qu'un jour
+ c'est une chacune.
+ Après, c'est une base pour déposer tous les contrats.
+ Parce que c'est déligiant.
+ Parce que t'es déligiant, t'as bien pris le pli.
+ Les autres référents en contrats qu'on a nommé,
+ c'est fait par ci par là.
+ Et d'ailleurs,
+ ce qui a été un total non frappant,
+ c'est que dans le processus
+ de due déligètes d'acquisition,
+ pour compter les documents,
+ ils ne sont même pas servi de Glockon.
+ Ils demandaient au service "faites le lien".
+ Mais oui, ils ne vous avraient plus pas,
+ ils m'avaient compilé tous les contrats.
+ Et là, on leur a dit "m'attendez,
+ vous faites chier depuis des années avec Glockon,
+ qu'on a déployé, qu'on bassine les gens avec ça".
+ Nous n'avons essayé de créer un truc carré en France.
+ Pour en fait, quand il y en a vraiment besoin,
+ vous êtes pour dire que ça c'est la personne.
+ C'est ça.
+ Mais bon, on n'a pas fini avec ce suivi.
+ Mais du coup, avec DSV, il y aura d'autres suivis.
+ Ce ballon a été prendre des foules sur différents thèmes,
+ sur les contrats, mais pareil, sur la partie réseau par exemple.
+ Ils ont repris le réseau il y a de 3 ans, global,
+ nous disant "tu t'es gérant central, on va faire des exports".
+ On arrive des DSV, ils les équipent le balle,
+ on renvoye des DSV vers les pays.
+ "Vous allez voir la balle qui vous fera un export,
+ on va te retirer un petit".
+ Non, non, c'est pareil.
+ Sur la partie gestion de contrats et de process en général,
+ on a informatisé si on est vinais,
+ on va continuer d'utiliser les outils et les process,
+ donc on n'a pas autre chose.
+ Donc c'est d'attendre le nouveau process des DSV,
+ on connaît l'existence,
+ ils ont dit qu'ils avaient changé,
+ donc on attend l'apparition.
+ On pourra essayer de dire "ok, c'est leur directive,
+ nous comment on peut réfléchir avec la MD,
+ bien sûr on doit suivre les directives,
+ mais comment on peut se greffer un mode de gestion des contrats
+ qui correspond à leur organisation,
+ en respectant le canal du groupe,
+ nous trouvons un truc qui marche.
+ Donc on essaiera de bricoler en marge du groupe aussi,
+ enfin en complément du groupe, pardon,
+ pas en marge, en complément,
+ mais en risque d'aller les contraindre d'un truc.
+ Ouais, ils ne correspond pas exactement à ce qu'on a vu, non ?
+ Les gens sont persuadés.
+ Voilà, déjà je peux vous informer
+ que si vous avez des demandes de réalisation
+ de contrats par un autre genre de truc,
+ demain c'est un ticket,
+ ça passe par le monde,
+ et c'est lui qui décide où c'est prêté.
+ C'est pour ça qu'on ne veut que les contrats se promonglent,
+ alors est-ce que c'est...
+ Ouais, ouais, on a prêt de plier, ouais.
+ On est en train de prendre le plier.
+ Exactement, donc demain ça ne sera pas chaud,
+ ça ne va pas.
+ Donc, quels vont être exactement
+ le périmètre de revue ?
+ Qu'est-ce qu'il flacque, qu'est-ce qu'il flacque pas ?
+ J'en ai dit, voilà, pas d'aide,
+ ça ne sera pas bon, c'est...
+ Voilà.
+ C'est bien, merci. Merci infiniment.
+ Ok, plaisir.
+ Ça me courage, merci.
+ Merci, merci.

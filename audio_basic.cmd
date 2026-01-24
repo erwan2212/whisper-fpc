@@ -1,0 +1,1 @@
+ffmpeg -i "%1" -ac 1 -ar 16000 -af "loudnorm=I=-23:LRA=7:TP=-2" output_basic.wav

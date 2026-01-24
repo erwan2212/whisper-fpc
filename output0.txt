@@ -1,0 +1,861 @@
+
+[00:00:00.000 --> 00:00:04.500]   Il y a un premier découpage en ce moment qui est en train de se faire avec Maroc.
+[00:00:04.500 --> 00:00:07.200]   Là je parle de la France.
+[00:00:07.200 --> 00:00:10.500]   Il fait pas partie de Schenker-France, le Maroc que l'on voit.
+[00:00:10.500 --> 00:00:13.800]   - Je fais la partie de Schenker-France juste après. - Ça marche, ok.
+[00:00:13.800 --> 00:00:17.200]   Du coup, ça veut dire que ça c'est la première étape au 1er avril.
+[00:00:17.200 --> 00:00:20.700]   Donc au 1er avril, on a toujours les 4 structures juridiques,
+[00:00:20.700 --> 00:00:26.200]   - mais on a Schenker-France vider de tous les RNC et toute la contract-log. - Oui.
+[00:00:26.200 --> 00:00:31.400]   - DSV, contract-log, DSV, RNC, leur entité juridique actuelle. - Oui, complète.
+[00:00:31.400 --> 00:00:33.800]   - Avec toutes les activités. - Oui.
+[00:00:33.800 --> 00:00:39.500]   - Et DSVRU. L'opération... - Le changement pour nous, au 1er avril en tant que thème,
+[00:00:39.500 --> 00:00:42.600]   - puisqu'on reste chez Schenker-France. - Oui.
+[00:00:42.600 --> 00:00:45.400]   - Et maintenant, j'en viens sur l'étape d'après. - Ok.
+[00:00:45.400 --> 00:00:49.000]   - D'un point de vue juridique, la Coquille Schenker-France reste chez Schenker-France. - Elle est 10 bisous.
+[00:00:49.000 --> 00:00:54.100]   311, 789, 456, le RCS.
+[00:00:54.100 --> 00:00:57.500]   Les sirètes des agences qui vont être outes.
+[00:00:57.500 --> 00:01:01.200]   Le petit sujet, je sais que les sirètes, mais on va discuter des implications après.
+[00:01:01.200 --> 00:01:04.400]   On va discuter des implications après, mais en effet, la Coquille juridique Schenker,
+[00:01:04.400 --> 00:01:11.800]   les 4 entités restent au 1er avril, Schenker-France, DSVRU, DSV contract-log, DSVRU.
+[00:01:11.800 --> 00:01:15.600]   Ensuite, donc ça va se préparer un peu avant le 1er avril forcément,
+[00:01:15.600 --> 00:01:21.200]   on va préparer ce qui va s'appliquer à une fusion entre DSVRU et Schenker-France,
+[00:01:21.200 --> 00:01:24.300]   parce que la cible, c'est l'arrivée à 3 entités.
+[00:01:24.300 --> 00:01:27.600]   Donc une fois qu'on aura réglé le sujet DSV contract-log et DSVRU ici,
+[00:01:27.600 --> 00:01:32.000]   par la scission, on va faire une troisième opération qui est la fusion absorption,
+[00:01:32.000 --> 00:01:39.400]   où là, c'est Schenker-France qui va absorber DSVRU, donc c'est pas juridiquement, c'est pas une chose.
+[00:01:39.400 --> 00:01:43.100]   - Non. Donc DSVRU va disparaître. - D'accord.
+[00:01:43.100 --> 00:01:49.500]   Schenker-France va accueillir tout l'actif et le passive de DSVRU.
+[00:01:49.500 --> 00:01:55.100]   Donc ça veut dire que là aussi, Schenker-France demain va changer sa dénomination et devenir DSVRU.
+[00:01:55.100 --> 00:02:04.300]   Donc en fait, le 319789456 va rester, va être Schenker-France, renommé DSVRU.
+[00:02:04.300 --> 00:02:08.200]   Le DSVRU d'actuel va disparaître. D'accord.
+[00:02:08.200 --> 00:02:12.700]   Ok, DSVRU de recenser avec un autre numéro, il est terminé.
+[00:02:12.700 --> 00:02:18.100]   - Terminé. Donc il y a terminé peut-être chez... - Donc vous aujourd'hui, si la question c'est d'appréhender le boulot
+[00:02:18.100 --> 00:02:21.700]   sur les deux côtés, tant côté DSV que côté Schenker, c'est ce que je comprends.
+[00:02:21.700 --> 00:02:27.700]   Donc en effet, un des sujets qui va avoir une conséquence chez vous, c'est que tout le DSVRU,
+[00:02:27.700 --> 00:02:33.400]   tout ce qui est contrat, potentiellement dans le terminet IT signé avec DSVRU, il n'existera plus.
+[00:02:33.400 --> 00:02:37.900]   Il sera automatiquement transféré à l'authentité. Donc là, il vous avait peut-être des...
+[00:02:37.900 --> 00:02:40.400]   avec certains prestataires des choses à régler.
+[00:02:40.400 --> 00:02:43.500]   Ça veut dire aussi que l'entité payée ne sera plus la même.
+[00:02:43.500 --> 00:02:46.500]   Donc ça, c'est la relation peut-être côté finance, mais ça veut aussi dire ça.
+[00:02:46.500 --> 00:02:50.900]   C'est si DSVRU disparaît, référencé en compte, ça devrait être Schenker France
+[00:02:50.900 --> 00:02:57.300]   pour les prestataires IT de DSVRU, par exemple. DSVRU va disparaître, va être intégrée à Schenker France.
+[00:02:57.300 --> 00:02:59.300]   Tout se fait normalement automatiquement.
+[00:02:59.300 --> 00:03:08.700]   - Si la partie... Certes, ça va être Schenker Center qui va intémer donc, qui va arriver chez Schenker France au premier mai.
+[00:03:08.700 --> 00:03:13.100]   - Là, tu parles des fonctions support. - Oui, nous c'est des fonctions support qui...
+[00:03:13.100 --> 00:03:19.900]   Là, je parlais des activités. Les fonctions support, ce qui est prévu, adapté au premier mai,
+[00:03:19.900 --> 00:03:25.100]   c'est que toutes les fonctions support, c'est ce qu'on est en train de discuter des instances,
+[00:03:25.100 --> 00:03:33.500]   soumis à l'avis du CSE, toutes les fonctions support soient attachées à DSVRU de demain,
+[00:03:33.500 --> 00:03:36.700]   qui sera, qui est donc Schenker France.
+[00:03:36.700 --> 00:03:46.900]   Donc, imaginons qu'au niveau de l'IT, quand les DSVRU de... ils ont signé un contrat avec un partenaire, un fournisseur,
+[00:03:46.900 --> 00:03:50.900]   demain, quand ils vont arriver chez nous, ça va être recrut dans notre giron.
+[00:03:50.900 --> 00:03:58.900]   Oui, IT France, je peux même voir DSVRU de machin ça. IT France, c'est habituel, sans support France,
+[00:03:58.900 --> 00:04:02.100]   il faudrait qu'on change ce contrat pour dire.
+[00:04:02.100 --> 00:04:05.700]   - Donc, l'impact sur les contrats. - Oui.
+[00:04:05.700 --> 00:04:14.100]   En fait, tous les contrats, dans ces opérations que ça soit l'assission ou la fusion,
+[00:04:14.100 --> 00:04:18.700]   il y a le transfert automatique d'un point de vue interne, je ne parle pas d'un point de vue co-contractant,
+[00:04:18.700 --> 00:04:22.700]   de notre point de vue anoui, tout est légalement automatique, c'est-à-dire qu'aujourd'hui,
+[00:04:22.700 --> 00:04:26.100]   par exemple, avec des clients, on a encore des contrats à entêtres chez Nkressa.
+[00:04:26.100 --> 00:04:28.900]   Alors que chez Nkressa n'existe plus depuis 2015.
+[00:04:28.900 --> 00:04:34.300]   Le Chanel, qui est un contrat historique de 2011, il est au nom de Schenker et ça, il l'est toujours.
+[00:04:34.300 --> 00:04:39.300]   En fait, l'opération juridique en elle-même rend automatique le transfert.
+[00:04:39.300 --> 00:04:43.100]   Il n'y a pas besoin de renommer, de refaire les contrats et heureusement,
+[00:04:43.100 --> 00:04:46.300]   parce que sinon, c'est-à-dire que nos beaux, on mettraient tout sur la table aussi.
+[00:04:46.300 --> 00:04:52.900]   Donc, en fait, et si demain, il y a besoin de justifier en quoi vous venez au droit de Schenker et ça,
+[00:04:52.900 --> 00:04:59.500]   c'est les traités de scission, l'historique de, ce qu'on appelle le corporet qui vient justifier auprès du co-contractant,
+[00:04:59.500 --> 00:05:03.300]   que aujourd'hui, Schenker et ça, c'est Schenker France.
+[00:05:03.300 --> 00:05:05.100]   Donc en fait, tout est automatique.
+[00:05:05.100 --> 00:05:12.900]   Le seul problème qu'on a, le seul problème qu'on a, le seul problème qu'on a sur ce sujet automatique,
+[00:05:12.900 --> 00:05:16.300]   c'est que les co-contractants, et nous aussi, à l'inverse,
+[00:05:16.300 --> 00:05:19.300]   on essaye de se verrouiller dans les contrats sur ce type de changement.
+[00:05:19.300 --> 00:05:22.100]   Parce qu'on ne sait jamais à qui ça va changer.
+[00:05:22.100 --> 00:05:23.100]   Je prends un exemple.
+[00:05:23.100 --> 00:05:26.700]   Imaginons qu'on travaille avec un fournisseur et qu'il est racheté par Daxer.
+[00:05:26.700 --> 00:05:29.500]   Peut-être qu'on n'a plus envie de bosser avec ce fournisseur-là.
+[00:05:29.500 --> 00:05:33.300]   Donc dans les contrats, qu'est-ce qu'on retrouve ?
+[00:05:33.300 --> 00:05:37.500]   On retrouve tout un tas de clauses qui prévoient que s'il y a des changements d'actionnaires,
+[00:05:37.500 --> 00:05:40.500]   il faut une information ou il faut un agrément.
+[00:05:40.500 --> 00:05:42.500]   Sans agrément, c'est la fin du contrat.
+[00:05:42.500 --> 00:05:46.500]   Donc on prévoit tout un tas de ces clauses-là, ils existent.
+[00:05:46.500 --> 00:05:51.500]   Le parti prix qui a été fait, et ce n'est pas commun à Schenker, c'est classif en ce qui est fait.
+[00:05:51.500 --> 00:05:53.500]   On ne peut pas parcourir tout le contrat qui est pris dans la boutique.
+[00:05:53.500 --> 00:05:56.500]   Déjà, il faudrait les recenser, qu'on soit sur tous les avoir.
+[00:05:56.500 --> 00:06:00.500]   Et surtout qu'il y a la majeure partie des contracteurs et ils s'en foutent.
+[00:06:00.500 --> 00:06:03.500]   Alors, ils s'en foutent, mais néanmoins Jacques a fait l'exercice.
+[00:06:03.500 --> 00:06:06.500]   Enfin, je retrouve des traces là-dessus, peut-être que tu les as amélie.
+[00:06:06.500 --> 00:06:08.500]   Sur les aspects de licences, par exemple.
+[00:06:08.500 --> 00:06:11.500]   Jacques avait contacté l'ensemble de nos co-contracteurs, fournisseurs ici,
+[00:06:11.500 --> 00:06:15.500]   en leur demandant est-ce que le fait de changer de nom avait un impact.
+[00:06:15.500 --> 00:06:17.500]   La plupart répondent non, ça passe.
+[00:06:17.500 --> 00:06:23.500]   Quelques-uns, avec un répondu, ben oui, il faudra payer déjà pour faire la manip.
+[00:06:23.500 --> 00:06:26.500]   Aucun ne s'y est opposé, mais par contre, certains en profitent, effectivement,
+[00:06:26.500 --> 00:06:29.500]   et c'était contractuel de nous dire que cette opération va vous coûter de l'argent.
+[00:06:29.500 --> 00:06:34.500]   Donc 99,9% sur les 10 000 contrats de l'entreprise, ils s'en foutent.
+[00:06:34.500 --> 00:06:38.500]   Sur certaines relations spécifiques, c'est plus problématique.
+[00:06:38.500 --> 00:06:40.500]   D'où l'exercice de cartographie.
+[00:06:40.500 --> 00:06:43.500]   C'est que nous, je redis qu'on peut me guider le propos.
+[00:06:43.500 --> 00:06:48.500]   Mais c'est à chaque service, essayez de se dire, c'est quoi mes relations clés qui peuvent poser problème.
+[00:06:48.500 --> 00:06:52.500]   Parce que si je vais à la douane, forcément, si je ne vais pas voir l'administration des douanes,
+[00:06:52.500 --> 00:06:57.500]   je vais la réexpliquer le bar d'aile, et demain, il se retrouve à déclarer sur des RCS différents des trucs.
+[00:06:57.500 --> 00:07:02.500]   C'est la douane qui est problématique parce qu'ils ont des impréhens, ils sont donné.
+[00:07:02.500 --> 00:07:04.500]   Plein de problématiques, j'ai pris cet exemple là.
+[00:07:04.500 --> 00:07:06.500]   Je donne un autre exemple, l'immobilier.
+[00:07:06.500 --> 00:07:10.500]   Autant, le bailleur d'agent, il s'en fout, que ça soit pu porté par DS Vero,
+[00:07:10.500 --> 00:07:13.500]   mais que ça soit Jean-Claire France, je n'en sais rien, il s'en fout.
+[00:07:13.500 --> 00:07:19.500]   Par contre, je prends l'institutionnel, qui est la convention du PDM public à l'aéroport de Roissy.
+[00:07:19.500 --> 00:07:22.500]   Lui, il a 3 mois dans son contrat, c'est du domaine public.
+[00:07:22.500 --> 00:07:25.500]   Si tu ne l'as pas informé 3 mois avant, fais l'exercice d'agrément.
+[00:07:25.500 --> 00:07:30.500]   Le Georgie, quand il se rend compte que ce n'est plus le même payer, ce n'est plus Jean-Claire France mais DSVR ANSI,
+[00:07:30.500 --> 00:07:33.500]   il m'attend, c'est quoi ça ? Moi, je te résidis ton contrat.
+[00:07:33.500 --> 00:07:38.500]   Voilà, le type de relation sensible que l'entreprise peut avoir.
+[00:07:38.500 --> 00:07:40.500]   La finance, les banques, c'est pareil.
+[00:07:40.500 --> 00:07:46.500]   Si ce sujet ne s'anticite pas, les banques c'est des institutionnels, ils prennent les contrats à la lettre.
+[00:07:46.500 --> 00:07:50.500]   Il ne faut pas générer surtout, il faut essayer, par une communication plutôt générale.
+[00:07:50.500 --> 00:07:54.500]   C'est pour ça que ce qui a été fait, normalement, c'est que l'idée s'est faite, l'idée s'est faite par Laurent.
+[00:07:54.500 --> 00:07:58.500]   Cette semaine, l'idée, c'est d'adresser au panel de partenaires de l'entreprise, une com-générale,
+[00:07:58.500 --> 00:08:04.500]   qui permet d'amorcer après en silo des com un peu plus ciblés, par en plus de mobilier des débailleurs,
+[00:08:04.500 --> 00:08:09.500]   de la douane vis-à-vis de leur contratant, etc., quelque chose de plus ciblé pour traiter les spécificités.
+[00:08:09.500 --> 00:08:19.500]   Nous, le truc qu'on pourrait avoir, si on a un fournisseur un peu pointilleux, qui pourrait dire, ok, je vous ai rendu une licence au mi-le-chamqueur, 100 000 euros.
+[00:08:19.500 --> 00:08:23.500]   En premier, je vous en prends une au long des ex, 100 000 euros.
+[00:08:23.500 --> 00:08:31.500]   Une autre ou alors ils peuvent aller aussi se servir des clauses des contrats.
+[00:08:31.500 --> 00:08:36.500]   Les clauses des contrats pour dire attendez, c'est une clause de résiliation parce que je n'ai pas agréé.
+[00:08:36.500 --> 00:08:42.500]   Donc, on ouvre la discussion. Ok, je suis ok pour que vous résiliez. Par contre, le tarif qui était de 100, je veux qu'il soit à 120, c'est ça.
+[00:08:42.500 --> 00:08:48.500]   Et ça, c'est les effets de bord. Si on ne les anticipe pas et que, forcément, si on anticipe, qu'est-ce qu'il se passe ?
+[00:08:48.500 --> 00:08:54.500]   Il y a un dialogue plutôt constructif qui se crée. Si on est suffisamment à l'avance, en plus, le mec, il sait peut-être qu'on peut résilier.
+[00:08:54.500 --> 00:08:57.500]   Il peut-être qu'il peut y avoir des changements de bord, donc changer de prestataire.
+[00:08:57.500 --> 00:09:04.500]   Donc le gars, il est plutôt intéressé surtout par garder la relation. Donc, les discussions sont tout de suite plus faciles.
+[00:09:04.500 --> 00:09:08.500]   Par contre, il se retrouve de refaites accomplies. C'est lui qui est en position de force vis-à-vis du contrat.
+[00:09:08.500 --> 00:09:16.500]   Il sait qu'on est dans la merde et qu'on est dans la fragilité, il va nous aligner. Et ça, c'est pareil pour les noyés, c'est pareil pour tout.
+[00:09:16.500 --> 00:09:23.500]   Typiquement, l'éditeur d'Ingren qui aujourd'hui est HCL, elle nous avait gratté un petit peu déjà en disant que vous allez bientôt changer de nom.
+[00:09:23.500 --> 00:09:30.500]   C'est vrai bien qu'on se parle. Vu le type d'éditeur et les galères à négocier avec eux, HCL, je ne serais pas étonné que là-dessus nous en bête.
+[00:09:30.500 --> 00:09:33.500]   En disant que vous n'êtes plus dans la même boîte, donc vous allez racheter une licence.
+[00:09:33.500 --> 00:09:37.500]   Ce n'est pas elle qui avait dit que ce ne serait pas étonné.
+[00:09:37.500 --> 00:09:42.500]   Alors, déjà elle l'avait dit. Mais je ne serais pas étonné que ça aille encore un peu plus loin.
+[00:09:42.500 --> 00:09:48.500]   Et l'IT, les clauses sont majoritairement horribles. Pourquoi ? Parce que vous êtes sur des prestas où souvent c'est les CGV.
+[00:09:48.500 --> 00:09:58.500]   Donc les CGV, on peut prendre les CGV à nous, c'est des trucs qui sont très unilatérales, ceinture bretelle, donc ils vont être tranquilles en fait.
+[00:09:58.500 --> 00:10:09.500]   Donc ils ont le pouvoir, ce type de profil. Les valeurs, c'est un peu différent parce que c'est un bail, donc ça fait léger d'un contrat, de discussion.
+[00:10:09.500 --> 00:10:19.500]   On a déjà pu essayer d'équilibrer les clauses avant. Là vous, vous avez le prix sur les CGV, en mon avis, changement de contrôle, les trucs, c'est tout simplement rime.
+[00:10:19.500 --> 00:10:30.500]   Moi, j'avais une question, au-delà du premier mail, ce sera des CGV à qui t'es réglé le nombre des CGV, va-t-il chez les CGV ? La fonction superactive, oui.
+[00:10:30.500 --> 00:10:42.500]   Sur ce que moi, je sais ce qui est prévu. Oui. Quand on a remis le contrat, parce que nous, on a souvent des contrats qu'on remise tous les trois mois.
+[00:10:42.500 --> 00:10:50.500]   On demandera donc à notre fournisseur qu'on ne tractera plus au nombre des chancre-français, mais au nombre des héros.
+[00:10:50.500 --> 00:11:02.500]   Alors il y a une bonne question qui est de dire, il y a deux points, je pense, sur ce sujet. Le premier point, c'est de se dire quelle est l'entité qui contracte.
+[00:11:02.500 --> 00:11:10.500]   Jusqu'à maintenant, tous les contrats que tu fais, tu les fais au nom de chancre-français, quand chancre-français va être nommé des héros, automatiquement, le changement il se fait.
+[00:11:10.500 --> 00:11:15.500]   Heureusement, quand on change les nominations, on n'a pas à revoir tous les contrats, c'est ce que j'ai dit tout à l'heure.
+[00:11:15.500 --> 00:11:22.500]   Les contrats qui sont finis avant. Par contre, il y a un gros sujet, et ça, je n'ai pas la réponse.
+[00:11:22.500 --> 00:11:33.500]   C'est demain, commençons à gérer la contractualisation pour ce qui sert une ou deux ou trois quantités.
+[00:11:33.500 --> 00:11:43.500]   Ça, je n'ai pas la réponse. C'est propre à chaque... Je donne un exemple sur ma partie, le plus essentiel qui est client.
+[00:11:43.500 --> 00:11:49.500]   Moi, aujourd'hui, j'ai un client qui traite de la route et de l'air ainsi. Je ne sais pas comment je dois faire avant ces chaînes cartes françaises.
+[00:11:49.500 --> 00:11:54.500]   Demain, qu'est-ce que je fais ? Est-ce qu'on fait la part d'OCA la plus importante et on fait signer l'une des entités ?
+[00:11:54.500 --> 00:11:58.500]   Mais après, il faut faire gaffe, parce que ça veut dire qu'il faut quand même autoriser votre entité à opérer.
+[00:11:58.500 --> 00:12:04.500]   Donc, je ne serais pas surpris que vous, dans votre logique, la question de demain. Vous avez un contrat à IT.
+[00:12:04.500 --> 00:12:11.500]   Qui est l'entité, elle sert ? Elle sert à l'activité route, elle sert à l'activité R&C, elle sert le contrat club.
+[00:12:11.500 --> 00:12:15.500]   Il y a une règle qui peut-être se dire si ça sert les trois, mais je ne dis n'importe quoi, ce n'est pas moi le dessiné.
+[00:12:15.500 --> 00:12:19.500]   Peut-être que ça se met sous des SVRO et après, il y a de la revacturation.
+[00:12:19.500 --> 00:12:25.500]   Si ça sert que l'R&C, le contrat, pourquoi je le mettrai au nombre des SVRO, je vais le mettre au nombre des SVRO.
+[00:12:25.500 --> 00:12:30.500]   Et honnêtement, je pense que c'est là où il va nous manquer de main une entité légal et juridique pour la Partie SSC.
+[00:12:30.500 --> 00:12:33.500]   J'ai travaillé dans beaucoup de grands groupes, il y avait toujours une entité légal et juridique.
+[00:12:33.500 --> 00:12:36.500]   Un chef de service center, je sais bien, je sais bien.
+[00:12:36.500 --> 00:12:38.500]   C'est fou, il déploie leur truc, tu n'as rien à dire.
+[00:12:38.500 --> 00:12:44.500]   Mais ça simplifie la vie, parce qu'au moins, tu as une entité à part qui peut prendre une facturation, prendre un contrat,
+[00:12:44.500 --> 00:12:47.500]   et derrière, sur des clés de répartition ou autre.
+[00:12:47.500 --> 00:12:50.500]   Donc là, effectivement, sur la partie contractuelle, c'est la partie qui va gratter le plus.
+[00:12:50.500 --> 00:12:52.500]   Il faudra bien qu'une entité légal et juridique porte le contrat.
+[00:12:52.500 --> 00:12:55.500]   Après, sur la clé de répartition, je suis moins inquiet.
+[00:12:55.500 --> 00:12:58.500]   Là, je vous invite à aller voir ce qui est fait dans les autres pays, les pratiques chez DSV,
+[00:12:58.500 --> 00:13:01.500]   puisque leur configuration entre les entités existe, donc il faut comment.
+[00:13:01.500 --> 00:13:03.500]   Alors moi, j'ai eu des surprises.
+[00:13:03.500 --> 00:13:05.500]   Sur la partie client, j'allais vous faire comment.
+[00:13:05.500 --> 00:13:08.500]   On ne s'est jamais posé la question, par contre.
+[00:13:08.500 --> 00:13:11.500]   Je suis au global, vous savez bien que c'est le premier fou que je veux.
+[00:13:11.500 --> 00:13:18.500]   Parce qu'en plus, si c'est au nom des SVRO, du RNC, ça veut dire que toi, tu ne seras plus qui qui signerais.
+[00:13:18.500 --> 00:13:23.500]   Alors oui, les représentants légaux, déjà.
+[00:13:23.500 --> 00:13:27.500]   Les représentants légaux, déjà, ils changent sur les contrats.
+[00:13:27.500 --> 00:13:29.500]   Aujourd'hui, il y en a une politique chez Nker France, c'est facile.
+[00:13:29.500 --> 00:13:31.500]   Frédéric plus Ceroin, je crois que c'est ça.
+[00:13:31.500 --> 00:13:36.500]   Demain, Frédéric est toujours chez Nker France, mais ça va changer, c'est François, normalement.
+[00:13:36.500 --> 00:13:38.500]   Il a prévenu une réunion d'information.
+[00:13:38.500 --> 00:13:41.500]   C'est normal, il va partir de son mandat, normalement, il ne devrait plus l'être.
+[00:13:41.500 --> 00:13:43.500]   C'est qu'il ne l'est pour assurer la continuité, etc.
+[00:13:43.500 --> 00:13:47.500]   Mais néanmoins, dans les signatures, on est en train de réfléchir.
+[00:13:47.500 --> 00:13:55.500]   La règle, c'est que le représentant légal, donc que le MB, ce qui pourrait être fait.
+[00:13:55.500 --> 00:13:58.500]   Ce qu'il faut savoir, c'est que dans la représentation des entités,
+[00:13:58.500 --> 00:14:01.500]   il y a un président qui est un fantôme, c'est à la fonction du groupe.
+[00:14:01.500 --> 00:14:06.500]   C'est souvent en fonction de la taille de la structure, soit le monde, soit le Europe, soit le cluster.
+[00:14:06.500 --> 00:14:11.500]   Et le MB, c'est lui qui prend tout, mais il est que le directeur général.
+[00:14:11.500 --> 00:14:15.500]   Néanmoins, l'idée, ou ce que nous demandons du groupe, c'est au moins d'avoir un détail signitaire.
+[00:14:15.500 --> 00:14:18.500]   Moi, je pense, mais ce n'est pas encore tranché.
+[00:14:18.500 --> 00:14:23.500]   Et des SV aujourd'hui en France ne font qu'un seul signitaire, le MB.
+[00:14:23.500 --> 00:14:29.500]   Moi, je pense que, vu la volumétrie, quand on va emmener le contrat à François ou à Éric ou à Syrie,
+[00:14:29.500 --> 00:14:34.500]   la question, c'est que comment ils sont sécurisés, que ça a été revu par le honneur du sujet.
+[00:14:34.500 --> 00:14:36.500]   Et pour moi, il y a deux solutions.
+[00:14:36.500 --> 00:14:42.500]   Soit ça veut dire qu'on borde avec un template administratif où il y a la signature du directeur haïtiste,
+[00:14:42.500 --> 00:14:46.500]   c'est le directeur haïtiste qui a habilité à remettre les contrats à signature de n'importe quoi.
+[00:14:46.500 --> 00:14:50.500]   C'est-à-dire que là, il sait, il y a une trappe bien précise, c'est signer le directeur haïtiste.
+[00:14:50.500 --> 00:14:52.500]   Derrière, il appose sa signature, son contrat.
+[00:14:52.500 --> 00:14:54.500]   Ça, c'est une option.
+[00:14:54.500 --> 00:14:57.500]   La deuxième option, c'était de conserver cette double signature,
+[00:14:57.500 --> 00:15:02.500]   d'avoir le directeur de la fonction ou du service qui enlite de la relation.
+[00:15:02.500 --> 00:15:06.500]   Et en deuxième signitaire, le directeur général, pour là, la partie représentation légale.
+[00:15:06.500 --> 00:15:09.500]   Aujourd'hui, on ne pencherait plus sur la première option,
+[00:15:09.500 --> 00:15:14.500]   qui est un template bien propre, où la personne peut dire aussi le contexte.
+[00:15:14.500 --> 00:15:17.500]   Voilà, c'est clean, ou tiens, il y a ce point-là.
+[00:15:17.500 --> 00:15:18.500]   Faire une petite...
+[00:15:18.500 --> 00:15:19.500]   Ça complète déjà.
+[00:15:19.500 --> 00:15:20.500]   Le signe offre. Exactement.
+[00:15:20.500 --> 00:15:22.500]   Moi, en tout cas, c'est ma préco.
+[00:15:22.500 --> 00:15:25.500]   Et d'avoir la signature du honneur, ce qui fait que,
+[00:15:25.500 --> 00:15:29.500]   si ça ne respecte pas ce format-là, le MD, il est sécurisé, signe pas.
+[00:15:29.500 --> 00:15:31.500]   Voilà.
+[00:15:31.500 --> 00:15:34.500]   Parce que de toute façon, si on ne fait que le MD,
+[00:15:34.500 --> 00:15:39.500]   on imagine que ça veut dire, sauvage, une tonne de sollicitations, comment eux,
+[00:15:39.500 --> 00:15:42.500]   ils ont la garantie, c'est ce que je suis en train de le dire, ils sont en train de s'en rendre compte,
+[00:15:42.500 --> 00:15:45.500]   comment ils savent ce qu'ils signent, parce que, bien sûr, ils n'estent pas.
+[00:15:45.500 --> 00:15:46.500]   Oui.
+[00:15:46.500 --> 00:15:47.500]   Ils ont le truc qui signe.
+[00:15:47.500 --> 00:15:50.500]   Mais comment ils ont la garantie que quelqu'un lui amène selon le bon process,
+[00:15:50.500 --> 00:15:52.500]   que c'est sécurisé, et ça, c'est un vrai sujet.
+[00:15:52.500 --> 00:15:55.500]   Et je ne parle même pas des signatures électroniques qui sont poussées par les co-contractants,
+[00:15:55.500 --> 00:15:59.500]   où c'est à la sauvage, ils nous demandent même pas les signataires,
+[00:15:59.500 --> 00:16:02.500]   ils mettent des mots comme ça, ça arrive sur les boîtes mails.
+[00:16:02.500 --> 00:16:05.500]   Alors voilà, il y a un vrai sujet de sécurité.
+[00:16:05.500 --> 00:16:09.500]   Et la difficulté pour François, c'est qu'en plus lui, son entité légal juridique va héberger SSC,
+[00:16:09.500 --> 00:16:13.500]   donc SSC va lui générer une certaine charge de travail supplémentaire par rapport aux autres MD.
+[00:16:13.500 --> 00:16:14.500]   Exactement.
+[00:16:14.500 --> 00:16:16.500]   Il a tout, l'IT déjà, il est comme générateur de...
+[00:16:16.500 --> 00:16:18.500]   La question sur chaque silo, vous qui est l'IT,
+[00:16:18.500 --> 00:16:23.500]   de se dire, OK, comment on fait pour les entités qu'on contracte tant de décontract?
+[00:16:23.500 --> 00:16:26.500]   Est-ce qu'on met tout sous des SVEROD du qu'on ne se pose jamais de questions,
+[00:16:26.500 --> 00:16:30.500]   même si c'est que RNC, et derrière, on sait qu'il y a la refactoration qui se fait bien,
+[00:16:30.500 --> 00:16:36.500]   ou alors, mais sauf qu'après François, il faut qu'il soit habilité pour parler des coups de RNC.
+[00:16:36.500 --> 00:16:40.500]   Il y a un autre sujet de structure, c'est que François qui l'héberge SSC, c'est une chose.
+[00:16:40.500 --> 00:16:45.500]   Et quand vous allez déclencher un coup que sur les RNC, le buying, il va y être de l'éric,
+[00:16:45.500 --> 00:16:48.500]   par contre, vous allez envoyer à François pour signature.
+[00:16:48.500 --> 00:16:54.500]   Mais ça, moi, je n'ai pas les réponses aujourd'hui, c'est des sujets qui sont...
+[00:16:54.500 --> 00:16:56.500]   Et on est d'accord que...
+[00:16:56.500 --> 00:17:01.500]   Et l'approche plutôt générale, il ne faut pas que pour la civilité.
+[00:17:01.500 --> 00:17:04.500]   Oui, et sachant qu'en fin de fois, ce n'est pas juste une problématique à IT,
+[00:17:04.500 --> 00:17:09.500]   ça va concerner la comptabilité, ça a le marketing, la douane,
+[00:17:09.500 --> 00:17:14.500]   ce n'est pas encore un PNL aujourd'hui, donc...
+[00:17:14.500 --> 00:17:17.500]   C'est une sécrétage, François, ça va être une sécrétage sur le développement.
+[00:17:17.500 --> 00:17:22.500]   Et justement, Frédéric, c'est pour ça qu'il y en a à parler réunion, c'est que c'est un vrai sujet,
+[00:17:22.500 --> 00:17:27.500]   parce qu'en fait, on se rend compte que l'idée, l'activité, Éric François,
+[00:17:27.500 --> 00:17:31.500]   Cyril, c'est l'actualité, par contre, c'est une idée, les comptes sont supports,
+[00:17:31.500 --> 00:17:35.500]   autant Frédéric, par son rôle le président, il l'avait, et sa présence au siège,
+[00:17:35.500 --> 00:17:38.500]   la proximité, il connaît, il sait ce qu'elle a dit, il sait ce qu'elle a arraché.
+[00:17:38.500 --> 00:17:40.500]   Voilà, donc il connaît comment tout ça fonctionne.
+[00:17:40.500 --> 00:17:46.500]   François, il ne sait pas ce qu'on lui demande, donc il y a un vrai sujet.
+[00:17:46.500 --> 00:17:52.500]   C'est pour ça qu'un moment Frédéric aussi, à la galette, à un moment, il a dit que peut-être qu'il y aurait quelqu'un
+[00:17:52.500 --> 00:17:56.500]   au niveau du service de Charles Sainteur, pour animer...
+[00:17:56.500 --> 00:17:58.500]   Avant, mais j'étais pas là.
+[00:17:58.500 --> 00:18:01.500]   Il a évoqué ça, Frédéric, dans l'après-midi.
+[00:18:01.500 --> 00:18:03.500]   Il va y avoir un représentant qui n'a pas l'égal, mais un représentant,
+[00:18:03.500 --> 00:18:09.500]   enfin, quelqu'un qui fasse bouillir après l'armite et position support du siège.
+[00:18:09.500 --> 00:18:11.500]   Puis l'AMD, sinon, ils ont tout le temps...
+[00:18:11.500 --> 00:18:16.500]   Le problème, c'est qu'ils ont une petite main d'art. Vous avez à vous adresser en AMD, vous avez trois interlocutaires.
+[00:18:16.500 --> 00:18:19.500]   Deux aussi, il va falloir que François fasse bouillir du temps.
+[00:18:19.500 --> 00:18:21.500]   Et c'est ce qui se passe aujourd'hui dans les organisations.
+[00:18:21.500 --> 00:18:23.500]   Les organisations qui ont avec ça, ils ont mon part.
+[00:18:23.500 --> 00:18:25.500]   Donc la question, c'est un vrai sujet.
+[00:18:25.500 --> 00:18:27.500]   Ils n'ont pas, ils ne vont pas le faire, ce que je peux comprendre.
+[00:18:27.500 --> 00:18:32.500]   Déjà, ils sont aujourd'hui désespérés par avoir assez de temps à commencer par les conseils de direction,
+[00:18:32.500 --> 00:18:35.500]   qu'on a du mal à mettre en place, c'est que ça trouve ça logique.
+[00:18:35.500 --> 00:18:39.500]   Mais je ne vois pas François dégager, ne serait-ce qu'une heure par semaine.
+[00:18:39.500 --> 00:18:42.500]   Pour effectivement l'idée, toutes les fonctions supportent.
+[00:18:42.500 --> 00:18:47.500]   Ils désagrégent, ils prennent leurs points, le nombre de sujets est colossal.
+[00:18:47.500 --> 00:18:49.500]   Tous les jours, il va avoir une sollicitation.
+[00:18:49.500 --> 00:18:55.500]   Mais là, ils sont déjà sur le sujet, parce que là, ils se rendent compte que qu'est-ce qu'une fonction support.
+[00:18:55.500 --> 00:19:00.500]   Parce que vos intégrations, vous êtes peut-être amis des côtés IT, ce que t'as été donné officiellement, etc.
+[00:19:00.500 --> 00:19:03.500]   Mais là, il y a plein d'autres fonctions aujourd'hui qui sont en attente.
+[00:19:03.500 --> 00:19:07.500]   Et ça veut dire qu'il faut être capable de dire ce que c'est avant, ce que c'est après,
+[00:19:07.500 --> 00:19:12.500]   de le gérer, de faire remonter au groupe quand ça ne va pas, etc.
+[00:19:12.500 --> 00:19:17.500]   C'est pour ça que je suis surpris, à défaut de créer une structure légal et juridique.
+[00:19:17.500 --> 00:19:19.500]   Je comprends les contraintes, les aspects.
+[00:19:19.500 --> 00:19:24.500]   Ce n'est pas sexy, en tout cas pour des décideurs qui n'ont pas envie d'aller sur ce terrain-là.
+[00:19:24.500 --> 00:19:29.500]   Mais à minima d'avoir, pourquoi pas, un responsable, on parle d'animateurs.
+[00:19:29.500 --> 00:19:32.500]   Mais en tout cas, une personne, directeur des fonctions support,
+[00:19:32.500 --> 00:19:35.500]   il y a beaucoup de boîtes, notamment dans le public, mais il a encore une chose.
+[00:19:35.500 --> 00:19:37.500]   Il y a une personne nommée, directeur des fonctions support.
+[00:19:37.500 --> 00:19:40.500]   Ce n'est pas un spécialisme marketing, ce n'est pas un spécialiste actif,
+[00:19:40.500 --> 00:19:44.500]   ce n'est pas un spécialiste finance, mais en tout cas, elle est légalement, effectivement,
+[00:19:44.500 --> 00:19:49.500]   légalement ou en tout cas d'un point de vue de responsabilité à la tête.
+[00:19:49.500 --> 00:19:50.500]   C'est pas le modèle des...
+[00:19:50.500 --> 00:19:52.500]   C'est pas le modèle... Oui, mais il n'y avait pas ça à l'heure.
+[00:19:52.500 --> 00:19:53.500]   En fait, je pense qu'il s'en fout.
+[00:19:53.500 --> 00:19:54.500]   Il y a 400 personnes à Montaigu.
+[00:19:54.500 --> 00:19:55.500]   En fait, je pense qu'il s'en fout.
+[00:19:55.500 --> 00:19:57.500]   C'est pas le modèle des aimes, il s'en fout.
+[00:19:57.500 --> 00:20:00.500]   En fait, ça, typiquement, c'est près de l'MD.
+[00:20:00.500 --> 00:20:05.500]   C'est l'MD qui sont représentants légaux, ils mettent la structure qu'ils souhaitent pour faire tourner la boutique.
+[00:20:05.500 --> 00:20:12.500]   Et derrière, il y a leur silo, groupe piano, groupe IT, groupe finance, groupe légal, groupe etc.
+[00:20:12.500 --> 00:20:14.500]   Ils ont leur silo, donc tu es animé par ton silo.
+[00:20:14.500 --> 00:20:18.500]   Par contre, savoir comment le pays tourne, c'est le problème des représentants légaux.
+[00:20:18.500 --> 00:20:23.500]   Donc c'est au MD de se mettre autour d'une table et de dire "tab, pour faire marcher la boutique demain, on a besoin de quoi".
+[00:20:23.500 --> 00:20:27.500]   Ce qui pourrait se passer, c'est qu'effectivement, il y a une personne qui est nommée en charge d'animer la communauté SSC
+[00:20:27.500 --> 00:20:33.500]   rapidement ce rôle d'animateur et il pourrait shifter vers tous les dossiers arrivent sur le numéro de cet animateur-là
+[00:20:33.500 --> 00:20:35.500]   avant qu'ils ne parlent pas de Valérie.
+[00:20:35.500 --> 00:20:45.500]   Moi, j'ai une autre question pour un peu plus, qui est à l'étude du terme.
+[00:20:45.500 --> 00:20:48.500]   C'est qu'aujourd'hui, dans d'autres systèmes d'information,
+[00:20:48.500 --> 00:20:53.500]   on a une société qui s'appelle Shanker France, la 006.
+[00:20:53.500 --> 00:21:03.500]   Demain, cette société Shanker France donne aux systèmes d'information 006. Est-ce qu'elle va mourir ?
+[00:21:03.500 --> 00:21:06.500]   Alors, où est-ce qu'on va faire ?
+[00:21:06.500 --> 00:21:08.500]   Ce système d'information, qu'est-ce qu'il s'appelle ?
+[00:21:08.500 --> 00:21:14.500]   Le nom de la société pour lequel, en fait...
+[00:21:14.500 --> 00:21:16.500]   Dans la structure administrative de la boîte ?
+[00:21:16.500 --> 00:21:18.500]   Oui, dans la structure administrative de Shanker.
+[00:21:18.500 --> 00:21:24.500]   Pour laquelle, sur laquelle on facture, on facture tout nos transports routes.
+[00:21:24.500 --> 00:21:27.500]   On fait toutes nos factures au nom de cette société 006.
+[00:21:27.500 --> 00:21:30.500]   Alors là, moi, je ne peux pas te répondre sur d'un point de vue.
+[00:21:30.500 --> 00:21:35.500]   Si ce compte-là est lié à l'entité juridique, pour moi, il ne devrait pas changer.
+[00:21:35.500 --> 00:21:37.500]   Donc il devrait être renommé ?
+[00:21:37.500 --> 00:21:41.500]   Renommé, renommé, mais restez, mais par contre ça, moi...
+[00:21:41.500 --> 00:21:45.500]   Alors, j'ai posé la question à la finance, j'ai l'impression qu'il faut une question guette.
+[00:21:45.500 --> 00:21:49.500]   J'ai l'outil, j'ai pas la réponse de comment ils vont...
+[00:21:49.500 --> 00:21:51.500]   Quelles conséquences ils vont prendre du fait que Shanker France reste ?
+[00:21:51.500 --> 00:21:53.500]   Est-ce que ça veut dire dans les...
+[00:21:53.500 --> 00:21:57.500]   Alors je ne sais pas comment vous appelez ça, mais dans le numéro où l'entité a efférencé,
+[00:21:57.500 --> 00:21:59.500]   dans tout, que ça soit IT, que ça soit finance, que ça soit...
+[00:21:59.500 --> 00:22:01.500]   Enfin, il y a des codes par entité.
+[00:22:01.500 --> 00:22:04.500]   Est-ce que ce code va changer à être renommé ?
+[00:22:04.500 --> 00:22:07.500]   Dans l'absolu, Shanker France...
+[00:22:07.500 --> 00:22:09.500]   Mais juridiquement...
+[00:22:09.500 --> 00:22:11.500]   Moi, je peux répondre que juridiquement, normalement...
+[00:22:11.500 --> 00:22:15.500]   Normalement, Shanker France devient DS0 de...
+[00:22:15.500 --> 00:22:23.500]   Et Shanker France, aujourd'hui, a été numéroté en titée R467.
+[00:22:23.500 --> 00:22:25.500]   Rode 467.
+[00:22:25.500 --> 00:22:28.500]   Et pour moi, c'est un numéro définitif.
+[00:22:28.500 --> 00:22:32.500]   Donc, est-ce que je sais pas qu'est-ce qu'il y a derrière ce Shanker 006,
+[00:22:32.500 --> 00:22:37.500]   mais si l'idée de ce Shanker 006, c'est le 399456,
+[00:22:37.500 --> 00:22:42.500]   plus le numéros antitrustique DSV R467,
+[00:22:42.500 --> 00:22:45.500]   c'est-à-dire pour moi, il n'y a pas de lieu que ça change.
+[00:22:45.500 --> 00:22:47.500]   Mais je...
+[00:22:47.500 --> 00:22:52.500]   Maintenant, juridiquement, quelles sont les impacts pour l'entreprise, je dirais,
+[00:22:52.500 --> 00:22:54.500]   qui va devenir DS0 de...
+[00:22:54.500 --> 00:22:57.500]   d'envoyer des documents à l'extérieur au nom de Shanker.
+[00:22:57.500 --> 00:22:59.500]   Enfin, est-ce qu'il y a Shanker ?
+[00:22:59.500 --> 00:23:02.500]   On l'a oublié à un logo, dans un point, et on en voit...
+[00:23:02.500 --> 00:23:05.500]   Je sais pas, juridiquement, non, c'est pas dramatique.
+[00:23:05.500 --> 00:23:07.500]   C'est un point de com et de marketing.
+[00:23:07.500 --> 00:23:11.500]   Le directeur juridique n'est-ce pas parti en plan ?
+[00:23:11.500 --> 00:23:13.500]   Non, en tout cas, je n'ai pas de responsabilité.
+[00:23:13.500 --> 00:23:16.500]   Non, je les répète en tant que logo qui partait de responsabilité.
+[00:23:16.500 --> 00:23:18.500]   Non, mais il n'y a pas de sujet par rapport à ça.
+[00:23:18.500 --> 00:23:20.500]   Il faut distinguer deux jours.
+[00:23:20.500 --> 00:23:24.500]   Par le rachat, la marque Shanker est transférée à DSV.
+[00:23:24.500 --> 00:23:27.500]   La marque Shanker est un actif de Shanker.
+[00:23:27.500 --> 00:23:31.500]   La marque Shanker est un actif de Shanker AG,
+[00:23:31.500 --> 00:23:33.500]   dont les marts ont été cédés à DSV.
+[00:23:33.500 --> 00:23:37.500]   C'est la Dutch Bands qui était la maison mère qui a cédé Shanker AG.
+[00:23:37.500 --> 00:23:41.500]   La Dutch Bands avait déposé la marque, bien sûr, au long de Shanker AG.
+[00:23:41.500 --> 00:23:45.500]   Donc tous les actifs de moi, ce que j'en sais,
+[00:23:45.500 --> 00:23:48.500]   Shanker AG ont été cédés en même temps que les participations plus.
+[00:23:48.500 --> 00:23:50.500]   Donc ça veut dire qu'aujourd'hui,
+[00:23:50.500 --> 00:23:53.500]   DSV a le droit d'utilisation de la marque.
+[00:23:53.500 --> 00:23:55.500]   Donc demain, ta question, c'est de dire,
+[00:23:55.500 --> 00:23:58.500]   si post-intégration, il y a un logo Shanker qui gravite,
+[00:23:58.500 --> 00:24:01.500]   Big B Shanker, on est toujours des B Shankers.
+[00:24:01.500 --> 00:24:04.500]   Db, c'est autre chose.
+[00:24:04.500 --> 00:24:07.500]   Db, c'est autre chose et ça faudrait revoucler avec Laurent les instructions qu'il a eues.
+[00:24:07.500 --> 00:24:10.500]   Je pense qu'il y a un seuil de tolérance, forcément.
+[00:24:10.500 --> 00:24:12.500]   C'est ça qui ne vont pas épurer tous les camions, tout ça.
+[00:24:12.500 --> 00:24:14.500]   Il y a tout le temps un truc qui traîne.
+[00:24:14.500 --> 00:24:18.500]   Je serais très surpris que DSV, dans ses négo d'intégration,
+[00:24:18.500 --> 00:24:22.500]   n'est pas prévu que le droit d'utilisation du logo d'Db
+[00:24:22.500 --> 00:24:25.500]   ne puisse pas subsister jusqu'à une période qui ne peut pas être
+[00:24:25.500 --> 00:24:28.500]   deux ans après le 1er mai.
+[00:24:28.500 --> 00:24:31.500]   Parce qu'en réalité, on n'a jamais eu le logo Shanker.
+[00:24:31.500 --> 00:24:33.500]   On parle de logo Shanker, j'entends ce que tu dis.
+[00:24:33.500 --> 00:24:35.500]   La marque Shanker et CD à DSV.
+[00:24:35.500 --> 00:24:37.500]   Ça, c'est plutôt rassurant et c'est bon à savoir.
+[00:24:37.500 --> 00:24:39.500]   Mais en fait, dans toute notre branding,
+[00:24:39.500 --> 00:24:42.500]   il y a toujours eu Db Shanker.
+[00:24:42.500 --> 00:24:44.500]   Je ne pense pas que... J'ai jamais vu un branding.
+[00:24:44.500 --> 00:24:47.500]   J'ai jamais vu un branding Shanker seulement.
+[00:24:47.500 --> 00:24:50.500]   Donc pour moi, le sujet, en fait, c'est quoi ?
+[00:24:50.500 --> 00:24:52.500]   Je prends la risque.
+[00:24:52.500 --> 00:24:54.500]   Le risque n'est pas vis-à-vis de notre client.
+[00:24:54.500 --> 00:24:57.500]   Le risque, c'est que db avant, au point de du doigt,
+[00:24:57.500 --> 00:24:59.500]   vous avez continu d'utiliser mon logo
+[00:24:59.500 --> 00:25:01.500]   alors qu'on est après la période que je ne connais pas
+[00:25:01.500 --> 00:25:04.500]   pour avoir avec Laurent David de Tolérance.
+[00:25:04.500 --> 00:25:07.500]   Vous avez utilisé ma marque à mon insu.
+[00:25:07.500 --> 00:25:10.500]   Parce qu'il y a un courrier qui parle.
+[00:25:10.500 --> 00:25:12.500]   Ça, c'est rassurant.
+[00:25:12.500 --> 00:25:14.500]   Mais par contre, sur la partie d'informations textuelles,
+[00:25:14.500 --> 00:25:17.500]   RCS et autres, ça, il faut parler aussi du coup...
+[00:25:17.500 --> 00:25:19.500]   Sur nos factures, sur nos documents,
+[00:25:19.500 --> 00:25:21.500]   il y a le logo, c'est une chose.
+[00:25:21.500 --> 00:25:23.500]   Ça, c'est du branding de la marque.
+[00:25:23.500 --> 00:25:25.500]   Mais il y a aussi effectivement des décirés d'RCS.
+[00:25:25.500 --> 00:25:28.500]   Là, il faut rabattage.
+[00:25:28.500 --> 00:25:30.500]   Mais non, ça change pas.
+[00:25:30.500 --> 00:25:32.500]   Attention.
+[00:25:32.500 --> 00:25:35.500]   Il y a des confusions, des fois, dans les numéros
+[00:25:35.500 --> 00:25:37.500]   et sans vouloir faire une Bible.
+[00:25:37.500 --> 00:25:40.500]   Le RCS, c'est les 9 premiers numéros
+[00:25:40.500 --> 00:25:42.500]   qui correspondent à l'enregistrement juridique
+[00:25:42.500 --> 00:25:44.500]   auprès du grève du tribunal de commerce de rattachement d'entre eux.
+[00:25:44.500 --> 00:25:47.500]   Donc, quand je dis 351, 756,
+[00:25:47.500 --> 00:25:51.500]   351, 759, 456,
+[00:25:51.500 --> 00:25:53.500]   c'est le RCS du grève de la Roche Chaurion,
+[00:25:53.500 --> 00:25:55.500]   du siège social de Schenker-France.
+[00:25:55.500 --> 00:25:58.500]   Ensuite, chaque établissement pour la gestion administrative,
+[00:25:58.500 --> 00:26:00.500]   mais à ce qu'on appelle un sirète,
+[00:26:00.500 --> 00:26:02.500]   c'est-à-dire que ces 9 premiers chiffres ne changent pas
+[00:26:02.500 --> 00:26:04.500]   et on en rajoute 5.
+[00:26:04.500 --> 00:26:07.500]   Et là, chaque établissement, je connais pas celui du siège,
+[00:26:07.500 --> 00:26:09.500]   mais chaque est l'agence de boufferies, etc.
+[00:26:09.500 --> 00:26:12.500]   Selon un sirète.
+[00:26:12.500 --> 00:26:14.500]   Ce sirète, il n'a rien de juridique.
+[00:26:14.500 --> 00:26:17.500]   C'est-à-dire, aujourd'hui, les conditions pour qu'on ouvre un sirète,
+[00:26:17.500 --> 00:26:20.500]   c'est poussé par la IT,
+[00:26:20.500 --> 00:26:23.500]   surtout par les RH parce qu'ils veulent cender l'accidentologie par site,
+[00:26:23.500 --> 00:26:26.500]   ou d'autres choses, ou la paix.
+[00:26:26.500 --> 00:26:29.500]   Donc, en fait, ça, c'est un outil administratif.
+[00:26:29.500 --> 00:26:32.500]   Ce n'est pas un outil juridique.
+[00:26:32.500 --> 00:26:34.500]   Moi, l'entité juridique, elle ne change jamais.
+[00:26:34.500 --> 00:26:36.500]   C'est tout le temps Schenker-France.
+[00:26:36.500 --> 00:26:38.500]   Une fois que j'ai dit ça,
+[00:26:38.500 --> 00:26:40.500]   pour vous, c'est exactement.
+[00:26:40.500 --> 00:26:42.500]   Et moi, souvent, je me dis, oui, on n'a pas de sirètes,
+[00:26:42.500 --> 00:26:44.500]   mais un sirète, moi, juridique,
+[00:26:44.500 --> 00:26:46.500]   je n'exige pas de sirètes, il n'y a rien qui m'exige un sirète.
+[00:26:46.500 --> 00:26:48.500]   Une fois que j'ai dit ça,
+[00:26:48.500 --> 00:26:50.500]   c'est ce que je suis en train de pousser à l'immobilier.
+[00:26:50.500 --> 00:26:52.500]   Dans la session qu'on est en train de faire,
+[00:26:52.500 --> 00:26:54.500]   on a quand même un gros sujet,
+[00:26:54.500 --> 00:26:56.500]   parce qu'on bouge des effectifs,
+[00:26:56.500 --> 00:26:58.500]   on bouge du matériel,
+[00:26:58.500 --> 00:27:00.500]   on bouge des contrats.
+[00:27:00.500 --> 00:27:04.500]   Un site qui est multiactivité,
+[00:27:04.500 --> 00:27:06.500]   il n'a qu'un sirète aujourd'hui,
+[00:27:06.500 --> 00:27:08.500]   je ne suis pas content d'y apprendre.
+[00:27:08.500 --> 00:27:10.500]   Demain, ce sirète,
+[00:27:10.500 --> 00:27:12.500]   vu qu'on va bouger les chapeaux,
+[00:27:12.500 --> 00:27:14.500]   un site RNC
+[00:27:14.500 --> 00:27:16.500]   va basculer
+[00:27:16.500 --> 00:27:18.500]   sous un autre chapeau,
+[00:27:18.500 --> 00:27:20.500]   il ne peut pas garder le précédent sirète.
+[00:27:20.500 --> 00:27:22.500]   C'est impossible,
+[00:27:22.500 --> 00:27:24.500]   puisque les premiers neufs numéros
+[00:27:24.500 --> 00:27:26.500]   sont liés d'abord à la structure juridique.
+[00:27:26.500 --> 00:27:28.500]   Donc, ce que je dis,
+[00:27:28.500 --> 00:27:30.500]   c'est qu'il faut faire la liste de tous les sites.
+[00:27:30.500 --> 00:27:32.500]   Dans ces listes de sites,
+[00:27:32.500 --> 00:27:34.500]   il faut estampiller les activités qui sont présentes.
+[00:27:34.500 --> 00:27:36.500]   Ensuite, il faut se dire, demain,
+[00:27:36.500 --> 00:27:38.500]   est-ce que ces activités vont perdurer?
+[00:27:38.500 --> 00:27:40.500]   Donc, quels vont être les entités
+[00:27:40.500 --> 00:27:42.500]   qui vont avoir des activités dans ce site?
+[00:27:42.500 --> 00:27:44.500]   Et ensuite,
+[00:27:44.500 --> 00:27:46.500]   définir.
+[00:27:46.500 --> 00:27:48.500]   Alors, ça, ça ne vous regarde pas,
+[00:27:48.500 --> 00:27:50.500]   mais quel site juridique? Est-ce que ça va être
+[00:27:50.500 --> 00:27:52.500]   un buy direct avec le buyer? Est-ce que ça va être
+[00:27:52.500 --> 00:27:54.500]   la soulof contre un terme?
+[00:27:54.500 --> 00:27:56.500]   Et, autre sujet,
+[00:27:56.500 --> 00:27:58.500]   les sirètes.
+[00:27:58.500 --> 00:28:00.500]   Comment découpe administrativement le site?
+[00:28:00.500 --> 00:28:02.500]   Parce que, si sur un site, j'ai de la route et de l'RNC,
+[00:28:02.500 --> 00:28:04.500]   aujourd'hui,
+[00:28:04.500 --> 00:28:06.500]   Shankar France, on ne s'en fout, c'est qu'un sirète,
+[00:28:06.500 --> 00:28:08.500]   c'est qu'une main de boîte. Demain,
+[00:28:08.500 --> 00:28:10.500]   DSVR O de pour l'un va avoir un sirète.
+[00:28:10.500 --> 00:28:12.500]   S'il y a de l'RNC, il faudra créer
+[00:28:12.500 --> 00:28:14.500]   un RNC.
+[00:28:14.500 --> 00:28:16.500]   Il faudra deux sirètes pour
+[00:28:16.500 --> 00:28:18.500]   un site où il y a deux activités.
+[00:28:18.500 --> 00:28:20.500]   Il faudra deux sirètes.
+[00:28:20.500 --> 00:28:22.500]   Deux sirètes dans la soleur CS.
+[00:28:22.500 --> 00:28:24.500]   Non, deux RCS.
+[00:28:24.500 --> 00:28:26.500]   La raison, c'est qu'il y a deux RCS.
+[00:28:26.500 --> 00:28:28.500]   Il y a des sites.
+[00:28:28.500 --> 00:28:30.500]   Voilà, donc moi, par exemple, si on m'a dit,
+[00:28:30.500 --> 00:28:32.500]   il y a des sites blogs, aujourd'hui, qu'on pas de sirètes.
+[00:28:32.500 --> 00:28:34.500]   Des sites logistiques qui n'ont pas de sirètes.
+[00:28:34.500 --> 00:28:36.500]   C'est possible ça? Oui, parce qu'il y a du special
+[00:28:36.500 --> 00:28:38.500]   à la route, historiquement, qui était rattaché
+[00:28:38.500 --> 00:28:40.500]   à l'agence. Ah oui, donc ça passe sur la route.
+[00:28:40.500 --> 00:28:42.500]   Il y en a un sous la log de main.
+[00:28:42.500 --> 00:28:44.500]   Du coup, c'est la question.
+[00:28:44.500 --> 00:28:46.500]   Voilà, il faut ouvrir un sirète, etc.
+[00:28:46.500 --> 00:28:48.500]   Donc, bien sûr, le deux coupages des sirètes
+[00:28:48.500 --> 00:28:50.500]   est un vrai sujet
+[00:28:50.500 --> 00:28:52.500]   d'administration
+[00:28:52.500 --> 00:28:54.500]   qui dépend de la scission qui va être faite.
+[00:28:54.500 --> 00:28:56.500]   Donc du découpage par l'immobilier valider
+[00:28:56.500 --> 00:28:58.500]   par les AMD, qui vont après avoir
+[00:28:58.500 --> 00:29:00.500]   des conséquences sur la paix, sur vous.
+[00:29:00.500 --> 00:29:02.500]   Parce que vous, je crois que vous êtes aussi
+[00:29:02.500 --> 00:29:04.500]   sur les sirètes, il y avait chaud pour ouvrir
+[00:29:04.500 --> 00:29:06.500]   les mini-ranges et les mains des sirètes.
+[00:29:06.500 --> 00:29:10.500]   Il y a eu sur des discussions d'écran. Historiquement,
+[00:29:10.500 --> 00:29:12.500]   Chien-Cœur France ou Chien-Cœur Angérien,
+[00:29:12.500 --> 00:29:14.500]   je ne sais pas, on n'est pas bons sur les sirètes
+[00:29:14.500 --> 00:29:16.500]   parce qu'on nous demande souvent de vibrer
+[00:29:16.500 --> 00:29:18.500]   des lignes à sape pour une agence.
+[00:29:18.500 --> 00:29:20.500]   Et quand je demande à l'agence de l'IMO
+[00:29:20.500 --> 00:29:22.500]   "il est où mon sirète?"
+[00:29:22.500 --> 00:29:24.500]   J'en ai pas.
+[00:29:24.500 --> 00:29:26.500]   C'est poisson qui se m'en accuse.
+[00:29:26.500 --> 00:29:28.500]   En fait, le greffe, il peut accepter
+[00:29:28.500 --> 00:29:30.500]   une demande de sirètes que 30 jours
+[00:29:30.500 --> 00:29:32.500]   avant le type d'occupation.
+[00:29:32.500 --> 00:29:34.500]   Effective. Donc, j'ai un bail.
+[00:29:34.500 --> 00:29:36.500]   Le bail n'est pas signé parce que ça, c'est théorique.
+[00:29:36.500 --> 00:29:38.500]   Très souvent, on arrive à l'arrache.
+[00:29:38.500 --> 00:29:40.500]   Donc, le site, il est pris avant.
+[00:29:40.500 --> 00:29:42.500]   Et là, on nous dit "mais pourquoi on n'a pas de sirètes?"
+[00:29:42.500 --> 00:29:44.500]   Mais j'ai pas de type d'occupation signée.
+[00:29:44.500 --> 00:29:46.500]   Je ne peux pas faire ma démarche.
+[00:29:46.500 --> 00:29:48.500]   Ou alors des fois, on me dit "est-ce qu'il y a moyen
+[00:29:48.500 --> 00:29:50.500]   d'anticiper le sirète?" Non.
+[00:29:50.500 --> 00:29:52.500]   Je peux faire mes démarches que 30 jours
+[00:29:52.500 --> 00:29:54.500]   avant l'ouverture du site.
+[00:29:54.500 --> 00:29:56.500]   Et après, je suis tributaire de délai
+[00:29:56.500 --> 00:29:58.500]   d'enregistrement des greffes, de la formalité,
+[00:29:58.500 --> 00:30:00.500]   de la réception du LBIS.
+[00:30:00.500 --> 00:30:02.500]   Le LBIS, CABIS, c'est pour le RCS.
+[00:30:02.500 --> 00:30:04.500]   LBIS, c'est pour le numéro de sirètes.
+[00:30:04.500 --> 00:30:06.500]   C'est l'établissement solidaire.
+[00:30:06.500 --> 00:30:08.500]   C'est pas évident alors que la property d'histoire
+[00:30:08.500 --> 00:30:10.500]   nous demande de sirètes, parfois, jusqu'à 3 à 6 mois
+[00:30:10.500 --> 00:30:12.500]   avant pour pouvoir faire la commande.
+[00:30:12.500 --> 00:30:14.500]   Mais ça ne nous peut pas. On ne peut pas y répondre.
+[00:30:14.500 --> 00:30:16.500]   Sauf avoir un type d'occupation qui est d'atterre.
+[00:30:16.500 --> 00:30:18.500]   Parce que souvent, dans les sites,
+[00:30:18.500 --> 00:30:20.500]   ils peuvent avoir une période où ils n'exploitent pas,
+[00:30:20.500 --> 00:30:22.500]   mais ils nous prennent le bail pour s'installer, etc.
+[00:30:22.500 --> 00:30:24.500]   Ce qu'il faut, c'est la date de prise d'effet.
+[00:30:24.500 --> 00:30:26.500]   Peu importe qu'on exploite ou qu'on n'exploite pas.
+[00:30:26.500 --> 00:30:28.500]   Une loïse, ça ne marche pas. Une letter of intention, justement.
+[00:30:28.500 --> 00:30:30.500]   Non.
+[00:30:30.500 --> 00:30:32.500]   On va s'amuser le cas de sirètes.
+[00:30:32.500 --> 00:30:34.500]   Donc vous, par contre,
+[00:30:34.500 --> 00:30:36.500]   vous êtes tributaire du travail
+[00:30:36.500 --> 00:30:38.500]   que là, on a poussé avec nous
+[00:30:38.500 --> 00:30:40.500]   et qu'il doit après tout lister
+[00:30:40.500 --> 00:30:42.500]   avec la financeuse, ce que ça fait partie du travail de 6 ans.
+[00:30:42.500 --> 00:30:44.500]   Il y a une casse supplémentaire qui est de sirètes.
+[00:30:44.500 --> 00:30:46.500]   Alors, ça, les MD, je pense qu'ils n'ont pas encore la part de sirètes.
+[00:30:46.500 --> 00:30:48.500]   Sirètes, oui, je pense que oui.
+[00:30:48.500 --> 00:30:50.500]   Je pense que la partie sirètes,
+[00:30:50.500 --> 00:30:52.500]   il est important pour la partie route.
+[00:30:52.500 --> 00:30:54.500]   Et sur la partie route, dans l'absolu,
+[00:30:54.500 --> 00:30:56.500]   ça ne va pas changer.
+[00:30:56.500 --> 00:30:58.500]   Le RCS ne va pas changer.
+[00:30:58.500 --> 00:31:00.500]   Le sirètes, non. Le sirètes
+[00:31:00.500 --> 00:31:02.500]   d'une agence route ne va pas changer.
+[00:31:02.500 --> 00:31:04.500]   Sur les DSB Road.
+[00:31:04.500 --> 00:31:06.500]   Tous les DSB Road.
+[00:31:06.500 --> 00:31:08.500]   Et qu'il n'a pas encore entrepéré
+[00:31:08.500 --> 00:31:10.500]   l'éthique du masque.
+[00:31:10.500 --> 00:31:12.500]   Parce que changement de numéro de RCS.
+[00:31:12.500 --> 00:31:14.500]   Ça va les chambouilles, c'est quand même
+[00:31:14.500 --> 00:31:16.500]   à côté des DSB Road.
+[00:31:16.500 --> 00:31:18.500]   Il va faire des changements.
+[00:31:18.500 --> 00:31:20.500]   Bon, ils ont pas été 20 d'agences,
+[00:31:20.500 --> 00:31:22.500]   mais ça, ça dépend du nombre
+[00:31:22.500 --> 00:31:24.500]   de clients qu'il y en a.
+[00:31:24.500 --> 00:31:26.500]   Parce que le nombre de clients s'appuie, justement,
+[00:31:26.500 --> 00:31:28.500]   c'est la clé des changements,
+[00:31:28.500 --> 00:31:30.500]   souvent, entre
+[00:31:30.500 --> 00:31:32.500]   la facture de client.
+[00:31:32.500 --> 00:31:34.500]   C'est quoi ce qu'il y a de la facture ?
+[00:31:34.500 --> 00:31:36.500]   C'est le sirètes ou le RCS ?
+[00:31:36.500 --> 00:31:38.500]   Une facture de l'agence route.
+[00:31:38.500 --> 00:31:40.500]   Un sirètes, c'est une partie
+[00:31:40.500 --> 00:31:42.500]   d'un RCS.
+[00:31:42.500 --> 00:31:44.500]   Le sirètes tout seul, il ne marche pas.
+[00:31:44.500 --> 00:31:46.500]   C'est pour ça que ce travail
+[00:31:46.500 --> 00:31:48.500]   de digestion, de faire matcher
+[00:31:48.500 --> 00:31:50.500]   le rythme des opérations
+[00:31:50.500 --> 00:31:52.500]   des conséquences avec les implications
+[00:31:52.500 --> 00:31:54.500]   pour chaque service dans son écosystème.
+[00:31:54.500 --> 00:31:56.500]   C'est un travail qui dépend
+[00:31:56.500 --> 00:31:58.500]   du service concerné, parce que nous,
+[00:31:58.500 --> 00:32:00.500]   toutes les implications, nous, on peut raconter
+[00:32:00.500 --> 00:32:02.500]   l'histoire juridique, expliquer les conséquences.
+[00:32:02.500 --> 00:32:04.500]   Mais derrière, vous, dans votre quotidien,
+[00:32:04.500 --> 00:32:06.500]   dans vos outils,
+[00:32:06.500 --> 00:32:08.500]   ce que ça veut dire ou dans vos relations,
+[00:32:08.500 --> 00:32:10.500]   c'est impossible.
+[00:32:10.500 --> 00:32:12.500]   C'est pour ça que vous avez fait l'exercice.
+[00:32:12.500 --> 00:32:14.500]   Moi, ce que je pose, c'est que chaque service
+[00:32:14.500 --> 00:32:16.500]   doit faire ce brandy-storming
+[00:32:16.500 --> 00:32:18.500]   de, voilà, s'il comprend
+[00:32:18.500 --> 00:32:20.500]   les conséquences, pour s'interprimer, mais moi,
+[00:32:20.500 --> 00:32:22.500]   dans mon univers, ça veut dire bien ça. Il y a des trucs
+[00:32:22.500 --> 00:32:24.500]   dans les mailles du filet.
+[00:32:24.500 --> 00:32:26.500]   Mais au moins, les gros sujets.
+[00:32:26.500 --> 00:32:28.500]   Parce que c'est quand même 2 mains, hein,
+[00:32:28.500 --> 00:32:30.500]   ça veut dire...
+[00:32:30.500 --> 00:32:32.500]   ça veut dire...
+[00:32:32.500 --> 00:32:34.500]   OK.
+[00:32:34.500 --> 00:32:36.500]   Bon, on aura certainement
+[00:32:36.500 --> 00:32:38.500]   une question derrière.
+[00:32:38.500 --> 00:32:40.500]   Le périmètre Maroc.
+[00:32:40.500 --> 00:32:42.500]   Oui, ça va pas de moi.
+[00:32:42.500 --> 00:32:44.500]   C'est un polylit, là.
+[00:32:44.500 --> 00:32:46.500]   Alors, le Maroc,
+[00:32:46.500 --> 00:32:48.500]   donc là, on a fait tous les documents,
+[00:32:48.500 --> 00:32:50.500]   on a juste à les envoyer au Maroc, ça va y faire.
+[00:32:50.500 --> 00:32:52.500]   Donc, eux, il n'y a pas de conséquences
+[00:32:52.500 --> 00:32:54.500]   d'un point de vue juridique, déjà.
+[00:32:54.500 --> 00:32:56.500]   Il n'y a pas d'opérations juridiques
+[00:32:56.500 --> 00:32:58.500]   de structure.
+[00:32:58.500 --> 00:33:00.500]   Ils ont décidé le groupe de vider
+[00:33:00.500 --> 00:33:02.500]   l'activité RNC tout simplement
+[00:33:02.500 --> 00:33:04.500]   en l'arrêtant, et implicitement
+[00:33:04.500 --> 00:33:06.500]   en le réentend vers leur agent.
+[00:33:06.500 --> 00:33:08.500]   Après, ça y a un risque.
+[00:33:08.500 --> 00:33:10.500]   C'est une session de désir. Ça, c'est pas
+[00:33:10.500 --> 00:33:12.500]   de notre problème. C'est le groupe qui a décidé.
+[00:33:12.500 --> 00:33:14.500]   Donc, ça veut dire que le shaker Maroc
+[00:33:14.500 --> 00:33:16.500]   garde que la route. Aujourd'hui,
+[00:33:16.500 --> 00:33:18.500]   depuis le...
+[00:33:18.500 --> 00:33:20.500]   9e novembre, vous prenez des centres de la route.
+[00:33:20.500 --> 00:33:22.500]   Toutes les activités ont été arrêtées.
+[00:33:22.500 --> 00:33:24.500]   Donc, c'est peut-être l'entraînement du CA,
+[00:33:24.500 --> 00:33:26.500]   qui reste.
+[00:33:26.500 --> 00:33:28.500]   Aujourd'hui, ce que nous, l'intégration...
+[00:33:28.500 --> 00:33:30.500]   Non, un peu logique.
+[00:33:30.500 --> 00:33:32.500]   Rattachée la route.
+[00:33:32.500 --> 00:33:34.500]   Planqué dans la route, c'est du spécial.
+[00:33:34.500 --> 00:33:36.500]   Ok, c'est du spécial.
+[00:33:36.500 --> 00:33:38.500]   Donc, ils sont que routes.
+[00:33:38.500 --> 00:33:40.500]   Ça veut dire que nous,
+[00:33:40.500 --> 00:33:42.500]   l'intégration du Maroc,
+[00:33:42.500 --> 00:33:44.500]   ça consiste uniquement
+[00:33:44.500 --> 00:33:46.500]   à renommer
+[00:33:46.500 --> 00:33:48.500]   les représentants l'ego.
+[00:33:48.500 --> 00:33:50.500]   Et là, je vois sur la question que tu posais.
+[00:33:50.500 --> 00:33:52.500]   Aujourd'hui, les représentants l'ego,
+[00:33:52.500 --> 00:33:54.500]   c'est pas ceux qui seront
+[00:33:54.500 --> 00:33:56.500]   dans 6 mois ou un an.
+[00:33:56.500 --> 00:33:58.500]   Pourquoi ? Le groupe,
+[00:33:58.500 --> 00:34:00.500]   capitalistiquement,
+[00:34:00.500 --> 00:34:02.500]   contrairement...
+[00:34:02.500 --> 00:34:04.500]   Là, on parle de la France. Donc, la France est rattachée
+[00:34:04.500 --> 00:34:06.500]   au même holding, etc. Par contre, le Maroc,
+[00:34:06.500 --> 00:34:08.500]   c'est un autre pays. Et donc, capitalistiquement,
+[00:34:08.500 --> 00:34:10.500]   ça devrait être rattaché directement
+[00:34:10.500 --> 00:34:12.500]   au Danemark. Comme la France est rattachée au Danemark.
+[00:34:12.500 --> 00:34:14.500]   Aujourd'hui, qui possède la France ?
+[00:34:14.500 --> 00:34:16.500]   Le Maroc,
+[00:34:16.500 --> 00:34:18.500]   c'est Schenker France,
+[00:34:18.500 --> 00:34:20.500]   et une part des défransonnés.
+[00:34:20.500 --> 00:34:22.500]   Donc, en fait, la France,
+[00:34:22.500 --> 00:34:24.500]   les entités françaises, Schenker France notamment,
+[00:34:24.500 --> 00:34:26.500]   possède le Maroc.
+[00:34:26.500 --> 00:34:28.500]   Dans l'organisation de demain,
+[00:34:28.500 --> 00:34:30.500]   tout va être vendu
+[00:34:30.500 --> 00:34:32.500]   pour être rattaché directement
+[00:34:32.500 --> 00:34:34.500]   au Danemark, parce que la France est de Maroc.
+[00:34:34.500 --> 00:34:36.500]   C'est deux pays.
+[00:34:36.500 --> 00:34:38.500]   Donc, le lien de rattachement ne doit pas passer par un autre pays.
+[00:34:38.500 --> 00:34:40.500]   Ça, par contre, ça a été dit, vu l'intégration France,
+[00:34:40.500 --> 00:34:42.500]   on ne veut pas télescoper ces opérations de session
+[00:34:42.500 --> 00:34:44.500]   par rapport à l'intégration France et la priorité.
+[00:34:44.500 --> 00:34:46.500]   Donc, ça, on verra au deuxième semestre.
+[00:34:46.500 --> 00:34:48.500]   Ça veut dire que Schenker France
+[00:34:48.500 --> 00:34:50.500]   reste toujours jusqu'à
+[00:34:50.500 --> 00:34:52.500]   ces opérations-là présidentes,
+[00:34:52.500 --> 00:34:54.500]   renommées, recombies,
+[00:34:54.500 --> 00:34:56.500]   présidentes du Maroc. Donc, aujourd'hui,
+[00:34:56.500 --> 00:34:58.500]   représentées par Frédéric Vallée en tant que présidente Schenker France.
+[00:34:58.500 --> 00:35:00.500]   Et le DG,
+[00:35:00.500 --> 00:35:02.500]   c'est Éric Tizy,
+[00:35:02.500 --> 00:35:04.500]   qui a donc le rôle de l'AMD
+[00:35:04.500 --> 00:35:06.500]   Rodeau.
+[00:35:06.500 --> 00:35:08.500]   Donc, on change le nom, on change la forme juridique,
+[00:35:08.500 --> 00:35:10.500]   mais ça, ça ne vous intéresse pas.
+[00:35:10.500 --> 00:35:12.500]   Donc, il faut que l'on actualise le statut
+[00:35:12.500 --> 00:35:14.500]   pour faire des trucs DSV.
+[00:35:14.500 --> 00:35:16.500]   Mais il n'y a pas d'impact
+[00:35:16.500 --> 00:35:18.500]   sur le numéro de Maroc.
+[00:35:18.500 --> 00:35:20.500]   Il y a une société qui s'appelle DSV Rode
+[00:35:20.500 --> 00:35:22.500]   qui est la même entité.
+[00:35:22.500 --> 00:35:24.500]   Comme Schenker France va devenir DSV Rode,
+[00:35:24.500 --> 00:35:26.500]   Schenker Maroc devient le premier février
+[00:35:26.500 --> 00:35:28.500]   des DSV Rode.
+[00:35:28.500 --> 00:35:30.500]   Non, il fait pas.
+[00:35:30.500 --> 00:35:34.500]   Il y aura, après, on verra,
+[00:35:34.500 --> 00:35:36.500]   enfin, du rôle de première semestre et ensuite après,
+[00:35:36.500 --> 00:35:38.500]   le deuxième semestre, quand ça passera sous la holding,
+[00:35:38.500 --> 00:35:40.500]   c'est de la réfecturation,
+[00:35:40.500 --> 00:35:42.500]   parce qu'aujourd'hui, ils utilisent une partie
+[00:35:42.500 --> 00:35:44.500]   de notre système d'information.
+[00:35:44.500 --> 00:35:46.500]   C'est une partie de nos informatiens,
+[00:35:46.500 --> 00:35:48.500]   une partie de nos licences.
+[00:35:48.500 --> 00:35:50.500]   Ça sera des conventions intra-groupe,
+[00:35:50.500 --> 00:35:52.500]   sauf que s'il n'y a plus la ligne directrice,
+[00:35:52.500 --> 00:35:54.500]   enfin, la ligne capitalistique avec la France,
+[00:35:54.500 --> 00:35:56.500]   sachant que le Maroc,
+[00:35:56.500 --> 00:35:58.500]   c'est le ceintur bretel
+[00:35:58.500 --> 00:36:00.500]   pour tous ces flux-là de monnaie,
+[00:36:00.500 --> 00:36:02.500]   il y a des conventions spécifiques France-Maroc.
+[00:36:02.500 --> 00:36:04.500]   Il n'y en a pas d'aide maroc Maroc.
+[00:36:04.500 --> 00:36:06.500]   Il y aura sûrement des gros sujets.
+[00:36:06.500 --> 00:36:08.500]   Mais ça, ça sera appréhendé
+[00:36:08.500 --> 00:36:10.500]   quand on se posera à apprendre chaque problème.
+[00:36:10.500 --> 00:36:12.500]   Quand on se posera
+[00:36:12.500 --> 00:36:14.500]   le sujet de la changement capitalistique,
+[00:36:14.500 --> 00:36:16.500]   on posera nous les conséquences que ça a.
+[00:36:16.500 --> 00:36:18.500]   Et notamment, ce sujet-là,
+[00:36:18.500 --> 00:36:20.500]   parce que le fils d'échange de Maroc...
+[00:36:20.500 --> 00:36:22.500]   Pour la petite histoire, parce qu'on ne paierait pas le Maroc,
+[00:36:22.500 --> 00:36:24.500]   imaginons que, pendant un temps donné, on est souples
+[00:36:24.500 --> 00:36:26.500]   parce qu'on ne paiera pas le Maroc,
+[00:36:26.500 --> 00:36:28.500]   la partie du premier mestre, c'est pour ça qu'il perd.
+[00:36:28.500 --> 00:36:30.500]   Oui, oui.
+[00:36:30.500 --> 00:36:32.500]   Tant qu'on est capitalistiquement réunis,
+[00:36:32.500 --> 00:36:34.500]   ça veut dire que la première semestre, ça passe,
+[00:36:34.500 --> 00:36:36.500]   le pro de deuxième semestre.
+[00:36:36.500 --> 00:36:38.500]   Je serais François Malasine, ça me pique un peu,
+[00:36:38.500 --> 00:36:40.500]   de devoir payer pour le Maroc.
+[00:36:40.500 --> 00:36:42.500]   Ça veut dire que dans les conditions de transfert
+[00:36:42.500 --> 00:36:44.500]   des participations de l'échange de France-Maroc,
+[00:36:44.500 --> 00:36:46.500]   François lui devra dire, attendez,
+[00:36:46.500 --> 00:36:48.500]   moi, j'ai quand même un sujet.
+[00:36:48.500 --> 00:36:50.500]   C'est qu'aujourd'hui, j'ai ces flux monétaires.
+[00:36:50.500 --> 00:36:52.500]   Demain, je change les lieux en capitalistique.
+[00:36:52.500 --> 00:36:54.500]   Il faut d'abord qu'il y ait les conventions réglementées
+[00:36:54.500 --> 00:36:56.500]   et que vous ayez les accords avec le fils d'échange
+[00:36:56.500 --> 00:36:58.500]   pour pouvoir que ça remonte tout en haut
+[00:36:58.500 --> 00:37:00.500]   et que ça redescend un peu.
+[00:37:00.500 --> 00:37:02.500]   Après, des cas qui nous redonnent,
+[00:37:02.500 --> 00:37:04.500]   ça sera toujours possible.
+[00:37:04.500 --> 00:37:06.500]   Par contre, des cas qui se référent
+[00:37:06.500 --> 00:37:08.500]   sur Maroc, des ESB,
+[00:37:08.500 --> 00:37:10.500]   ils sont anti-Afrique.
+[00:37:10.500 --> 00:37:12.500]   Ça, des articles de la bataille de Maroc,
+[00:37:12.500 --> 00:37:14.500]   qui n'ont pas un pire en Afrique,
+[00:37:14.500 --> 00:37:16.500]   ça a toujours été à leur raison des histoires
+[00:37:16.500 --> 00:37:18.500]   par le passé, ils ne veulent pas y retourner.
+[00:37:18.500 --> 00:37:20.500]   Donc là, je me demande bien
+[00:37:20.500 --> 00:37:22.500]   comment ça va être pris en compte tout.
+[00:37:22.500 --> 00:37:24.500]   Sauf qu'on couple les ponts étis d'ici là.
+[00:37:24.500 --> 00:37:26.500]   Oui.
+[00:37:26.500 --> 00:37:28.500]   Ça serait souhaitable.
+[00:37:28.500 --> 00:37:30.500]   Alors, je t'invite à référencer
+[00:37:30.500 --> 00:37:32.500]   sur ce sujet-là auprès de François
+[00:37:32.500 --> 00:37:34.500]   dans ton fils.
+[00:37:34.500 --> 00:37:36.500]   Je le fais régler Maroc.
+[00:37:36.500 --> 00:37:38.500]   Mais je vais continuer à le faire.
+[00:37:38.500 --> 00:37:40.500]   Ce deuxième semestre, les prévus qu'il y a capitalistiques
+[00:37:40.500 --> 00:37:42.500]   changent.
+[00:37:42.500 --> 00:37:44.500]   Donc, Chine-Cart-France et Dédé-Françolique
+[00:37:44.500 --> 00:37:46.500]   vont nous vendre la participation de Maroc.
+[00:37:46.500 --> 00:37:48.500]   OK.
+[00:37:48.500 --> 00:37:50.500]   Voilà.
+[00:37:50.500 --> 00:37:52.500]   Tout à raison.
+[00:37:52.500 --> 00:37:54.500]   Glockon, est-ce que c'est amené
+[00:37:54.500 --> 00:37:56.500]   à disparaître ?
+[00:37:56.500 --> 00:37:58.500]   Oui, il serait certain disparaître.
+[00:37:58.500 --> 00:38:00.500]   Mais en moins, je ne peux pas tenir
+[00:38:00.500 --> 00:38:02.500]   un discours qu'il faut continuer
+[00:38:02.500 --> 00:38:04.500]   à tenir nos pratiques.
+[00:38:04.500 --> 00:38:06.500]   Oui, ça, c'est ce qu'on fait.
+[00:38:06.500 --> 00:38:08.500]   Mais après, il y a un équipe global
+[00:38:08.500 --> 00:38:10.500]   au niveau des services support
+[00:38:10.500 --> 00:38:12.500]   qui est désolé.
+[00:38:12.500 --> 00:38:14.500]   Une merde, comme Glockon.
+[00:38:14.500 --> 00:38:16.500]   Bon, ça ne sent pas.
+[00:38:16.500 --> 00:38:18.500]   Même pire, peut-être que Glockon.
+[00:38:18.500 --> 00:38:20.500]   Ah non !
+[00:38:20.500 --> 00:38:22.500]   Mais par contre, ils ont envie
+[00:38:22.500 --> 00:38:24.500]   de, mais j'ai déjà eu ce sous
+[00:38:24.500 --> 00:38:26.500]   chez Chine-Cart et ça n'a rien fait.
+[00:38:26.500 --> 00:38:28.500]   Ils ont envie de doter
+[00:38:28.500 --> 00:38:30.500]   l'organisation des contrats.
+[00:38:30.500 --> 00:38:32.500]   Pas que du juridique, sur que les services
+[00:38:32.500 --> 00:38:34.500]   qui gèrent les contrats, d'un vrai outil.
+[00:38:34.500 --> 00:38:36.500]   Ce que ça sera fait, pas fait.
+[00:38:36.500 --> 00:38:38.500]   Moi, j'ai écouté ces cours.
+[00:38:38.500 --> 00:38:40.500]   C'était un gros manque pour l'organisation,
+[00:38:40.500 --> 00:38:42.500]   pas pour l'égole, c'est pour
+[00:38:42.500 --> 00:38:44.500]   l'administration des contrats dans les boîtes.
+[00:38:44.500 --> 00:38:46.500]   Moi, je produis ça depuis des années,
+[00:38:46.500 --> 00:38:48.500]   c'est pas un sous-juridique, c'est un sous-étonnisation.
+[00:38:48.500 --> 00:38:50.500]   On est léger, même avec Glockon,
+[00:38:50.500 --> 00:38:52.500]   qui n'est pas mal, mais c'est pas parfait.
+[00:38:52.500 --> 00:38:54.500]   Il n'y a pas de suivi,
+[00:38:54.500 --> 00:38:56.500]   c'est mal fait,
+[00:38:56.500 --> 00:38:58.500]   franchement il y a un moitié d'hélogène qui est triste.
+[00:38:58.500 --> 00:39:00.500]   C'est rien, c'est juste
+[00:39:00.500 --> 00:39:02.500]   pour cocher un truc dodique parce qu'un jour
+[00:39:02.500 --> 00:39:04.500]   c'est une chacune.
+[00:39:04.500 --> 00:39:06.500]   Après, c'est une base pour déposer tous les contrats.
+[00:39:06.500 --> 00:39:08.500]   Parce que c'est déligiant.
+[00:39:08.500 --> 00:39:10.500]   Parce que t'es déligiant, t'as bien pris le pli.
+[00:39:10.500 --> 00:39:12.500]   Les autres référents en contrats qu'on a nommé,
+[00:39:12.500 --> 00:39:14.500]   c'est fait par ci par là.
+[00:39:14.500 --> 00:39:16.500]   Et d'ailleurs,
+[00:39:16.500 --> 00:39:18.500]   ce qui a été un total non frappant,
+[00:39:18.500 --> 00:39:20.500]   c'est que dans le processus
+[00:39:20.500 --> 00:39:22.500]   de due déligètes d'acquisition,
+[00:39:22.500 --> 00:39:24.500]   pour compter les documents,
+[00:39:24.500 --> 00:39:26.500]   ils ne sont même pas servi de Glockon.
+[00:39:26.500 --> 00:39:28.500]   Ils demandaient au service "faites le lien".
+[00:39:28.500 --> 00:39:30.500]   Mais oui, ils ne vous avraient plus pas,
+[00:39:30.500 --> 00:39:32.500]   ils m'avaient compilé tous les contrats.
+[00:39:32.500 --> 00:39:34.500]   Et là, on leur a dit "m'attendez,
+[00:39:34.500 --> 00:39:36.500]   vous faites chier depuis des années avec Glockon,
+[00:39:36.500 --> 00:39:38.500]   qu'on a déployé, qu'on bassine les gens avec ça".
+[00:39:38.500 --> 00:39:40.500]   Nous n'avons essayé de créer un truc carré en France.
+[00:39:40.500 --> 00:39:42.500]   Pour en fait, quand il y en a vraiment besoin,
+[00:39:42.500 --> 00:39:44.500]   vous êtes pour dire que ça c'est la personne.
+[00:39:44.500 --> 00:39:46.500]   C'est ça.
+[00:39:46.500 --> 00:39:48.500]   Mais bon, on n'a pas fini avec ce suivi.
+[00:39:48.500 --> 00:39:50.500]   Mais du coup, avec DSV, il y aura d'autres suivis.
+[00:39:50.500 --> 00:39:52.500]   Ce ballon a été prendre des foules sur différents thèmes,
+[00:39:52.500 --> 00:39:54.500]   sur les contrats, mais pareil, sur la partie réseau par exemple.
+[00:39:54.500 --> 00:39:56.500]   Ils ont repris le réseau il y a de 3 ans, global,
+[00:39:56.500 --> 00:39:58.500]   nous disant "tu t'es gérant central, on va faire des exports".
+[00:39:58.500 --> 00:40:00.500]   On arrive des DSV, ils les équipent le balle,
+[00:40:00.500 --> 00:40:02.500]   on renvoye des DSV vers les pays.
+[00:40:02.500 --> 00:40:04.500]   "Vous allez voir la balle qui vous fera un export,
+[00:40:04.500 --> 00:40:06.500]   on va te retirer un petit".
+[00:40:06.500 --> 00:40:08.500]   Non, non, c'est pareil.
+[00:40:08.500 --> 00:40:10.500]   Sur la partie gestion de contrats et de process en général,
+[00:40:10.500 --> 00:40:12.500]   on a informatisé si on est vinais,
+[00:40:12.500 --> 00:40:14.500]   on va continuer d'utiliser les outils et les process,
+[00:40:14.500 --> 00:40:16.500]   donc on n'a pas autre chose.
+[00:40:16.500 --> 00:40:18.500]   Donc c'est d'attendre le nouveau process des DSV,
+[00:40:18.500 --> 00:40:20.500]   on connaît l'existence,
+[00:40:20.500 --> 00:40:22.500]   ils ont dit qu'ils avaient changé,
+[00:40:22.500 --> 00:40:24.500]   donc on attend l'apparition.
+[00:40:24.500 --> 00:40:26.500]   On pourra essayer de dire "ok, c'est leur directive,
+[00:40:26.500 --> 00:40:28.500]   nous comment on peut réfléchir avec la MD,
+[00:40:28.500 --> 00:40:30.500]   bien sûr on doit suivre les directives,
+[00:40:30.500 --> 00:40:32.500]   mais comment on peut se greffer un mode de gestion des contrats
+[00:40:32.500 --> 00:40:34.500]   qui correspond à leur organisation,
+[00:40:34.500 --> 00:40:36.500]   en respectant le canal du groupe,
+[00:40:36.500 --> 00:40:38.500]   nous trouvons un truc qui marche.
+[00:40:38.500 --> 00:40:40.500]   Donc on essaiera de bricoler en marge du groupe aussi,
+[00:40:40.500 --> 00:40:42.500]   enfin en complément du groupe, pardon,
+[00:40:42.500 --> 00:40:44.500]   pas en marge, en complément,
+[00:40:44.500 --> 00:40:46.500]   mais en risque d'aller les contraindre d'un truc.
+[00:40:46.500 --> 00:40:48.500]   Ouais, ils ne correspond pas exactement à ce qu'on a vu, non ?
+[00:40:48.500 --> 00:40:50.500]   Les gens sont persuadés.
+[00:40:50.500 --> 00:40:52.500]   Voilà, déjà je peux vous informer
+[00:40:52.500 --> 00:40:54.500]   que si vous avez des demandes de réalisation
+[00:40:54.500 --> 00:40:56.500]   de contrats par un autre genre de truc,
+[00:40:56.500 --> 00:40:58.500]   demain c'est un ticket,
+[00:40:58.500 --> 00:41:00.500]   ça passe par le monde,
+[00:41:00.500 --> 00:41:02.500]   et c'est lui qui décide où c'est prêté.
+[00:41:02.500 --> 00:41:04.500]   C'est pour ça qu'on ne veut que les contrats se promonglent,
+[00:41:04.500 --> 00:41:06.500]   alors est-ce que c'est...
+[00:41:06.500 --> 00:41:08.500]   Ouais, ouais, on a prêt de plier, ouais.
+[00:41:08.500 --> 00:41:10.500]   On est en train de prendre le plier.
+[00:41:10.500 --> 00:41:12.500]   Exactement, donc demain ça ne sera pas chaud,
+[00:41:12.500 --> 00:41:14.500]   ça ne va pas.
+[00:41:14.500 --> 00:41:16.500]   Donc, quels vont être exactement
+[00:41:16.500 --> 00:41:18.500]   le périmètre de revue ?
+[00:41:18.500 --> 00:41:20.500]   Qu'est-ce qu'il flacque, qu'est-ce qu'il flacque pas ?
+[00:41:20.500 --> 00:41:22.500]   J'en ai dit, voilà, pas d'aide,
+[00:41:22.500 --> 00:41:24.500]   ça ne sera pas bon, c'est...
+[00:41:24.500 --> 00:41:26.500]   Voilà.
+[00:41:26.500 --> 00:41:28.500]   C'est bien, merci. Merci infiniment.
+[00:41:28.500 --> 00:41:30.500]   Ok, plaisir.
+[00:41:30.500 --> 00:41:32.500]   Ça me courage, merci.
+[00:41:32.500 --> 00:41:34.500]   Merci, merci.

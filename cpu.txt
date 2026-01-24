@@ -1,0 +1,1 @@
+whisper-cli.exe -m "../ggml-base.bin" -f "../1971_Interview,_Bobbie_R._Allen,_Staff_Breakfast.wav" -osrt --language en      

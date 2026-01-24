@@ -1,0 +1,1 @@
+ffmpeg -i "%1" -ac 1 -ar 16000 -af "highpass=f=80, lowpass=f=12000, afftdn=nf=-30, agate=threshold=-35dB:ratio=3:attack=5:release=50, loudnorm=I=-23:LRA=7:TP=-2" output_high.wav

@@ -1,0 +1,255 @@
+[0] 00:00:00,000 --> 00:00:08,979:  It's 936 and time for staff practice from B&B Pharmacy with Warren Hassey.
+[1] 00:00:08,979 --> 00:00:13,500:  Well, many people say that flying is not as dangerous as driving an automobile.
+[2] 00:00:13,500 --> 00:00:20,299:  Others say you never get me up from one of those things and then others say well I'd like to go to the moon and others say never.
+[3] 00:00:20,299 --> 00:00:25,540:  So it doesn't matter how you look at it everybody's got a different opinion about aviation.
+[4] 00:00:25,540 --> 00:00:38,040:  Personally we think it's the greatest thing since sliced bread really but this morning a gentleman who is interested in aviation and makes a living worrying about the possibilities of aircraft accidents.
+[5] 00:00:38,040 --> 00:00:47,040:  And a very responsible role in that regard is our guest on staff breakfast. He's here visiting friends and relatives in Mr. Bobby Ray Allen, Bobby Ray. Good to have you with us this morning.
+[6] 00:00:47,040 --> 00:00:54,540:  Thank you very much. Let me first let's run through that long title that you have once again, which is what?
+[7] 00:00:54,540 --> 00:01:01,540:  All the title is special assistant to the director of the Bureau of Aviation Safety and the National Transportation Safety Board.
+[8] 00:01:01,540 --> 00:01:12,540:  Well, other than that, we just about have time in a closing conversation. We got that in, which sounds like it doesn't have a great deal to do with aviation safety, is that right?
+[9] 00:01:12,540 --> 00:01:25,540:  Yes, the board is the agency established by Congress to investigate all aircraft accidents throughout the United States, and attempt to determine probable cause and prevent the recurrence of aircraft accidents.
+[10] 00:01:25,540 --> 00:01:27,540:  And you're not here in any official capacity right now.
+[11] 00:01:27,540 --> 00:01:28,540:  No, we're in heaven.
+[12] 00:01:28,540 --> 00:01:35,540:  We're visiting relatives here. I have two very favorite uncles living in the area, Mr. Murray and Brown, Mr. Edgerton.
+[13] 00:01:35,540 --> 00:01:43,540:  I just checked him out, and he knows what he's talking about. I showed him an aircraft accident which I was in a few years ago.
+[14] 00:01:43,540 --> 00:01:48,540:  And he took a look at the picture and said, "Looks like this is what happened and you're absolutely right. That's what did happen."
+[15] 00:01:48,540 --> 00:01:51,540:  He had it figured out very well.
+[16] 00:01:51,540 --> 00:02:00,540:  So what is this percentage of aircraft safety versus automobile safety? Could you give us any idea on that? What's your thinking?
+[17] 00:02:00,540 --> 00:02:07,540:  Well, it's very difficult to make a valid comparison. In many respects there is no valid comparison.
+[18] 00:02:07,540 --> 00:02:19,539:  But on the highways each year there's slightly over 50,000 people killed and in aviation in the United States they're approximately 1200 killed each year.
+[19] 00:02:19,539 --> 00:02:32,539:  In commercial aviation there will be something on the order of 250, 300 average. And private aviation will be approximately a thousand totalities a year.
+[20] 00:02:32,539 --> 00:02:44,539:  And of course the auto industry or the departments of various departments of public safety I think base their ratio on a per mile driven ratio.
+[21] 00:02:44,539 --> 00:02:54,539:  You figure yours on an airline mileage ratio maintenance. There's been a lot of controversy on the yardstick for establishing the rate over the past several years.
+[22] 00:02:54,539 --> 00:03:07,539:  One group would use aircraft hours flown. Another group would use the yardstick of passenger miles.
+[23] 00:03:07,539 --> 00:03:17,539:  And I suppose that I prefer to use the aircraft hours flown are in better yet.
+[24] 00:03:17,539 --> 00:03:25,539:  One mission, one take-off landing, or take-off your destination in landing.
+[25] 00:03:25,539 --> 00:03:28,539:  Because there's been from here to Amriller, here to Los Angeles.
+[26] 00:03:28,539 --> 00:03:30,539:  Regardless of the distance.
+[27] 00:03:30,539 --> 00:03:34,539:  Why do you say that? What's your thinking on that?
+[28] 00:03:34,539 --> 00:03:39,539:  I think the greatest amount of exposure occurs during take-off or landing.
+[29] 00:03:39,539 --> 00:03:44,539:  And if you're going to be it's actually any time you attempt to establish an accident
+[30] 00:03:44,539 --> 00:03:49,539:  greater fatality rate in any mode of transportation, you have to take into consideration the exposure.
+[31] 00:03:49,539 --> 00:03:54,539:  And the greatest exposure occurs during take-off or during landing.
+[32] 00:03:54,539 --> 00:04:03,539:  And that's the reason that I like to would like to see a rate based on each mission
+[33] 00:04:03,539 --> 00:04:08,539:  or each what rather than just a fashion demands form.
+[34] 00:04:08,539 --> 00:04:13,539:  Then you're saying that there's not a great deal of possibility of mid-air crashes.
+[35] 00:04:13,539 --> 00:04:17,540:  Of course it exists, but the possibility is fairly remote, is it not?
+[36] 00:04:17,540 --> 00:04:25,540:  Well, I started speech one time, said that we had potential or the problem of mid-air collisions
+[37] 00:04:25,540 --> 00:04:29,540:  ever since we'll return to orables and said let's build another one.
+[38] 00:04:29,540 --> 00:04:39,820:  Well, I think that right now the mid-air collision problem is being discussed throughout
+[39] 00:04:39,820 --> 00:04:42,339:  the entire United States.
+[40] 00:04:42,339 --> 00:04:48,420:  I think that it can't help, but the problem can't help but increase because our civil aviation
+[41] 00:04:48,420 --> 00:04:54,880:  fleet is projected to increase to approximately 260,000 airplanes in the next 10 years.
+[42] 00:04:54,880 --> 00:04:58,619:  Now, that's doubling the fleet that we have today.
+[43] 00:04:58,619 --> 00:05:06,059:  Right now we have approximately 128 to 130,000 airplanes in the civil aviation fleet.
+[44] 00:05:06,059 --> 00:05:14,220:  And out of this 130,000 aircraft, approximately 27 to 2800 are involved in commercial aviation.
+[45] 00:05:14,220 --> 00:05:21,140:  Now, by the year 1980, they expect the civil aviation fleet to increase to approximately
+[46] 00:05:21,140 --> 00:05:28,420:  260,000 airplanes, but the commercial transport fleet will only increase to about 3,100 airplanes.
+[47] 00:05:28,420 --> 00:05:34,760:  So the size of those, the loads that they can carry will be much greater will they not?
+[48] 00:05:34,760 --> 00:05:41,380:  Yes, the 2747, that's, well, it's just, enjoy it.
+[49] 00:05:41,380 --> 00:05:45,179:  It's made in flight here about two months ago, and see out of Washington.
+[50] 00:05:45,179 --> 00:05:49,019:  It's capable of carrying about 500 passengers.
+[51] 00:05:49,019 --> 00:05:52,540:  Unbelievable, unbelievable.
+[52] 00:05:52,540 --> 00:05:57,799:  I couldn't believe it last December, our man in the choir here at Math High School, had
+[53] 00:05:57,799 --> 00:06:01,859:  the privilege of performing, well, actually, on national television, on both coasts,
+[54] 00:06:01,859 --> 00:06:07,579:  football games, but they flew to New York in an airliner that's seated at that time.
+[55] 00:06:07,579 --> 00:06:12,019:  Carried 250 passengers, I didn't think there was anything that big, but there was.
+[56] 00:06:12,019 --> 00:06:13,519:  It's just huge.
+[57] 00:06:13,519 --> 00:06:17,220:  I can't even start to visualize one that carried 500.
+[58] 00:06:17,220 --> 00:06:23,820:  A keyed aircraft is building a new jetliner called the 1011, I believe it is.
+[59] 00:06:23,820 --> 00:06:28,380:  And the passenger carrying capacity of that aircraft will be about 350.
+[60] 00:06:28,380 --> 00:06:30,940:  This is the one they refer to as the air bus.
+[61] 00:06:30,940 --> 00:06:40,260:  An interesting comparison on the 747, if you land 3, 747s with full passenger load at
+[62] 00:06:40,260 --> 00:06:49,500:  an airport, it would be almost the same as disembarking passengers on the Queen Mary.
+[63] 00:06:49,500 --> 00:06:55,399:  So this will give you some feel for the impact of the 747 that's going to have on your
+[64] 00:06:55,399 --> 00:06:56,959:  airport around the country.
+[65] 00:06:56,959 --> 00:06:57,959:  As tremendous.
+[66] 00:06:57,959 --> 00:07:02,459:  I imagine there's an area that a lot of people are not familiar with and don't understand
+[67] 00:07:02,459 --> 00:07:03,459:  how it's accomplished.
+[68] 00:07:03,459 --> 00:07:09,059:  We might discuss this business of routes and altitudes and tons of work here.
+[69] 00:07:09,059 --> 00:07:13,739:  What will be those today on our super highways, Interstate 40, for instance, divided
+[70] 00:07:13,739 --> 00:07:17,600:  one, two lanes going one direction and then there's a divided between and two lanes going
+[71] 00:07:17,600 --> 00:07:20,640:  the other direction, so on and so forth.
+[72] 00:07:20,640 --> 00:07:25,440:  You have somewhat similar comparable flying rules and regulations.
+[73] 00:07:25,440 --> 00:07:28,660:  Do you not for east and west traffic, so on?
+[74] 00:07:28,660 --> 00:07:29,660:  Yes.
+[75] 00:07:29,660 --> 00:07:33,440:  There again there, actually I suppose you can say there are two sets of routes.
+[76] 00:07:33,440 --> 00:07:38,679:  You have a set of routes that prevail when weather is good, no instrument.
+[77] 00:07:38,679 --> 00:07:39,679:  Conditions.
+[78] 00:07:39,679 --> 00:07:44,000:  And then you have the routes that exist under instrument weather conditions.
+[79] 00:07:44,000 --> 00:07:51,739:  And under your IFR or instrument rules, altitude and traffic control is accomplished with
+[80] 00:07:51,739 --> 00:07:55,519:  the traffic control system.
+[81] 00:07:55,519 --> 00:08:04,059:  And under the visual flight rules or VFR conditions, the traffic flow is pretty much
+[82] 00:08:04,059 --> 00:08:08,760:  left in the cockpit of the aircraft, subject to the rules that exist.
+[83] 00:08:08,760 --> 00:08:14,100:  These rules are that if you're flying north or south, you will fly at an odd or even
+[84] 00:08:14,100 --> 00:08:18,220:  thousand foot, plus or minus 500 feet.
+[85] 00:08:18,220 --> 00:08:24,079:  And east and west, I believe the rule is called the quadrennial rule.
+[86] 00:08:24,079 --> 00:08:29,260:  And then the responsibility for maintaining a lookout for other aircraft rests in the
+[87] 00:08:29,260 --> 00:08:30,260:  cockpit.
+[88] 00:08:30,260 --> 00:08:37,239:  So, there's a tremendous amount of assistance that would be available to the pilots from
+[89] 00:08:37,239 --> 00:08:43,679:  the FAA air traffic control system, but the pilot has to be available in service.
+[90] 00:08:43,679 --> 00:08:49,539:  Any of your job, do you go personally go out on the scene of aircraft accidents for investigation
+[91] 00:08:49,539 --> 00:08:54,520:  or do you send teams out or is that at all in any area of your position?
+[92] 00:08:54,520 --> 00:09:00,859:  As I have not personally investigated an accident for several years, I started out with the board
+[93] 00:09:00,859 --> 00:09:05,820:  as a field investigator working out of the Chicago office.
+[94] 00:09:05,820 --> 00:09:16,700:  But on a hair carrier accident or catastrophic accident involving passengers, we usually
+[95] 00:09:16,700 --> 00:09:24,260:  dispatch a team from Washington, D.C. this comprised of specialists in various areas, power
+[96] 00:09:24,260 --> 00:09:32,520:  plants, systems, human factors, operations, engineering, flight recorder readout.
+[97] 00:09:32,520 --> 00:09:38,919:  And each individual is responsible for a particular phase of the investigation.
+[98] 00:09:38,919 --> 00:09:48,380:  It's now a general aviation accident investigation. This is generally investigated by two people,
+[99] 00:09:48,380 --> 00:09:54,919:  two men. As I mentioned earlier, the large team type investigation, they and the team
+[100] 00:09:54,919 --> 00:10:03,799:  will hold in some instances is comprised of 40 to 50 people. And this is probably the
+[101] 00:10:03,799 --> 00:10:04,799:  difference.
+[102] 00:10:04,799 --> 00:10:09,700:  There's something like the Wellaclesian over Grand Canyon. That's where your big teams
+[103] 00:10:09,700 --> 00:10:17,059:  go out, yes, and work on it historically over the past 10 years, we've had on the order
+[104] 00:10:17,059 --> 00:10:27,400:  of about 12, what we call team type investigations a year. The run anywhere from 8 to 14 major
+[105] 00:10:27,400 --> 00:10:37,159:  catastrophic accidents a year, and that number has remained fairly static since, so about
+[106] 00:10:37,159 --> 00:10:42,200:  19, 55 or 56. Well really any time you have an airplane accident it's, it's kind of
+[107] 00:10:42,200 --> 00:10:47,919:  not to be in catastrophic, I guess, at least certainly in the commercial aviation, there's
+[108] 00:10:47,919 --> 00:10:51,919:  no question because there's always a large number of board, and it's a big airplane, you
+[109] 00:10:51,919 --> 00:10:58,919:  take a little small airplane, a mooney or a piper, patchy something like that, where
+[110] 00:10:58,919 --> 00:11:03,520:  you want to get one or two passengers, it's just like a automobile accident where it takes
+[111] 00:11:03,520 --> 00:11:05,320:  one or two lives.
+[112] 00:11:05,320 --> 00:11:11,039:  You have to be very careful when you talk about catastrophic accidents, it's a matter of
+[113] 00:11:11,039 --> 00:11:12,039:  personal concern.
+[114] 00:11:12,039 --> 00:11:13,039:  It's an accident.
+[115] 00:11:13,039 --> 00:11:14,039:  That's right.
+[116] 00:11:14,039 --> 00:11:17,320:  I recall I was in an accident one time, and as far as I was concerned, I was the only
+[117] 00:11:17,320 --> 00:11:19,280:  one aboard the aircraft and it was catastrophic.
+[118] 00:11:19,280 --> 00:11:23,159:  That's absolutely-- I'm saying this true, it was an automobile accident, I believe that's
+[119] 00:11:23,159 --> 00:11:24,159:  certainly true.
+[120] 00:11:24,159 --> 00:11:26,520:  You also had another big responsibility.
+[121] 00:11:26,520 --> 00:11:34,020:  You were on a American United States team, which was working with the Russians, concerning
+[122] 00:11:34,020 --> 00:11:37,960:  the airline, commercial airline, between New York and Moscow, and I think that'd be
+[123] 00:11:37,960 --> 00:11:41,799:  interesting to find out how that worked out what some of the problems were that you had
+[124] 00:11:41,799 --> 00:11:42,799:  to overcome.
+[125] 00:11:42,799 --> 00:11:45,679:  I'd like to discuss that with you right after we pause for these words.
+[126] 00:11:45,679 --> 00:11:50,039:  Our guest is Bobby Ray Allen, a gentleman who's here visiting relatives in pamphabets
+[127] 00:11:50,039 --> 00:11:51,039:  for the government.
+[128] 00:11:51,039 --> 00:11:55,919:  And I'm interested, Bobby, let's talk about this situation between Russia and the United
+[129] 00:11:55,919 --> 00:12:00,039:  States and the commercial lines that were open between Moscow and New York.
+[130] 00:12:00,039 --> 00:12:03,919:  There were lots of problems to be worked out there where they're not.
+[131] 00:12:03,919 --> 00:12:13,000:  Yes, a rich man, a negotiation between New York and Moscow.
+[132] 00:12:13,000 --> 00:12:22,000:  Back in 1960, he may recall that in 1961 there was a role in the national fare called
+[133] 00:12:22,000 --> 00:12:23,000:  Boolean Crisis.
+[134] 00:12:23,000 --> 00:12:26,000:  And our negotiation was that time broke down.
+[135] 00:12:26,000 --> 00:12:32,000:  No matter if I can, my personal life was corrupted if that time was recalled and maybe
+[136] 00:12:32,000 --> 00:12:39,000:  and then the negotiations were resumed in 1966.
+[137] 00:12:39,000 --> 00:12:46,000:  The basic agreement had been signed back in 1960.
+[138] 00:12:46,000 --> 00:12:53,000:  But the details were revealed how the air service would be implemented and not been washed out.
+[139] 00:12:53,000 --> 00:13:03,000:  So 1966 President Johnson started the negotiation process.
+[140] 00:13:03,000 --> 00:13:24,000:  And the U.S. contingent would travel to Moscow and the second place of the negotiation would be the meeting of New York City where the Russian delegation would travel to the United States.
+[141] 00:13:24,000 --> 00:13:34,000:  Oh, hard group consisted of about 20 people and it was covered with a very easy and hard work.
+[142] 00:13:34,000 --> 00:13:39,000:  The negotiation of the facilities to an aggregation facility is key.
+[143] 00:13:39,000 --> 00:13:43,000:  They have a certain foundation and a certain configuration.
+[144] 00:13:43,000 --> 00:13:48,000:  And my particular area in response to the only was to establish a ground-to-risk floor.
+[145] 00:13:48,000 --> 00:13:54,000:  And the investigation of the accident might be effective once you're occurred.
+[146] 00:13:54,000 --> 00:13:59,000:  You know, we travel to Moscow on January 19, 1967.
+[147] 00:13:59,000 --> 00:14:05,000:  And remain there for a period of six weeks.
+[148] 00:14:05,000 --> 00:14:14,000:  During that period, we were given permission to ask here to inspect,
+[149] 00:14:14,000 --> 00:14:19,000:  and look at what facility is it, to achieve a weird port here in Moscow.
+[150] 00:14:19,000 --> 00:14:26,000:  And then we looked at the welcome airport operational located at the zone.
+[151] 00:14:26,000 --> 00:14:32,000:  I was, hey, someone's here.
+[152] 00:14:32,000 --> 00:14:36,000:  I had expected the direction to go into it.
+[153] 00:14:36,000 --> 00:14:39,000:  We're going to the radar room.
+[154] 00:14:39,000 --> 00:14:43,000:  A lot of facilities here, they might have had some luck looking to let us.
+[155] 00:14:43,000 --> 00:14:50,000:  But much to my surprise, we're trying to help each other.
+[156] 00:14:50,000 --> 00:14:53,000:  We're going to talk to each other.
+[157] 00:14:53,000 --> 00:14:56,000:  We're going to inspect the...
+[158] 00:14:56,000 --> 00:14:58,000:  What's the need?
+[159] 00:14:58,000 --> 00:15:01,000:  We've run a rare and rapid control center.
+[160] 00:15:01,000 --> 00:15:06,000:  We're going to get the radar installation.
+[161] 00:15:06,000 --> 00:15:08,000:  What's the need to tell us that we could do it?
+[162] 00:15:08,000 --> 00:15:12,000:  The radar room I didn't expect is that we were turned to radar to stand by.
+[163] 00:15:12,000 --> 00:15:15,000:  I tried to go off as we walked in.
+[164] 00:15:15,000 --> 00:15:18,000:  The sweep was operating.
+[165] 00:15:18,000 --> 00:15:21,000:  Very impressive.
+[166] 00:15:21,000 --> 00:15:27,000:  Very much in the test with the technical know-how and ability of the Russian people.
+[167] 00:15:27,000 --> 00:15:32,000:  How incomparable in that respect, could you make any kind of estimate?
+[168] 00:15:32,000 --> 00:15:37,000:  I don't really think that I could make it comparison.
+[169] 00:15:37,000 --> 00:15:50,000:  Primarily because I think you have to realize that what I saw was probably the best that they had to offer as far as commercial air service was concerned.
+[170] 00:15:50,000 --> 00:16:00,000:  We did not travel into some of their factories or some of the other facilities that would give you an opportunity to make a valid comparison.
+[171] 00:16:00,000 --> 00:16:12,000:  I guess maybe based on push for direction that I'm convinced that the service policy does.
+[172] 00:16:12,000 --> 00:16:18,000:  Certainly, I don't want to pick up some of their focus on that.
+[173] 00:16:18,000 --> 00:16:28,000:  As a for instance, some of the things that you worked out as in what suppose a Russian airliner crashes that's bound for the United States crashes in Russia.
+[174] 00:16:28,000 --> 00:16:37,000:  While a Russian team investigates, it's those are the kind of things that you had to work out in an American plane where it crashed in Russia.
+[175] 00:16:37,000 --> 00:16:43,000:  Who would investigate? Would it be a joint team? Well, and something. Are those the things that problems that came up?
+[176] 00:16:43,000 --> 00:16:46,000:  Yes, let me see if I can clarify this little more.
+[177] 00:16:46,000 --> 00:16:51,000:  There's an organization in Montreal called the International Civil Aviation Cooperation.
+[178] 00:16:51,000 --> 00:16:59,000:  Now, there are approximately 109 countries throughout the world that belong to that particular organization.
+[179] 00:16:59,000 --> 00:17:08,000:  Now, by membership in that organization and by agreeing to abide by the rules that have been established by the International Civil Aviation Organization,
+[180] 00:17:08,000 --> 00:17:15,000:  it's not necessary to negotiate a bilateral agreement with the member countries.
+[181] 00:17:15,000 --> 00:17:24,000:  Unfortunately, Russia, back in 1944, decided not to join the International Civil Aviation Organization.
+[182] 00:17:24,000 --> 00:17:32,000:  Consequently, it became necessary for us to negotiate each facet of this air service on an individual basis.
+[183] 00:17:32,000 --> 00:17:48,000:  And what we did was we arrived in an agreement with the Russians and we would abide by most of the provisions of Annex 13 to the Chicago Convention or the IKO manuals.
+[184] 00:17:48,000 --> 00:18:01,000:  And in the case of an American aircraft crashing in Russia, the Russian would investigate the accident as the state of occurrence.
+[185] 00:18:01,000 --> 00:18:09,000:  And we would be permitted to participate with the Russians in the investigation as the state of registry and as the state of manufacture.
+[186] 00:18:09,000 --> 00:18:15,000:  And if a Russian aircraft crashed in the United States, it worked exactly as I expected.
+[187] 00:18:15,000 --> 00:18:19,000:  So those are the things that have to be worked out.
+[188] 00:18:19,000 --> 00:18:22,000:  It's good that you've gotten the word now.
+[189] 00:18:22,000 --> 00:18:30,000:  I think there's no problems. No, hopefully. And we don't know what ever happened.
+[190] 00:18:30,000 --> 00:18:39,000:  Bobby, I would assume it would be an avid reader of aviation or aircraft books stories about flying.
+[191] 00:18:39,000 --> 00:18:45,000:  The latest big hit airport had to be of interest to you, I'm sure.
+[192] 00:18:45,000 --> 00:18:52,000:  What was that one, were the serenliner and this military jet were on a crash course, collision course.
+[193] 00:18:52,000 --> 00:18:54,000:  Can't think the name of that one, do you remember that book?
+[194] 00:18:54,000 --> 00:18:58,000:  Oh, that was a book that was written by Ernest Gaen and you caught me short here.
+[195] 00:18:58,000 --> 00:18:59,000:  I can't think of that.
+[196] 00:18:59,000 --> 00:19:04,000:  I love it either, but it was an exciting one, an exciting movie.
+[197] 00:19:04,000 --> 00:19:06,000:  A long on the mighty, was that it?
+[198] 00:19:06,000 --> 00:19:07,000:  No, no.
+[199] 00:19:07,000 --> 00:19:08,000:  No, that was B-17.
+[200] 00:19:08,000 --> 00:19:09,000:  I'm sorry.
+[201] 00:19:09,000 --> 00:19:10,000:  You're correct.
+[202] 00:19:10,000 --> 00:19:12,000:  It was Ernest Gaen book.
+[203] 00:19:12,000 --> 00:19:18,280:  But it's an area in which I still with a success that we've had of several of these that we
+[204] 00:19:18,280 --> 00:19:25,520:  will have many more fine novels written, actually, since you mentioned Orville and Wilburton.
+[205] 00:19:25,520 --> 00:19:30,000:  I believe we're just barely into the crawling stage of A.V.A.
+[206] 00:19:30,000 --> 00:19:36,000:  It's rather interesting when you consider that the first flight at Kitty Hawk occurred on
+[207] 00:19:36,000 --> 00:19:45,239:  December of the 17th 1903. That's only 66 years ago and we've gone from their first flight
+[208] 00:19:45,239 --> 00:19:53,079:  and the old bywing airplane that they built there to a 747 and fuselage of the 747 as
+[209] 00:19:53,079 --> 00:19:56,880:  longer than the total distance of their first flight.
+[210] 00:19:56,880 --> 00:20:02,079:  Amazing, amazing, by the way, all you people are in the aviation industry and you've been
+[211] 00:20:02,079 --> 00:20:07,119:  in it, you've studied it and know it forward and back with pretty much I would assume and
+[212] 00:20:07,119 --> 00:20:12,400:  you get around in bull sessions, you've been able to sit here through moon missions.
+[213] 00:20:12,400 --> 00:20:17,280:  These various launches that we've had, I imagine a lot of people say, "Man, I wish I was
+[214] 00:20:17,280 --> 00:20:18,280:  on that."
+[215] 00:20:18,280 --> 00:20:21,160:  The next one says, "Not me, or do they?"
+[216] 00:20:21,160 --> 00:20:26,160:  Would everybody that's involved in your work like to be on one of those jaunts to the moon?
+[217] 00:20:26,160 --> 00:20:32,239:  Two years ago, I probably would have given my teeth to go right by the fake about it a little
+[218] 00:20:32,239 --> 00:20:33,239:  while.
+[219] 00:20:33,239 --> 00:20:38,520:  Now it's proven that it could be done in before it wasn't.
+[220] 00:20:38,520 --> 00:20:41,520:  You'd rather go on before you're convinced.
+[221] 00:20:41,520 --> 00:20:48,079:  They still sound exciting, though, and aviation, that feels certainly is, and that's growing
+[222] 00:20:48,079 --> 00:20:54,199:  the statistics that you passed on to us earlier about the growth and private aviation and commercial
+[223] 00:20:54,199 --> 00:20:55,199:  aviation.
+[224] 00:20:55,199 --> 00:20:56,199:  It's fantastic.
+[225] 00:20:56,199 --> 00:21:01,839:  The communities, such as ours, right here in Tampa, realizing the necessity of better
+[226] 00:21:01,839 --> 00:21:08,760:  airfields, better aviation facilities, which we're over time here, Bobby.
+[227] 00:21:08,760 --> 00:21:11,540:  I want to go back to one thing that passed through my mind.
+[228] 00:21:11,540 --> 00:21:17,719:  We're talking about these air corridors, and you mentioned the instrument flights.
+[229] 00:21:17,719 --> 00:21:22,599:  In many, many, many times, you come down into a city, especially up in the east, I guess,
+[230] 00:21:22,599 --> 00:21:27,079:  where you've got more bad weather than we do here, where you land by instrument.
+[231] 00:21:27,079 --> 00:21:32,439:  And then you come down through clouds from 10,000 and then break out at 700 feet or something
+[232] 00:21:32,439 --> 00:21:37,439:  like that to those who have never done it or have only done it once or twice.
+[233] 00:21:37,439 --> 00:21:38,439:  It's quite a thrill.
+[234] 00:21:38,439 --> 00:21:40,959:  How safe are we under those conditions?
+[235] 00:21:40,959 --> 00:21:47,880:  I'd like the instrument landing system that we have if you have a full instrument landing
+[236] 00:21:47,880 --> 00:21:53,500:  system, so it isn't that an airport, there's no major in it at all.
+[237] 00:21:53,500 --> 00:21:59,199:  Let this highly perfected and the equipment is very reliable.
+[238] 00:21:59,199 --> 00:22:03,800:  Certainly it's amazing, these boys will come out near the eye right on the thing, see
+[239] 00:22:03,800 --> 00:22:07,719:  the end of the runway down there, a quarter of a mile or half mile away in their perfect
+[240] 00:22:07,719 --> 00:22:08,719:  alignment.
+[241] 00:22:08,719 --> 00:22:15,839:  It's truly amazing and more work's been done constantly to further assure the safety
+[242] 00:22:15,839 --> 00:22:17,839:  of passengers as it must.
+[243] 00:22:17,839 --> 00:22:21,239:  Bobby, thanks to you so much for coming down and being with us on staff breakfast this
+[244] 00:22:21,239 --> 00:22:22,239:  morning.
+[245] 00:22:22,239 --> 00:22:24,839:  It's been a very interesting bringing out these points about flying.
+[246] 00:22:24,839 --> 00:22:27,640:  Let me ask us where is home for you.
+[247] 00:22:27,640 --> 00:22:29,439:  Well home, Presley, is in Fort Worth.
+[248] 00:22:29,439 --> 00:22:31,239:  I was really disappointed.
+[249] 00:22:31,239 --> 00:22:33,439:  Once we're at Texas, we grew up in March from Texas.
+[250] 00:22:33,439 --> 00:22:36,719:  And I was going to ask a being that close though, I guess you drove out here.
+[251] 00:22:36,719 --> 00:22:37,719:  You didn't fly to Texas.
+[252] 00:22:37,719 --> 00:22:38,719:  Good, good, good.
+[253] 00:22:38,719 --> 00:22:39,719:  Good.
+[254] 00:22:39,719 --> 00:22:42,839:  Thank you very much, Bobby Ray Allen, for being with us on staff breakfast this morning.
