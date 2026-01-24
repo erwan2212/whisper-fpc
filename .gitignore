@@ -8,5 +8,4 @@ backup/
 *.exe
 .dll
 *.txt
-*.cmd
 *.srt
