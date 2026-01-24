@@ -4,3 +4,6 @@ get the other versions <a href="https://github.com/ggml-org/whisper.cpp/releases
 <br/>
 get the models <a href="https://huggingface.co/ggerganov/whisper.cpp/tree/main">here</a>.
 <br/>
+<br/>
+ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if your input is not a 16khz mono wav.
+<br/>
