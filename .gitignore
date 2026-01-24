@@ -6,3 +6,5 @@ backup/
 .dll
 *.txt
 *.cmd
+*.srt
+*.zip
