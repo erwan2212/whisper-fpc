@@ -8,8 +8,9 @@
       <Unit0>
         <Filename Value="whisperFP.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="98"/>
-        <CursorPos X="37" Y="82"/>
+        <CursorPos X="39" Y="118"/>
         <UsageCount Value="235"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -17,8 +18,8 @@
         <Filename Value="whisper.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="195"/>
-        <CursorPos X="21" Y="202"/>
+        <TopLine Value="243"/>
+        <CursorPos X="3" Y="268"/>
         <UsageCount Value="235"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -32,10 +33,9 @@
       <Unit3>
         <Filename Value="sndfilefp.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="74"/>
-        <CursorPos X="15" Y="79"/>
+        <CursorPos X="31" Y="102"/>
         <UsageCount Value="235"/>
         <Loaded Value="True"/>
       </Unit3>

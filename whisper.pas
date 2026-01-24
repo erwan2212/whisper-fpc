@@ -265,6 +265,7 @@ end;
 
 function preset_qual:whisper_full_params;
 begin
+
   {
   Avantages
   Texte le plus fidèle

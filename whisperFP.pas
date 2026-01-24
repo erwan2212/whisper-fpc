@@ -115,7 +115,7 @@ begin
 
 
   // Lecture WAV
-  WriteLn('Lecture WAV…');
+  WriteLn('Lecture WAV with libsndfile…');
   try
     ReadWavMono16kv2(WAV_FILE, Samples, nSamples);
   except
