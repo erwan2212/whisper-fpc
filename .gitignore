@@ -2,6 +2,7 @@
 lib/
 backup/
 *.wav
+*.m4a
 *.bin
 *.exe
 .dll
