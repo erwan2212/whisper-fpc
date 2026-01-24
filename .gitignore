@@ -4,3 +4,4 @@ backup/
 *.bin
 *.exe
 .dll
+*.txt
