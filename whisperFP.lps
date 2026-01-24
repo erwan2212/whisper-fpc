@@ -8,20 +8,18 @@
       <Unit0>
         <Filename Value="whisperFP.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="71"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="40" Y="117"/>
         <UsageCount Value="235"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="whisper.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos X="5" Y="136"/>
         <UsageCount Value="235"/>
-        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="audio.pas"/>
@@ -33,134 +31,12 @@
       <Unit3>
         <Filename Value="sndfilefp.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="31" Y="102"/>
         <UsageCount Value="235"/>
-        <Loaded Value="True"/>
       </Unit3>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="76" Column="2" TopLine="61"/>
-      </Position1>
-      <Position2>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="122" Column="46" TopLine="97"/>
-      </Position2>
-      <Position3>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="169" Column="24" TopLine="152"/>
-      </Position3>
-      <Position4>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="98" Column="17" TopLine="81"/>
-      </Position4>
-      <Position5>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="168" Column="27" TopLine="141"/>
-      </Position5>
-      <Position6>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="102" Column="17" TopLine="94"/>
-      </Position6>
-      <Position7>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="168" Column="27" TopLine="151"/>
-      </Position7>
-      <Position8>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="21" Column="17" TopLine="3"/>
-      </Position8>
-      <Position9>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="83" Column="10" TopLine="66"/>
-      </Position9>
-      <Position10>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="122" Column="41" TopLine="101"/>
-      </Position10>
-      <Position11>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="124" TopLine="107"/>
-      </Position11>
-      <Position12>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="126" Column="12" TopLine="107"/>
-      </Position12>
-      <Position13>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="89" Column="52" TopLine="76"/>
-      </Position13>
-      <Position14>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="87" Column="11" TopLine="76"/>
-      </Position14>
-      <Position15>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="16" Column="3"/>
-      </Position15>
-      <Position16>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="143" Column="102" TopLine="127"/>
-      </Position16>
-      <Position17>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="12" Column="37"/>
-      </Position17>
-      <Position18>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="122" Column="11" TopLine="83"/>
-      </Position18>
-      <Position19>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="123" Column="111" TopLine="114"/>
-      </Position19>
-      <Position20>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="102" Column="7" TopLine="83"/>
-      </Position20>
-      <Position21>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="76" Column="20" TopLine="56"/>
-      </Position21>
-      <Position22>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="87" Column="107" TopLine="64"/>
-      </Position22>
-      <Position23>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="125" Column="14" TopLine="60"/>
-      </Position23>
-      <Position24>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="88" Column="7" TopLine="61"/>
-      </Position24>
-      <Position25>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="81" Column="28" TopLine="65"/>
-      </Position25>
-      <Position26>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="344" Column="36" TopLine="338"/>
-      </Position26>
-      <Position27>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="148" Column="33" TopLine="131"/>
-      </Position27>
-      <Position28>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="117" Column="40" TopLine="71"/>
-      </Position28>
-      <Position29>
-        <Filename Value="whisper.pas"/>
-        <Caret Line="136" Column="7" TopLine="119"/>
-      </Position29>
-      <Position30>
-        <Filename Value="whisperFP.pas"/>
-        <Caret Line="117" Column="40" TopLine="71"/>
-      </Position30>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>

@@ -1,6 +1,7 @@
 unit whisper;
 
 {$mode objfpc}{$H+}
+{$PACKRECORDS 8} // Aligne les records comme le compilateur C++ (Win64)
 
 interface
 
@@ -12,15 +13,14 @@ type
   PWhisperState = Pointer; // opaque
 
   // Callback types
-  //whisper_new_segment_callback       = procedure(ctx: PWhisperContext; user_data: Pointer); cdecl;
   whisper_new_segment_callback         = procedure (ctx: PWhisperContext;state: PWhisperState;n_new: Integer;user_data: Pointer); cdecl;
-  whisper_progress_callback          = procedure(ctx: PWhisperContext; user_data: Pointer); cdecl;
+  whisper_progress_callback = function(ctx: PWhisperContext; state: PWhisperState; progress: Integer; user_data: Pointer): Byte; cdecl;
   whisper_encoder_begin_callback     = procedure(ctx: PWhisperContext; user_data: Pointer); cdecl;
   ggml_abort_callback                = function(user_data: Pointer): Byte; cdecl;
   whisper_logits_filter_callback     = procedure(logits: PSingle; n_logits: Integer; user_data: Pointer); cdecl;
 
   // Full params struct corrected
-  whisper_full_params = record
+  whisper_full_params = {packed} record
     strategy: Integer;
     n_threads: Integer;
     n_max_text_ctx: Integer;
@@ -136,6 +136,8 @@ type
     LastEnd: Single;
   end;
 
+  whisper_log_callback = procedure(level: Integer; const text: PChar; user_data: Pointer); cdecl;
+
   // Sampling strategies
   whisper_sampling_strategy = (WHISPER_SAMPLING_GREEDY = 0,WHISPER_SAMPLING_BEAM_SEARCH=1);
 
@@ -149,15 +151,16 @@ function whisper_full_n_segments(ctx: PWhisperContext): Integer; cdecl; external
 function whisper_full_get_segment_text(ctx: PWhisperContext; i: Integer): PChar; cdecl; external 'whisper.dll';
 function whisper_full_get_segment_t0(ctx: PWhisperContext; i: Integer): Int64; cdecl; external 'whisper.dll';
 function whisper_full_get_segment_t1(ctx: PWhisperContext; i: Integer): Int64; cdecl; external 'whisper.dll';
+procedure whisper_log_set(cb: whisper_log_callback; user_data: Pointer); cdecl; external 'whisper.dll';
 
 function whisper_context_default_params: TWhisperContextParams; cdecl; external 'whisper.dll';
 
 function whisper_init_from_file_with_params(path_model: PChar;params: TWhisperContextParams): PWhisperContext; cdecl;  external 'whisper.dll';
 
 //
-//procedure SegmentCallback(ctx: PWhisperContext; user_data: Pointer); cdecl;
+
 procedure SegmentCallback(ctx: PWhisperContext;state: PWhisperState;n_new: Integer;user_data: Pointer); cdecl;
-//function SecondsToSRTFormat(sec: Single): string;
+
 
 function preset_def:whisper_full_params;
 function preset_perf:whisper_full_params;
@@ -189,6 +192,7 @@ var
   t0_sec, t1_sec: Double;
   text: PChar;
 begin
+  //windows.MessageBoxA (0,'callback','whisper',0);
   if n_new <= 0 then Exit;
 
   nSeg := whisper_full_n_segments(ctx);
@@ -211,6 +215,7 @@ begin
 
   text := whisper_full_get_segment_text(ctx, i);
 
+  if IsConsole then
   WriteLn(Format(
     'Segment [%d] (%s --> %s): %s',
     [ i,
@@ -220,7 +225,8 @@ begin
     ]));
 
   {$i-}
-  WriteLn(PSegmentData(user_data)^.SRTFile , Format(
+  if TTextRec(PSegmentData(user_data)^.SRTFile).Mode <>0 then
+    WriteLn(PSegmentData(user_data)^.SRTFile , Format(
     '[%d] %s --> %s: %s',
     [ i,
       SecondsToSRTFormat(t0_sec),
