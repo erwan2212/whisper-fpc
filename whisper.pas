@@ -184,15 +184,24 @@ end;
 //procedure SegmentCallback(ctx: PWhisperContext; user_data: Pointer); cdecl;
 procedure SegmentCallback(ctx: PWhisperContext;state: PWhisperState;n_new: Integer;user_data: Pointer); cdecl;
 var
-  i, nSeg: Integer;
+  i, nSeg, s0: Integer;
   t0_10ms, t1_10ms: Int64;
   t0_sec, t1_sec: Double;
   text: PChar;
 begin
+  if n_new <= 0 then Exit;
+
   nSeg := whisper_full_n_segments(ctx);
   if nSeg = 0 then Exit;
 
-  i := nSeg - 1;
+  //i := nSeg - 1; //sans gestion de n_new
+
+  // Premier index des nouveaux segments
+  s0 := nSeg - n_new;
+  if s0 < 0 then s0 := 0;
+
+  for i := s0 to nSeg - 1 do
+  begin
 
   t0_10ms := whisper_full_get_segment_t0(ctx, i);
   t1_10ms := whisper_full_get_segment_t1(ctx, i);
@@ -219,8 +228,9 @@ begin
       text
     ]));
   {$i+}
+  end;
 
-  inc(PSegmentData(user_data)^.SegmentIndex);
+  inc(PSegmentData(user_data)^.SegmentIndex); //dans le for ou pas?
 
 end;
 
