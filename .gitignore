@@ -9,3 +9,7 @@ backup/
 .dll
 *.txt
 *.srt
+*.bat
+*.sig
+*.crt
+*.pfx
