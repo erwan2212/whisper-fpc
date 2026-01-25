@@ -232,14 +232,14 @@ begin
   if Assigned(PSegmentData(user_data)^.FullText) then
       PSegmentData(user_data)^.FullText.Add(SrtLine);
 
-  {$i-}
+  //{$i-}
   //if TTextRec(PSegmentData(user_data)^.SRTFile).Mode <>0 then
   if PSegmentData(user_data)^.FileOpened =true then
       begin
       {$i-}WriteLn(PSegmentData(user_data)^.SRTFile , SrtLine);{$i-}
       if IOResult <> 0 then PSegmentData(user_data)^.FileOpened := False;
       end;
-  {$i+}
+  //{$i+}
   end;
 
   inc(PSegmentData(user_data)^.SegmentIndex); //dans le for ou pas?

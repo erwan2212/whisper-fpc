@@ -9,18 +9,19 @@
         <Filename Value="whisperFP.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="71"/>
-        <CursorPos X="64" Y="88"/>
+        <TopLine Value="75"/>
+        <CursorPos X="23" Y="97"/>
         <UsageCount Value="235"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="whisper.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="118"/>
-        <CursorPos X="5" Y="136"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="363"/>
+        <CursorPos X="41" Y="237"/>
         <UsageCount Value="235"/>
+        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="audio.pas"/>
@@ -38,7 +39,7 @@
         <UsageCount Value="235"/>
       </Unit3>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
         <Filename Value="whisperFP.pas"/>
         <Caret Line="117" Column="40"/>
@@ -51,6 +52,14 @@
         <Filename Value="whisperFP.pas"/>
         <Caret Line="9" TopLine="2"/>
       </Position3>
+      <Position4>
+        <Filename Value="whisperFP.pas"/>
+        <Caret Line="110" Column="45" TopLine="92"/>
+      </Position4>
+      <Position5>
+        <Filename Value="whisperFP.pas"/>
+        <Caret Line="107" Column="50" TopLine="86"/>
+      </Position5>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -93,18 +93,20 @@ begin
       Halt(1);
     end;
 
- params:=preset_qual;
-
+ params:=preset_mid;;
  params.language :='en';
+
+ if paramstr(3)<>'' then params.language :=pchar(paramstr(3));
 
  segData.LastEnd := 0.0;
  segData.SegmentIndex :=0;;
 
- {$i-}
  assignfile(segData.SRTFile ,WAV_FILE+'.srt');
+ {$i-}
  Rewrite(segData.SRTFile);
  {$i+}
- if IOResult <> 0 then Writeln('Erreur E/S : ', IOResult); // gestion de l’erreur : message, fallback, abort, etc.
+ segData.FileOpened:=IOResult=0;
+ if segData.FileOpened =false then Writeln('Erreur E/S : ', IOResult); // gestion de l’erreur : message, fallback, abort, etc.
 
     // Callback pour afficher segments + timestamps
     params.new_segment_callback := @SegmentCallback;
