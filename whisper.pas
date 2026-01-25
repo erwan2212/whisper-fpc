@@ -145,7 +145,7 @@ type
 
 function whisper_init_from_file(path_model: PChar): PWhisperContext; cdecl; external 'whisper.dll';
 procedure whisper_free(ctx: PWhisperContext); cdecl; external 'whisper.dll';
-function whisper_full_default_params(strategy: Integer): whisper_full_params; cdecl; external 'whisper.dll';
+//function whisper_full_default_params(strategy: Integer): whisper_full_params; cdecl; external 'whisper.dll'; //instable
 function whisper_full(ctx: PWhisperContext; const params: whisper_full_params; samples: PSingle; n_samples: Integer): Integer; cdecl; external 'whisper.dll';
 function whisper_full_n_segments(ctx: PWhisperContext): Integer; cdecl; external 'whisper.dll';
 function whisper_full_get_segment_text(ctx: PWhisperContext; i: Integer): PChar; cdecl; external 'whisper.dll';
@@ -345,7 +345,6 @@ begin
 
   //Result.print_progress := 1;
   //Result.print_timestamps := 1;
-
 end;
 
 function preset_perf:whisper_full_params;
@@ -366,7 +365,7 @@ begin
   FillChar(Result, SizeOf(Result), 0);
 
   // 2. On initialise manuellement les valeurs par défaut standards de Whisper
-
+  result.strategy := longint(WHISPER_SAMPLING_GREEDY);
   result.temperature := 0.0;
   result.temperature_inc := 0.0;
 
@@ -385,7 +384,12 @@ end;
 
 function preset_def:whisper_full_params;
 begin
-  result := whisper_full_default_params(longint(WHISPER_SAMPLING_GREEDY)); //
+  // 1. On remplit TOUT de zéros d'abord (très important pour les pointeurs non utilisés)
+  //result := whisper_full_default_params(longint(WHISPER_SAMPLING_GREEDY)); //
+  FillChar(Result, SizeOf(Result), 0);
+
+  // 2. On initialise manuellement les valeurs par défaut standards de Whisper
+  result.strategy := longint(WHISPER_SAMPLING_GREEDY);
   result.no_timestamps := 0;
   //params.print_timestamps := 1;        // si tu veux un log de timestamp ??
   result.token_timestamps := 0;        // niveau segment Un segment = une phrase / portion cohérente
