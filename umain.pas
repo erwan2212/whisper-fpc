@@ -1,6 +1,7 @@
 unit umain;
 
 {$mode objfpc}{$H+}
+{$R meta.res}
 
 interface
 
@@ -24,7 +25,9 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
     txtaudio: TEdit;
+    txtprompt: TEdit;
     txtmodel: TEdit;
     Label1: TLabel;
     Label2: TLabel;
@@ -33,7 +36,6 @@ type
     ProgressBar1: TProgressBar;
     Timer1: TTimer;
     txtthreads: TEdit;
-    procedure Button1Click(Sender: TObject);
     procedure btntranscribeClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
@@ -168,19 +170,9 @@ procedure Tfrmmain.WhisperFinished(Sender: Tobject);
     end;
   end;
 
-
-procedure Tfrmmain.Button1Click(Sender: TObject);
+{
+procedure main_nothread;
 begin
-
-  {
-  WriteLn('Initialisation Whisper (GPU ou CPU)…');
-  ctx := whisper_init_from_file(PChar(MODEL_FILE));
-  if ctx = nil then
-  begin
-    WriteLn('Erreur: impossible de charger le modèle.');
-    Halt(1);
-  end;
-  }
 
   cparams := whisper_context_default_params;
   cparams.use_gpu := true;
@@ -210,7 +202,7 @@ begin
    //params.progress_callback_user_data := nil;
 
    // Lecture WAV
-   memo1.lines.add('Lecture WAV with libsndfile…');
+   memo1.lines.add('Lecture WAV…');
    try
        ReadWavMono16kv2(WAV_FILE, Samples, nSamples);
    except
@@ -237,6 +229,7 @@ begin
    {$i-}closefile(segData.SRTFile );{$i+}
 
 end;
+}
 
 procedure Tfrmmain.btntranscribeClick(Sender: TObject);
 var
@@ -251,23 +244,11 @@ begin
        Exit;
      end;
 
-
-   //if timer1.Enabled=false then timer1.Enabled :=true;
-
-  {
-  if chklog.Enabled then
-  begin
-    WhisperLogBuffer := TStringList.Create;
-    // On active le callback de log
-    whisper_log_set(@MyWhisperLogCallback, nil);
-  end;
-  }
-
    memo1.Lines.Clear ;
    WAV_FILE:=txtaudio.Text ;
    MODEL_FILE:=txtmodel.Text ;
    // Lecture WAV
-   memo1.lines.add('Lecture WAV with libsndfile…');
+   memo1.lines.add('Lecture WAV…');
    try
        ReadWavMono16kv2(WAV_FILE, Samples, nSamples);
    except
@@ -280,15 +261,12 @@ begin
    memo1.lines.add('Nombre d’échantillons : '+ inttostr(nSamples));
    //if nSamples > 0 then memo1.lines.add('Premier échantillon : '+ floattostr(Samples[0]));
 
-  {
+
   case cmbpreset.ItemIndex of
   0:LocalParams := preset_perf;
   1:LocalParams := preset_mid;
   2:LocalParams := preset_qual;
   end;
-  }
-
-  LocalParams := preset_mid;
   LocalParams.language := pchar(cmblang.Text) ; //'auto'
   LocalParams.n_threads:=strtoint(txtthreads.Text );
 
@@ -306,7 +284,8 @@ begin
     @samples[0],
     nSamples,
     LocalParams,
-    'output.srt',chkgpu.Checked ,0
+    'output.srt',chkgpu.Checked ,0,
+    txtprompt.Text
   );
 
   btntranscribe.Caption := 'Stop';

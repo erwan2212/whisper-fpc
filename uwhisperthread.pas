@@ -16,6 +16,8 @@ type
   TWhisperThread = class(TThread)
   private
     // --- Champs ---
+    FPromptAnchor: string;
+    FLangAnchor: string;
     FModelPath: string;
     FSRTFile: string;
     FSamples: PSingle;
@@ -52,7 +54,8 @@ type
       const AParams: whisper_full_params;
       const ASRTFile: string;
       const AUseGPU: Boolean=true;
-      const AGPUDevice: Integer=0
+      const AGPUDevice: Integer=0;
+      const Aprompt:string=''
     );
     destructor Destroy; override;
 
@@ -108,7 +111,8 @@ constructor TWhisperThread.Create(
   const AParams: whisper_full_params;
   const ASRTFile: string;
   const AUseGPU: Boolean=true;
-  const AGPUDevice: Integer=0
+  const AGPUDevice: Integer=0;
+  const Aprompt:string=''
 );
 begin
   inherited Create(True); // suspended
@@ -119,8 +123,21 @@ begin
   FSampleCount := ASampleCount;
   FParams      := AParams;
 
+  // --- ANCRAGE DE LA LANGUE ---
+    FLangAnchor := string(AParams.language);
+    if FLangAnchor = '' then FLangAnchor := 'auto';
+    FParams.language := PChar(FLangAnchor);
+
+    // --- ANCRAGE DU PROMPT ---
+    FPromptAnchor := Aprompt;
+    if FPromptAnchor <> '' then
+      FParams.initial_prompt := PChar(FPromptAnchor)
+    else
+      FParams.initial_prompt := nil;
+
   FSRTfile:=ASRTFile;
 
+  FillChar(FSegData, SizeOf(FSegData), 0);
   FSegData.FullText := TStringList.Create;
   FSegData.FileOpened := False;
 
@@ -133,7 +150,8 @@ begin
   FParams.progress_callback_user_data := Self; // passe le thread comme user_data
 
   // --- context params (GPU etc.) ---
-  FCtxParams := whisper_context_default_params;
+  //FCtxParams := whisper_context_default_params;
+  FillChar(FCtxParams, SizeOf(FCtxParams), 0);
   FCtxParams.use_gpu := AUseGPU;
   FCtxParams.gpu_device := AGPUDevice;
   FCtxParams.flash_attn := True;

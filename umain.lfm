@@ -1,11 +1,11 @@
 object frmmain: Tfrmmain
   Left = 991
-  Height = 429
+  Height = 489
   Top = 173
   Width = 841
   BorderStyle = bsSizeToolWin
-  Caption = 'WhisperFP'
-  ClientHeight = 429
+  Caption = 'WhisperFP 0.1'
+  ClientHeight = 489
   ClientWidth = 841
   DesignTimePPI = 120
   OnCreate = FormCreate
@@ -17,31 +17,30 @@ object frmmain: Tfrmmain
     Top = 320
     Width = 94
     Caption = 'Button1'
-    OnClick = Button1Click
     TabOrder = 0
     Visible = False
   end
   object Memo1: TMemo
-    Left = 24
-    Height = 256
-    Top = 128
+    Left = 23
+    Height = 272
+    Top = 176
     Width = 798
     ScrollBars = ssVertical
     TabOrder = 1
   end
   object btntranscribe: TButton
-    Left = 728
+    Left = 680
     Height = 31
-    Top = 88
+    Top = 128
     Width = 94
     Caption = 'Transcribe'
     OnClick = btntranscribeClick
     TabOrder = 2
   end
   object ProgressBar1: TProgressBar
-    Left = 25
+    Left = 24
     Height = 25
-    Top = 392
+    Top = 456
     Width = 798
     TabOrder = 3
   end
@@ -96,9 +95,9 @@ object frmmain: Tfrmmain
     TabOrder = 7
   end
   object chklog: TCheckBox
-    Left = 656
+    Left = 624
     Height = 24
-    Top = 88
+    Top = 128
     Width = 49
     Caption = 'Log'
     OnChange = chklogChange
@@ -107,7 +106,7 @@ object frmmain: Tfrmmain
   object cmblang: TComboBox
     Left = 80
     Height = 28
-    Top = 88
+    Top = 128
     Width = 125
     ItemHeight = 20
     ItemIndex = 0
@@ -122,7 +121,7 @@ object frmmain: Tfrmmain
   object Label3: TLabel
     Left = 27
     Height = 20
-    Top = 88
+    Top = 128
     Width = 35
     Caption = 'Lang.'
     ParentColor = False
@@ -130,7 +129,7 @@ object frmmain: Tfrmmain
   object Label4: TLabel
     Left = 224
     Height = 20
-    Top = 88
+    Top = 128
     Width = 40
     Caption = 'Preset'
     ParentColor = False
@@ -138,7 +137,7 @@ object frmmain: Tfrmmain
   object cmbpreset: TComboBox
     Left = 280
     Height = 28
-    Top = 88
+    Top = 128
     Width = 125
     ItemHeight = 20
     ItemIndex = 1
@@ -153,7 +152,7 @@ object frmmain: Tfrmmain
   object txtthreads: TEdit
     Left = 496
     Height = 28
-    Top = 88
+    Top = 128
     Width = 48
     TabOrder = 11
     Text = '4'
@@ -161,15 +160,15 @@ object frmmain: Tfrmmain
   object Label5: TLabel
     Left = 432
     Height = 20
-    Top = 88
+    Top = 128
     Width = 52
     Caption = 'Threads'
     ParentColor = False
   end
   object chkgpu: TCheckBox
-    Left = 568
+    Left = 560
     Height = 24
-    Top = 88
+    Top = 128
     Width = 52
     Caption = 'GPU'
     Checked = True
@@ -177,13 +176,28 @@ object frmmain: Tfrmmain
     State = cbChecked
     TabOrder = 12
   end
+  object txtprompt: TEdit
+    Left = 80
+    Height = 28
+    Top = 88
+    Width = 697
+    TabOrder = 13
+  end
+  object Label6: TLabel
+    Left = 24
+    Height = 20
+    Top = 88
+    Width = 49
+    Caption = 'Prompt'
+    ParentColor = False
+  end
   object Timer1: TTimer
     OnTimer = Timer1Timer
     left = 8
-    top = 112
+    top = 232
   end
   object OpenDialog1: TOpenDialog
-    left = 10
-    top = 168
+    left = 8
+    top = 192
   end
 end
