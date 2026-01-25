@@ -96,20 +96,66 @@ object frmmain: Tfrmmain
     TabOrder = 7
   end
   object chklog: TCheckBox
-    Left = 424
+    Left = 568
     Height = 24
     Top = 88
     Width = 49
     Caption = 'Log'
     TabOrder = 8
   end
+  object cmblang: TComboBox
+    Left = 80
+    Height = 28
+    Top = 88
+    Width = 125
+    ItemHeight = 20
+    ItemIndex = 0
+    Items.Strings = (
+      'auto'
+      'en'
+      'fr'
+    )
+    TabOrder = 9
+    Text = 'auto'
+  end
+  object Label3: TLabel
+    Left = 27
+    Height = 20
+    Top = 88
+    Width = 35
+    Caption = 'Lang.'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 232
+    Height = 20
+    Top = 88
+    Width = 40
+    Caption = 'Preset'
+    ParentColor = False
+  end
+  object cmbpreset: TComboBox
+    Left = 288
+    Height = 28
+    Top = 88
+    Width = 125
+    ItemHeight = 20
+    ItemIndex = 1
+    Items.Strings = (
+      'perf.'
+      'medium'
+      'quality'
+    )
+    TabOrder = 10
+    Text = 'medium'
+  end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    left = 10
+    left = 8
     top = 112
   end
   object OpenDialog1: TOpenDialog
-    left = 104
-    top = 80
+    left = 10
+    top = 168
   end
 end

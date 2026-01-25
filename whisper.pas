@@ -146,7 +146,7 @@ type
 function whisper_init_from_file(path_model: PChar): PWhisperContext; cdecl; external 'whisper.dll';
 procedure whisper_free(ctx: PWhisperContext); cdecl; external 'whisper.dll';
 function whisper_full_default_params(strategy: Integer): whisper_full_params; cdecl; external 'whisper.dll';
-function whisper_full(ctx: PWhisperContext; params: whisper_full_params; samples: PSingle; n_samples: Integer): Integer; cdecl; external 'whisper.dll';
+function whisper_full(ctx: PWhisperContext; const params: whisper_full_params; samples: PSingle; n_samples: Integer): Integer; cdecl; external 'whisper.dll';
 function whisper_full_n_segments(ctx: PWhisperContext): Integer; cdecl; external 'whisper.dll';
 function whisper_full_get_segment_text(ctx: PWhisperContext; i: Integer): PChar; cdecl; external 'whisper.dll';
 function whisper_full_get_segment_t0(ctx: PWhisperContext; i: Integer): Int64; cdecl; external 'whisper.dll';
@@ -291,7 +291,11 @@ begin
   Consommation CPU élevée
   }
 
-    result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  // 1. On remplit TOUT de zéros d'abord (très important pour les pointeurs non utilisés)
+  //result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  FillChar(Result, SizeOf(Result), 0);
+
+  // 2. On initialise manuellement les valeurs par défaut standards de Whisper
     result.strategy := longint(WHISPER_SAMPLING_BEAM_SEARCH);
     result.beam_search_beam_size := 5;
 
@@ -319,7 +323,11 @@ begin
   Temps de calcul maîtrisé
   }
 
-  result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  // 1. On remplit TOUT de zéros d'abord (très important pour les pointeurs non utilisés)
+  //result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  FillChar(Result, SizeOf(Result), 0);
+
+  // 2. On initialise manuellement les valeurs par défaut standards de Whisper
   result.strategy := longint(WHISPER_SAMPLING_BEAM_SEARCH);
   result.beam_search_beam_size := 3;
 
@@ -335,6 +343,8 @@ begin
   result.no_timestamps := 0;
   result.token_timestamps := 0;
 
+  //Result.print_progress := 1;
+  //Result.print_timestamps := 1;
 
 end;
 
@@ -351,7 +361,11 @@ begin
   Moins bon pour voix rapides / bruit
   }
 
-  result := whisper_full_default_params(longint(WHISPER_SAMPLING_BEAM_SEARCH)); //
+  // 1. On remplit TOUT de zéros d'abord (très important pour les pointeurs non utilisés)
+  //result := whisper_full_default_params(longint(WHISPER_SAMPLING_GREEDY)); //
+  FillChar(Result, SizeOf(Result), 0);
+
+  // 2. On initialise manuellement les valeurs par défaut standards de Whisper
 
   result.temperature := 0.0;
   result.temperature_inc := 0.0;

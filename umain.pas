@@ -18,6 +18,10 @@ type
     Button3: TButton;
     Button4: TButton;
     chklog: TCheckBox;
+    cmblang: TComboBox;
+    cmbpreset: TComboBox;
+    Label3: TLabel;
+    Label4: TLabel;
     txtaudio: TEdit;
     txtmodel: TEdit;
     Label1: TLabel;
@@ -180,7 +184,7 @@ var
   LocalParams: whisper_full_params;
 begin
    //Timer1.Enabled := False; // Sécurité immédiate
-
+   if timer1.Enabled=false then timer1.Enabled :=true;
 
 
   {
@@ -209,11 +213,25 @@ begin
    memo1.lines.add('Nombre d’échantillons : '+ inttostr(nSamples));
    //if nSamples > 0 then memo1.lines.add('Premier échantillon : '+ floattostr(Samples[0]));
 
+  {
+  case cmbpreset.ItemIndex of
+  0:LocalParams := preset_perf;
+  1:LocalParams := preset_mid;
+  2:LocalParams := preset_qual;
+  end;
+  }
+
   LocalParams := preset_mid;
-  LocalParams.language := 'en';
+  LocalParams.language := pchar(cmblang.Text) ; //'auto'
+  LocalParams.n_threads:=4;
+
+
+  Memo1.Lines.Add ('preset:'+inttostr(cmbpreset.ItemIndex));
+  Memo1.Lines.Add ('language:'+LocalParams.language);
+  Memo1.Lines.Add ('threads:'+inttostr(LocalParams.n_threads));
 
   WhisperThread:=TWhisperThread.Create(
-    'ggml-base.bin',
+    MODEL_FILE ,
     @samples[0],
     nSamples,
     LocalParams,
@@ -260,6 +278,7 @@ begin
   //
   txtmodel.Text :='ggml-small.bin';
   txtaudio.Text :='output.wav';
+
   //
   WhisperLogBuffer := TStringList.Create;
   // On active le callback de log
