@@ -18,6 +18,7 @@ type
     Button3: TButton;
     Button4: TButton;
     chklog: TCheckBox;
+    chkgpu: TCheckBox;
     cmblang: TComboBox;
     cmbpreset: TComboBox;
     Label3: TLabel;
@@ -36,6 +37,7 @@ type
     procedure btntranscribeClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure chklogChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -90,6 +92,7 @@ begin
 
 end;
 
+{
 procedure Tfrmmain.WhisperFinished(Sender: Tobject);
 begin
   try
@@ -106,9 +109,34 @@ begin
     except
       on E: Exception do ; // On absorbe les éventuels derniers râles de la DLL
     end;
+end;
+}
 
+procedure Tfrmmain.WhisperFinished(Sender: Tobject);
+begin
+  // Cette procédure est appelée par le Timer quand LThread.Finished est vrai
+  try
+    if Assigned(WhisperThread) then
+    begin
+      // Si le thread a été interrompu par l'utilisateur
+      if WhisperThread.IsCancelled  then
+        Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
+      else
+      begin
+        Memo1.Lines.Add('Transcription terminée !');
+        Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
+        ProgressBar1.Position := 100;
+      end;
 
-
+      WhisperThread.WaitFor;
+      FreeAndNil(WhisperThread);
+    end;
+  finally
+    // On remet TOUJOURS le bouton dans l'état initial
+    btntranscribe.Caption := 'Transcribe';
+    btntranscribe.Enabled := True;
+    Timer1.Enabled := False;
+  end;
 end;
 
 
@@ -185,9 +213,17 @@ procedure Tfrmmain.btntranscribeClick(Sender: TObject);
 var
   LocalParams: whisper_full_params;
 begin
-   //Timer1.Enabled := False; // Sécurité immédiate
-   if timer1.Enabled=false then timer1.Enabled :=true;
+   // --- LOGIQUE D'ARRÊT (STOP) ---
+     if Assigned(WhisperThread) then
+     begin
+       btntranscribe.Enabled := False; // Désactive pour éviter les clics multiples pendant l'arrêt
+       Memo1.Lines.Add('Demande d''arrêt en cours...');
+       WhisperThread.Terminate; // Signal au thread qu'il doit s'arrêter
+       Exit;
+     end;
 
+
+   //if timer1.Enabled=false then timer1.Enabled :=true;
 
   {
   if chklog.Enabled then
@@ -232,21 +268,20 @@ begin
   Memo1.Lines.Add ('language:'+LocalParams.language);
   Memo1.Lines.Add ('threads:'+inttostr(LocalParams.n_threads));
 
+  //a revoir : initial_prompt
+
   WhisperThread:=TWhisperThread.Create(
     MODEL_FILE ,
     @samples[0],
     nSamples,
     LocalParams,
-    'output.srt'
+    'output.srt',chkgpu.Checked ,0
   );
 
-  // assignation des callbacks
-  //WhisperThread.OnProgress := @WhisperProgress;
-  //WhisperThread.OnFinished := @WhisperFinished;
-  //WhisperThread.OnTerminate :=@WhisperFinished; ;
-
+  btntranscribe.Caption := 'Stop';
+  Timer1.Enabled := True;
   start:=gettickcount64;
-  //Timer1.Enabled := True;
+
   WhisperThread.Start ;
 
 end;
@@ -265,6 +300,11 @@ begin
   OpenDialog1.Filter :='audio|*.wav';;
   OpenDialog1.Execute ;
   txtaudio.Text :=OpenDialog1.FileName ;
+end;
+
+procedure Tfrmmain.chklogChange(Sender: TObject);
+begin
+
 end;
 
 procedure Tfrmmain.FormCreate(Sender: TObject);

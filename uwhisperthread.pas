@@ -29,13 +29,16 @@ type
     //
     FProgressPercent: Integer;
     //procedure UpdateProgress;
-
+    function GetIsTerminated: Boolean;
   protected
     procedure Execute; override;
 
     procedure DoFinished;
 
   public
+    // On expose Terminated qui est normalement protected
+    property IsCancelled: Boolean read GetIsTerminated;
+    //
     property ProgressPercent: Integer read FProgressPercent;
 
     constructor Create(
@@ -43,7 +46,9 @@ type
       ASamples: PSingle;
       ASampleCount: Integer;
       const AParams: whisper_full_params;
-      const ASRTFile: string
+      const ASRTFile: string;
+      const AUseGPU: Boolean=true;
+      const AGPUDevice: Integer=0
     );
     destructor Destroy; override;
 
@@ -55,6 +60,20 @@ type
 
 
 implementation
+
+function TWhisperThread.GetIsTerminated: Boolean;
+begin
+  // Ici, à l'intérieur de l'implémentation, Terminated est parfaitement visible
+  Result := Terminated;
+end;
+
+function WhisperAbortCallback(user_data: Pointer): Byte; cdecl;
+begin
+  if Assigned(user_data) and TWhisperThread(user_data).IsCancelled then
+    Result := 1
+  else
+    Result := 0;
+end;
 
 function ProgressCallback(ctx: PWhisperContext; state: PWhisperState; progress: Integer; user_data: Pointer): Byte; cdecl;
 var
@@ -83,7 +102,9 @@ constructor TWhisperThread.Create(
   ASamples: PSingle;
   ASampleCount: Integer;
   const AParams: whisper_full_params;
-  const ASRTFile: string
+  const ASRTFile: string;
+  const AUseGPU: Boolean=true;
+  const AGPUDevice: Integer=0
 );
 begin
   inherited Create(True); // suspended
@@ -106,8 +127,8 @@ begin
 
   // --- context params (GPU etc.) ---
   FCtxParams := whisper_context_default_params;
-  FCtxParams.use_gpu := True;
-  FCtxParams.gpu_device := 0;
+  FCtxParams.use_gpu := AUseGPU;
+  FCtxParams.gpu_device := AGPUDevice;
   FCtxParams.flash_attn := True;
 
 //  Start;
@@ -131,6 +152,9 @@ begin
     AssignFile(FSegData.SRTFile, FSRTFile);
     Rewrite(FSegData.SRTFile);
     FSegData.SegmentIndex := 0;
+
+    FParams.abort_callback := @WhisperAbortCallback;
+    FParams.abort_callback_user_data := Self; // On passe l'instance du thread
 
 
     if whisper_full(ctx, FParams, FSamples, FSampleCount)<> 0 then raise Exception.Create('whisper_full: echec');
