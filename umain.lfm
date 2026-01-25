@@ -1,11 +1,11 @@
 object frmmain: Tfrmmain
   Left = 991
-  Height = 333
+  Height = 429
   Top = 173
   Width = 762
   BorderStyle = bsSizeToolWin
   Caption = 'WhisperFP'
-  ClientHeight = 333
+  ClientHeight = 429
   ClientWidth = 762
   DesignTimePPI = 120
   OnCreate = FormCreate
@@ -23,7 +23,7 @@ object frmmain: Tfrmmain
   end
   object Memo1: TMemo
     Left = 24
-    Height = 160
+    Height = 256
     Top = 128
     Width = 723
     ScrollBars = ssVertical
@@ -39,9 +39,9 @@ object frmmain: Tfrmmain
     TabOrder = 2
   end
   object ProgressBar1: TProgressBar
-    Left = 27
+    Left = 25
     Height = 25
-    Top = 296
+    Top = 392
     Width = 720
     TabOrder = 3
   end
@@ -96,7 +96,7 @@ object frmmain: Tfrmmain
     TabOrder = 7
   end
   object chklog: TCheckBox
-    Left = 568
+    Left = 584
     Height = 24
     Top = 88
     Width = 49
@@ -148,6 +148,22 @@ object frmmain: Tfrmmain
     )
     TabOrder = 10
     Text = 'medium'
+  end
+  object txtthreads: TEdit
+    Left = 512
+    Height = 28
+    Top = 88
+    Width = 48
+    TabOrder = 11
+    Text = '4'
+  end
+  object Label5: TLabel
+    Left = 448
+    Height = 20
+    Top = 88
+    Width = 52
+    Caption = 'Threads'
+    ParentColor = False
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer

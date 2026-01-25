@@ -22,6 +22,7 @@ type
     cmbpreset: TComboBox;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     txtaudio: TEdit;
     txtmodel: TEdit;
     Label1: TLabel;
@@ -30,6 +31,7 @@ type
     OpenDialog1: TOpenDialog;
     ProgressBar1: TProgressBar;
     Timer1: TTimer;
+    txtthreads: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure btntranscribeClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -223,7 +225,7 @@ begin
 
   LocalParams := preset_mid;
   LocalParams.language := pchar(cmblang.Text) ; //'auto'
-  LocalParams.n_threads:=4;
+  LocalParams.n_threads:=strtoint(txtthreads.Text );
 
 
   Memo1.Lines.Add ('preset:'+inttostr(cmbpreset.ItemIndex));
