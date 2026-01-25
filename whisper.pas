@@ -405,4 +405,3 @@ end;
 //SetEnvironmentVariable('GGML_VULKAN', '0')
 
 end.
-
