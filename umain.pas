@@ -120,6 +120,7 @@ procedure Tfrmmain.WhisperFinished(Sender: Tobject);
     try
       if Assigned(WhisperThread) then
       begin
+
         // 1. Gestion des messages d'état
         if WhisperThread.IsCancelled then
           Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
@@ -132,7 +133,7 @@ procedure Tfrmmain.WhisperFinished(Sender: Tobject);
 
         // 2. LOGIQUE DE SECOURS (FALLBACK)
         // Si le fichier n'a pas pu être ouvert sur le disque mais qu'on a du texte en RAM
-        if not WhisperThread.FileWasOpened then
+        if (not WhisperThread.IsCancelled) and (not WhisperThread.FileWasOpened) then
         begin
           if (WhisperThread.FullTextResult <> nil) and (WhisperThread.FullTextResult.Count > 0) then
           begin

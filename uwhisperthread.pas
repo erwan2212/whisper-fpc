@@ -182,7 +182,7 @@ begin
       if FSegData.FileOpened then
     begin
       {$I-}CloseFile(FSegData.SRTFile);{$I+}
-      FSegData.FileOpened := False; // Sécurité pour éviter un double close
+      //FSegData.FileOpened := False; // Sécurité pour éviter un double close
     end;
     end;//finally
 end;
@@ -197,8 +197,12 @@ end;
 
 destructor TWhisperThread.Destroy;
 begin
-  // Ferme le fichier SRT si ouvert
-  {$I-}if TTextRec(FSegData.SRTFile).Mode <> 0 then CloseFile(FSegData.SRTFile);{$I+}
+  // On ne ferme que si Execute n'a pas pu le faire proprement
+  if FSegData.FileOpened then
+  begin
+    {$I-}CloseFile(FSegData.SRTFile);{$I+}
+    FSegData.FileOpened := False;
+  end;
   // On s'assure que les pointeurs de callbacks sont mis à nil pour la DLL
     FParams.new_segment_callback := nil;
     FParams.progress_callback := nil;
