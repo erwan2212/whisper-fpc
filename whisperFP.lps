@@ -9,9 +9,10 @@
         <Filename Value="whisperFP.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="40" Y="117"/>
+        <TopLine Value="71"/>
+        <CursorPos X="64" Y="88"/>
         <UsageCount Value="235"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="whisper.pas"/>
@@ -37,6 +38,19 @@
         <UsageCount Value="235"/>
       </Unit3>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="whisperFP.pas"/>
+        <Caret Line="117" Column="40"/>
+      </Position1>
+      <Position2>
+        <Filename Value="whisperFP.pas"/>
+        <Caret Line="79" Column="51" TopLine="55"/>
+      </Position2>
+      <Position3>
+        <Filename Value="whisperFP.pas"/>
+        <Caret Line="9" TopLine="2"/>
+      </Position3>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>

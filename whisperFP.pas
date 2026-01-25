@@ -6,9 +6,7 @@ uses
   Math, classes,windows,SysUtils, whisper, sndfilefp;
 
 
-const
-  WAV_FILE = 'test.wav';
-  MODEL_FILE = 'ggml-small.bin';
+
 
 
 var
@@ -20,6 +18,9 @@ var
   segData: TSegmentData;
   start:int64;
   SRTFile: Text;
+  //
+  WAV_FILE:string = 'output.wav';
+  MODEL_FILE:string = 'ggml-small.bin';
 
 
 
@@ -76,13 +77,16 @@ begin
   end;
   }
 
+  if paramstr(1)<>'' then MODEL_FILE :=paramstr(1);
+  if paramstr(2)<>'' then WAV_FILE :=paramstr(2);
+
   cparams := whisper_context_default_params;
 
     cparams.use_gpu := true;
     cparams.gpu_device := 0; // GPU 0
     cparams.flash_attn := True; // si supporté
 
-    ctx := whisper_init_from_file_with_params(MODEL_FILE,cparams);
+    ctx := whisper_init_from_file_with_params(pchar(MODEL_FILE),cparams);
     if ctx = nil then
     begin
       WriteLn('Erreur: impossible de charger le modèle.');
