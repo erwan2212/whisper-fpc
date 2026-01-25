@@ -36,6 +36,10 @@ type
     procedure DoFinished;
 
   public
+    // Ajoute cette propriété pour que le Form puisse lire le texte
+    property FullTextResult: TStringList read FSegData.FullText;
+    // Ajoute celle-ci pour savoir si le fichier a été écrit ou non
+    property FileWasOpened: Boolean read FSegData.FileOpened;
     // On expose Terminated qui est normalement protected
     property IsCancelled: Boolean read GetIsTerminated;
     //
@@ -117,6 +121,9 @@ begin
 
   FSRTfile:=ASRTFile;
 
+  FSegData.FullText := TStringList.Create;
+  FSegData.FileOpened := False;
+
   // --- callbacks ---
   FParams.new_segment_callback := @SegmentCallback;
   FParams.new_segment_callback_user_data := @FSegData;
@@ -150,7 +157,10 @@ begin
 
     // --- SRT ---
     AssignFile(FSegData.SRTFile, FSRTFile);
+    {$i-}
     Rewrite(FSegData.SRTFile);
+    fsegData.FileOpened := (IOResult = 0); // Si 0, le fichier est prêt !
+    {$i+}
     FSegData.SegmentIndex := 0;
 
     FParams.abort_callback := @WhisperAbortCallback;
@@ -169,8 +179,12 @@ begin
       if ctx <> nil then
         whisper_free(ctx);
 
-      {$I-} CloseFile(FSegData.SRTFile); {$I+}
+      if FSegData.FileOpened then
+    begin
+      {$I-}CloseFile(FSegData.SRTFile);{$I+}
+      FSegData.FileOpened := False; // Sécurité pour éviter un double close
     end;
+    end;//finally
 end;
 
 
@@ -188,6 +202,10 @@ begin
   // On s'assure que les pointeurs de callbacks sont mis à nil pour la DLL
     FParams.new_segment_callback := nil;
     FParams.progress_callback := nil;
+    FParams.abort_callback := nil;
+
+    if Assigned(FSegData.FullText) then
+    FSegData.FullText.Free;
 
     inherited Destroy;
 

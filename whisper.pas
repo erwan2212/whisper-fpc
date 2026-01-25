@@ -6,7 +6,7 @@ unit whisper;
 interface
 
 uses
-  SysUtils;
+  SysUtils,classes;
 
 type
   PWhisperContext = Pointer;
@@ -134,6 +134,8 @@ type
     SRTFile: Text;         // fichier SRT ouvert
     SegmentIndex: Integer; // compteur de segments
     LastEnd: Single;
+    FileOpened: Boolean;
+    FullText: TStringList;
   end;
 
   whisper_log_callback = procedure(level: Integer; const text: PChar; user_data: Pointer); cdecl;
@@ -191,6 +193,7 @@ var
   t0_10ms, t1_10ms: Int64;
   t0_sec, t1_sec: Double;
   text: PChar;
+  srtline:string;
 begin
   //windows.MessageBoxA (0,'callback','whisper',0);
   if n_new <= 0 then Exit;
@@ -224,15 +227,18 @@ begin
       text
     ]));
 
+  srtline:=Format('[%d] %s --> %s: %s',[i, SecondsToSRTFormat(t0_sec), SecondsToSRTFormat(t1_sec), text]);
+
+  if Assigned(PSegmentData(user_data)^.FullText) then
+      PSegmentData(user_data)^.FullText.Add(SrtLine);
+
   {$i-}
-  if TTextRec(PSegmentData(user_data)^.SRTFile).Mode <>0 then
-    WriteLn(PSegmentData(user_data)^.SRTFile , Format(
-    '[%d] %s --> %s: %s',
-    [ i,
-      SecondsToSRTFormat(t0_sec),
-      SecondsToSRTFormat(t1_sec),
-      text
-    ]));
+  //if TTextRec(PSegmentData(user_data)^.SRTFile).Mode <>0 then
+  if PSegmentData(user_data)^.FileOpened =true then
+      begin
+      {$i-}WriteLn(PSegmentData(user_data)^.SRTFile , SrtLine);{$i-}
+      if IOResult <> 0 then PSegmentData(user_data)^.FileOpened := False;
+      end;
   {$i+}
   end;
 

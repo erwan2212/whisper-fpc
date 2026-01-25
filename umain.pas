@@ -113,31 +113,59 @@ end;
 }
 
 procedure Tfrmmain.WhisperFinished(Sender: Tobject);
-begin
-  // Cette procédure est appelée par le Timer quand LThread.Finished est vrai
-  try
-    if Assigned(WhisperThread) then
-    begin
-      // Si le thread a été interrompu par l'utilisateur
-      if WhisperThread.IsCancelled  then
-        Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
-      else
+  var
+    SaveDlg: TSaveDialog;
+  begin
+    // Cette procédure est appelée par le Timer quand WhisperThread.Finished est vrai
+    try
+      if Assigned(WhisperThread) then
       begin
-        Memo1.Lines.Add('Transcription terminée !');
-        Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
-        ProgressBar1.Position := 100;
-      end;
+        // 1. Gestion des messages d'état
+        if WhisperThread.IsCancelled then
+          Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
+        else
+        begin
+          Memo1.Lines.Add('Transcription terminée !');
+          Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
+          ProgressBar1.Position := 100;
+        end;
 
-      WhisperThread.WaitFor;
-      FreeAndNil(WhisperThread);
+        // 2. LOGIQUE DE SECOURS (FALLBACK)
+        // Si le fichier n'a pas pu être ouvert sur le disque mais qu'on a du texte en RAM
+        if not WhisperThread.FileWasOpened then
+        begin
+          if (WhisperThread.FullTextResult <> nil) and (WhisperThread.FullTextResult.Count > 0) then
+          begin
+            if MessageDlg('Erreur d''écriture',
+               'Le fichier SRT n''a pas pu être créé sur le disque (accès refusé).' + sLineBreak +
+               'Voulez-vous enregistrer le résultat manuellement ?',
+               mtWarning, [mbYes, mbNo], 0) = mrYes then
+            begin
+              SaveDlg := TSaveDialog.Create(nil);
+              try
+                SaveDlg.DefaultExt := 'srt';
+                SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
+                SaveDlg.FileName := ExtractFileName(txtaudio.Text) + '.srt';
+                if SaveDlg.Execute then
+                  WhisperThread.FullTextResult.SaveToFile(SaveDlg.FileName);
+              finally
+                SaveDlg.Free;
+              end;
+            end;
+          end;
+        end;
+
+        // 3. Libération propre
+        WhisperThread.WaitFor;
+        FreeAndNil(WhisperThread);
+      end;
+    finally
+      // On remet TOUJOURS le bouton dans l'état initial, même en cas d'erreur
+      btntranscribe.Caption := 'Transcribe';
+      btntranscribe.Enabled := True;
+      Timer1.Enabled := False;
     end;
-  finally
-    // On remet TOUJOURS le bouton dans l'état initial
-    btntranscribe.Caption := 'Transcribe';
-    btntranscribe.Enabled := True;
-    Timer1.Enabled := False;
   end;
-end;
 
 
 procedure Tfrmmain.Button1Click(Sender: TObject);
@@ -268,6 +296,8 @@ begin
   Memo1.Lines.Add ('language:'+LocalParams.language);
   Memo1.Lines.Add ('threads:'+inttostr(LocalParams.n_threads));
 
+
+
   //a revoir : initial_prompt
 
   WhisperThread:=TWhisperThread.Create(
@@ -366,7 +396,7 @@ begin
 
   // 3. Gestion sécurisée des LOGS
   // On vérifie Assigned ET si la liste n'est pas en train d'être modifiée
-  if Assigned(WhisperLogBuffer) then
+  if Assigned(WhisperLogBuffer) and (chklog.Checked) then
   begin
     try
       if WhisperLogBuffer.Count > 0 then
