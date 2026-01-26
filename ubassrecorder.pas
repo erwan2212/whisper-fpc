@@ -98,6 +98,7 @@ begin
   Result := 1;
 end;
 
+
 function WasapiCallback(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
 var
   Samples: PSingle;
