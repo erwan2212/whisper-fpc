@@ -51,6 +51,8 @@ type
     procedure timer_transcribeTimer(Sender: TObject);
   private
     FRecorder: TBassRecorder;
+    FWhisperBuffer: array of Single; // Le buffer qui contient (Overlap + Nouveau bloc)
+    FOverlapSize: Integer;          // 8000 pour 0.5s à 16kHz
     procedure WhisperProgress(Percent: Integer);
     procedure WhisperFinished(Sender: Tobject);
     //
@@ -58,6 +60,7 @@ type
     procedure OnAudioDataReceived(const Samples: array of Single); // Notre nouveau callback
     procedure listdevices;
     procedure DisplayTranscription(const AText: string);
+    procedure UpdateMemoWithCleanerText(NewText: string);
   public
 
   end;
@@ -131,6 +134,63 @@ begin
   end;
 end;
 
+procedure Tfrmmain.UpdateMemoWithCleanerText(NewText: string);
+var
+  LastLine: string;
+  WordsNew: TStringList;
+  i, MatchIdx: Integer;
+  CleanText: string;
+begin
+  NewText := Trim(NewText);
+  if NewText = '' then Exit;
+
+  if Memo1.Lines.Count > 0 then
+  begin
+    // On récupère la toute dernière ligne affichée
+    LastLine := LowerCase(Memo1.Lines[Memo1.Lines.Count - 1]);
+
+    WordsNew := TStringList.Create;
+    try
+      WordsNew.Delimiter := ' ';
+      WordsNew.StrictDelimiter := False;
+      WordsNew.DelimitedText := NewText;
+
+      // On cherche si les premiers mots du nouveau texte existent déjà
+      // à la fin de la dernière ligne (on teste les 3 premiers mots)
+      MatchIdx := 0;
+      if WordsNew.Count >= 1 then
+      begin
+        // Si le 1er mot est dans les 20 derniers caractères de la dernière ligne
+        if Pos(LowerCase(WordsNew[0]), LastLine) > (Length(LastLine) - 25) then MatchIdx := 1;
+
+        // Si le 2ème mot suit, on décale encore
+        if (WordsNew.Count >= 2) and (MatchIdx = 1) then
+          if Pos(LowerCase(WordsNew[1]), LastLine) > 0 then MatchIdx := 2;
+      end;
+
+      // On reconstruit le texte sans les mots qui doublonnent
+      CleanText := '';
+      for i := MatchIdx to WordsNew.Count - 1 do
+        CleanText := CleanText + WordsNew[i] + ' ';
+
+      CleanText := Trim(CleanText);
+
+      if CleanText <> '' then
+        Memo1.Lines.Add('🎤 ' + CleanText);
+
+    finally
+      WordsNew.Free;
+    end;
+  end
+  else
+    Memo1.Lines.Add('🎤 ' + NewText);
+
+  // Auto-scroll
+  SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
+end;
+
+//sans overlap buffer
+{
 procedure Tfrmmain.OnAudioDataReceived(const Samples: array of Single);
 var
   LocalParams: whisper_full_params;
@@ -198,6 +258,96 @@ begin
   // 5. LANCEMENT DU MOTEUR DE SURVEILLANCE CAPTURE
   start := GetTickCount64;
   timer_capture.Enabled := True; // C'est lui qui gérera l'affichage et la libération
+  WhisperThread.Start;
+end;
+}
+
+//avec overlap buffer
+procedure Tfrmmain.OnAudioDataReceived(const Samples: array of Single);
+var
+  LocalParams: whisper_full_params;
+  MaxAmp: Single;
+  i: Integer;
+  SampleCount: Integer;
+  Timestamp: string;
+  CombineCount: Integer;
+begin
+  Timestamp := FormatDateTime('HH:nn:ss', Now);
+  SampleCount := Length(Samples);
+  if SampleCount = 0 then Exit;
+
+  // --- 1. GESTION DE L'OVERLAP (NOUVEAU) ---
+  //OverlapSize := 8000; // 0.5 seconde à 16kHz
+
+  // On combine ce qu'on a déjà dans le buffer avec les nouveaux arrivants
+  CombineCount := Length(FWhisperBuffer) + SampleCount;
+  SetLength(FWhisperBuffer, CombineCount);
+
+  // On déplace les nouveaux samples à la suite de l'overlap existant
+  // On utilise Move pour la rapidité (FPC 3.0 compatible)
+  Move(Samples[0], FWhisperBuffer[CombineCount - SampleCount], SampleCount * SizeOf(Single));
+
+  // --- 2. DIAGNOSTIC D'AMPLITUDE (sur les nouveaux samples uniquement) ---
+  MaxAmp := 0;
+  for i := 0 to SampleCount - 1 do
+    if Abs(Samples[i]) > MaxAmp then MaxAmp := Abs(Samples[i]);
+
+  ProgressBar1.Position := Round(MaxAmp * 100);
+
+  // Seuil de silence
+  if MaxAmp < 0.0015 then
+  begin
+    // Si c'est le silence, on vide quand même l'overlap pour ne pas
+    // répéter un vieux mot quand le son reviendra dans 10 minutes.
+    SetLength(FWhisperBuffer, 0);
+    Exit;
+  end;
+
+  // --- 3. SÉCURITÉ ANTI-SATURATION ---
+  if Assigned(WhisperThread) then
+  begin
+    if not WhisperThread.Finished then Exit;
+    Exit;
+  end;
+
+  // --- 4. PRÉPARATION DES PARAMÈTRES ---
+  case cmbpreset.ItemIndex of
+    0: LocalParams := preset_perf;
+    1: LocalParams := preset_mid;
+    2: LocalParams := preset_qual;
+  else
+    LocalParams := preset_mid;
+  end;
+
+  LocalParams.language := PChar(cmblang.Text);
+  LocalParams.n_threads := StrToIntDef(txtthreads.Text, 4);
+  LocalParams.print_progress := 0;
+
+  // Note : On loggue la taille COMBINÉE (Overlap + Nouveaux)
+  //Memo1.Lines.Add(Format('[%s] 🧠 Analyse flux live (%d samples dont overlap)...', [Timestamp, CombineCount]));
+
+  // --- 5. CRÉATION DU THREAD (On utilise FWhisperBuffer[0] !) ---
+  WhisperThread := TWhisperThread.Create(
+    txtmodel.Text,
+    @FWhisperBuffer[0], // On pointe sur le buffer combiné
+    CombineCount,
+    LocalParams,
+    '',
+    chkgpu.Checked,
+    0,
+    txtPrompt.Text
+  );
+
+  // --- 6. PRÉPARATION DE L'OVERLAP POUR LE PROCHAIN TOUR ---
+  // On ne garde que les 8000 derniers samples pour la prochaine fois
+  if CombineCount > FOverlapSize then
+  begin
+    Move(FWhisperBuffer[CombineCount - FOverlapSize], FWhisperBuffer[0], FOverlapSize * SizeOf(Single));
+    SetLength(FWhisperBuffer, FOverlapSize);
+  end;
+
+  start := GetTickCount64;
+  timer_capture.Enabled := True;
   WhisperThread.Start;
 end;
 
@@ -427,12 +577,15 @@ procedure Tfrmmain.btncaptureClick(Sender: TObject);
 begin
   if btnCapture.Caption = 'Démarrer Capture' then
   begin
-    if FRecorder.StartCapture(PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]),5) then
+    if FRecorder.StartCapture(PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]),10) then
     begin
       btnCapture.Caption := 'Stop Capture';
       Memo1.Lines.Add('🎤 Capture en cours...');
       // On peut activer le timer ici ou attendre le premier chunk audio
       timer_capture.Enabled := True;
+      //
+      FOverlapSize := 16000;// 1 sec
+      SetLength(FWhisperBuffer, 0);
     end;
   end
   else
@@ -525,9 +678,11 @@ begin
         begin
           // On affiche le texte avec une petite info de perf en fin de ligne
           DisplayTranscription(Format('%s (⚡ %0.2fs)', [FinalText, DureeTraitement]));
+          //DisplayTranscription(FinalText);
         end;
       end;
-
+      //
+      //UpdateMemoWithCleanerText(FinalText);
       // 3. NETTOYAGE
       LThread.WaitFor;
       FreeAndNil(WhisperThread);

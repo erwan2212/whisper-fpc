@@ -38,7 +38,7 @@ implementation
 
 const BASS_WASAPI_MONO=$100;
 
-function WasapiCallback(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
+function WasapiCallback1(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
 var
   Samples: PSingle;
   Count: Integer;
@@ -98,7 +98,54 @@ begin
   Result := 1;
 end;
 
+function WasapiCallback(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
+var
+  Samples: PSingle;
+  Count, i, Step: Integer;
+  Recorder: TBassRecorder;
+  Info: BASS_WASAPI_INFO;
+begin
+  Result := 1;
+  if (Buffer <> nil) and (Length > 0) and (User <> nil) then
+  begin
+    Recorder := TBassRecorder(User);
+    Samples := PSingle(Buffer);
+    Count := Length div 4; // Longueur en Float
 
+    BASS_WASAPI_GetInfo(Info);
+
+    // Calcul du pas pour réduire à 16kHz
+    // Info.chans est essentiel ici pour ne pas doubler les données
+    Step := (Recorder.FCurrentFreq div 16000) * Info.chans;
+    if Step < 1 then Step := 1;
+
+    i := 0;
+    while i < Count do
+    begin
+      // Gestion mémoire simplifiée pour FPC 3.0
+      // On vérifie si on doit agrandir le tableau dynamique
+      if Recorder.FAccSize >= System.Length(Recorder.FAccumulator) then
+        SetLength(Recorder.FAccumulator, Recorder.FAccSize + 2000);
+
+      Recorder.FAccumulator[Recorder.FAccSize] := Samples[i];
+      Recorder.FAccSize := Recorder.FAccSize + 1;
+
+      i := i + Step;
+    end;
+
+    // Envoi si le tampon est rempli
+    if Recorder.FAccSize >= Recorder.FTargetSize then
+    begin
+      if Assigned(Recorder.FOnAudioChunk) then
+      begin
+        SetLength(Recorder.FAccumulator, Recorder.FAccSize);
+        Recorder.FOnAudioChunk(Recorder.FAccumulator);
+      end;
+      Recorder.FAccSize := 0;
+      SetLength(Recorder.FAccumulator, 0);
+    end;
+  end;
+end;
 
 constructor TBassRecorder.Create;
 begin

@@ -65,26 +65,19 @@ implementation
 procedure Tfrmmain.OnAudioDataReceived(const Samples: array of Single);
 var
   i: Integer;
-  Sample16: SmallInt;
-  Value: Single;
+  S: SmallInt;
 begin
   if Assigned(FFileStream) then
   begin
     for i := 0 to High(Samples) do
     begin
-      Value := Samples[i];
-
-      // Clipping de sécurité
-      if Value > 1.0 then Value := 1.0;
-      if Value < -1.0 then Value := -1.0;
-
-      // Conversion Float (-1..1) vers SmallInt (-32768..32767)
-      Sample16 := Round(Value * 32767);
-
-      FFileStream.Write(Sample16, SizeOf(SmallInt));
-      FWavHeader.data_len := FWavHeader.data_len + SizeOf(SmallInt);
+      // Conversion Float vers 16 bits
+      S := Round(Samples[i] * 32767);
+      FFileStream.Write(S, 2);
+      FWavHeader.data_len := FWavHeader.data_len + 2;
     end;
   end;
+  Memo1.Lines.Add(Format('[%s] Reçu 1 seconde de son', [FormatDateTime('nn:ss.zzz', Now)]));
 end;
 
 procedure Tfrmmain.CreateWavFile(const AFileName: string; ASampleRate: Cardinal);
@@ -187,17 +180,19 @@ begin
     FWavHeader.fmt := 'fmt ';
     FWavHeader.fmt_len := 16;
 
-    // --- CHANGEMENTS ICI ---
-    FWavHeader.format := 1;          // 1 = PCM Standard (au lieu de 3)
-    FWavHeader.channels := 1;
-    FWavHeader.sample_rate := 16000;
-    FWavHeader.bits_per_sample := 16; // 16 bits (au lieu de 32)
-    // -----------------------
+    // --- CONFIGURATION PCM 16-BIT / 16KHZ ---
+    FWavHeader.format := 1;          // PCM Standard
+    FWavHeader.channels := 1;        // Mono
+    FWavHeader.sample_rate := 16000; // 16kHz
+    FWavHeader.bits_per_sample := 16;
 
+    // Calculs automatiques basés sur les valeurs ci-dessus
     FWavHeader.byte_rate := FWavHeader.sample_rate * FWavHeader.channels * (FWavHeader.bits_per_sample div 8);
     FWavHeader.block_align := FWavHeader.channels * (FWavHeader.bits_per_sample div 8);
+
     FWavHeader.data_id := 'data';
     FWavHeader.data_len := 0;
+    // La taille totale sera mise à jour au Stop
 
     FFileStream.Write(FWavHeader, SizeOf(TWavHeader));
 
