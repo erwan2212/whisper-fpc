@@ -7,4 +7,6 @@ get the models <a href="https://huggingface.co/ggerganov/whisper.cpp/tree/main">
 <br/>
 <br/>
 ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if your input is not a 16khz mono wav.
-<br/>
+<br/><br/>
+<img width="835" height="526" alt="image" src="https://github.com/user-attachments/assets/41eff652-582f-4839-b032-7e04801054c8" />
+
