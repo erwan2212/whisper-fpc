@@ -240,9 +240,10 @@ begin
       if IOResult <> 0 then PSegmentData(user_data)^.FileOpened := False;
       end;
   //{$i+}
+  inc(PSegmentData(user_data)^.SegmentIndex);
   end;
 
-  inc(PSegmentData(user_data)^.SegmentIndex); //dans le for ou pas?
+
 
 end;
 
@@ -340,6 +341,7 @@ begin
   // 2. On initialise manuellement les valeurs par défaut standards de Whisper
   result.strategy := longint(WHISPER_SAMPLING_BEAM_SEARCH);
   result.beam_search_beam_size := 3;
+  result.beam_search_patience := -1.0; //(valeur par défaut pour "auto"). Si c'est à 0.0 (via FillChar), le Beam Search pourrait s'arrêter trop tôt.
 
   result.temperature := 0.0;
   result.temperature_inc := 0.2;
@@ -381,7 +383,7 @@ begin
   result.temperature := 0.0;
   result.temperature_inc := 0.0;
 
-  result.n_max_text_ctx := 0; //radical. Cela signifie que Whisper n'a aucune mémoire de ce qu'il a dit juste avant. C'est très rapide, mais la grammaire peut en souffrir.
+  result.n_max_text_ctx := 50; //radical. Cela signifie que Whisper n'a aucune mémoire de ce qu'il a dit juste avant. C'est très rapide, mais la grammaire peut en souffrir.
 
   result.no_speech_thold := 0.6;
   result.logprob_thold := -1.0;

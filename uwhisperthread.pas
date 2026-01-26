@@ -25,6 +25,7 @@ type
     FParams: whisper_full_params;
     FCtxParams: TWhisperContextParams;
     FSegData: TSegmentData;
+    FInternalSamples: array of Single;
 
     FOnFinished: TWhisperFinishedEvent;
     //FOnProgress: TWhisperProgressEvent;
@@ -123,6 +124,15 @@ begin
   FSampleCount := ASampleCount;
   FParams      := AParams;
 
+  // --- COPIE DE SÉCURITÉ DES SAMPLES ---
+    // On crée notre propre stockage pour que les données ne bougent pas
+    SetLength(FInternalSamples, ASampleCount);
+    Move(ASamples^, FInternalSamples[0], ASampleCount * SizeOf(Single));
+
+    // On pointe FSamples vers notre copie interne
+    FSamples := @FInternalSamples[0];
+    FSampleCount := ASampleCount;
+
   // --- ANCRAGE DE LA LANGUE ---
     FLangAnchor := string(AParams.language);
     if FLangAnchor = '' then FLangAnchor := 'auto';
@@ -174,11 +184,16 @@ begin
       raise Exception.Create('Impossible de charger le modèle Whisper');
 
     // --- SRT ---
+    if FSRTFile<>'' then
+    begin
     AssignFile(FSegData.SRTFile, FSRTFile);
     {$i-}
     Rewrite(FSegData.SRTFile);
     fsegData.FileOpened := (IOResult = 0); // Si 0, le fichier est prêt !
     {$i+}
+    end
+    else fsegData.FileOpened:=false;
+
     FSegData.SegmentIndex := 0;
 
     FParams.abort_callback := @WhisperAbortCallback;

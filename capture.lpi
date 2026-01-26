@@ -6,11 +6,14 @@
     <General>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
-      <Title Value="whisperGUI"/>
+      <Title Value="capture"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
     </General>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="Default" Default="True"/>
       <Item2 Name="Debug">
@@ -18,7 +21,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="whisperGUI"/>
+            <Filename Value="capture"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -37,8 +40,6 @@
               <StackChecks Value="True"/>
             </Checks>
             <VerifyObjMethodCallValidity Value="True"/>
-            <TargetCPU Value="x86_64"/>
-            <TargetOS Value="win64"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -69,39 +70,30 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="2">
       <Unit0>
-        <Filename Value="whisperGUI.lpr"/>
+        <Filename Value="capture.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="umain.pas"/>
+        <Filename Value="ucapture.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmmain"/>
-        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Ucapture"/>
       </Unit1>
-      <Unit2>
-        <Filename Value="uwhisperthread.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uWhisperThread"/>
-      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="whisperGUI"/>
+      <Filename Value="capture"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <CodeGeneration>
-      <TargetCPU Value="x86_64"/>
-      <TargetOS Value="win64"/>
-    </CodeGeneration>
     <Linking>
       <Options>
         <Win32>

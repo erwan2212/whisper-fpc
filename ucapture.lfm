@@ -1,0 +1,65 @@
+object frmmain: Tfrmmain
+  Left = 764
+  Height = 374
+  Top = 274
+  Width = 412
+  Caption = 'frmmain'
+  ClientHeight = 374
+  ClientWidth = 412
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  LCLVersion = '1.8.2.0'
+  object btnstart: TButton
+    Left = 10
+    Height = 31
+    Top = 10
+    Width = 94
+    Caption = 'btnstart'
+    OnClick = btnstartClick
+    TabOrder = 0
+  end
+  object btnstop: TButton
+    Left = 272
+    Height = 31
+    Top = 10
+    Width = 94
+    Caption = 'btnstop'
+    OnClick = btnstopClick
+    TabOrder = 1
+  end
+  object cmbdevices: TComboBox
+    Left = 10
+    Height = 28
+    Top = 80
+    Width = 358
+    ItemHeight = 20
+    TabOrder = 2
+    Text = 'cmbdevices'
+  end
+  object ProgressBar1: TProgressBar
+    Left = 16
+    Height = 25
+    Top = 152
+    Width = 350
+    TabOrder = 3
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 144
+    Top = 192
+    Width = 350
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 4
+  end
+  object lblstatus: TLabel
+    Left = 16
+    Height = 20
+    Top = 344
+    Width = 343
+    AutoSize = False
+    Caption = 'lblstatus'
+    ParentColor = False
+  end
+end
