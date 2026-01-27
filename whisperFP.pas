@@ -94,8 +94,8 @@ begin
     end;
 
  params:=preset_mid;;
- params.language :='en';
 
+ params.language :='auto';
  if paramstr(3)<>'' then params.language :=pchar(paramstr(3));
 
  segData.LastEnd := 0.0;
