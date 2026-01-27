@@ -69,7 +69,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="whisperGUI.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -86,6 +86,10 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperThread"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="whisper_api.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

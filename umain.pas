@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, whisper, sndfilefp, uwhisperthread,
+  ComCtrls, ExtCtrls, math, windows, whisper, whisper_api, sndfilefp, uwhisperthread,
   ubassrecorder;
 
 type
@@ -426,7 +426,14 @@ procedure Tfrmmain.WhisperFinished(Sender: Tobject);
               try
                 SaveDlg.DefaultExt := 'srt';
                 SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
-                SaveDlg.FileName := ExtractFileName(txtaudio.Text) + '.srt';
+                SaveDlg.InitialDir := ExtractFilePath(txtaudio.Text);
+                SaveDlg.InitialDir := ExtractFilePath(txtaudio.Text);
+                // Si le dossier n'existe pas ou est vide, on assure le coup
+                if (SaveDlg.InitialDir = '') or not DirectoryExists(SaveDlg.InitialDir) then
+                  SaveDlg.InitialDir := GetCurrentDir;
+
+                SaveDlg.FileName := ChangeFileExt(ExtractFileName(txtaudio.Text), '') +
+                                    '_' + FormatDateTime('hhmmss', Now) + '.srt';
                 if SaveDlg.Execute then
                   WhisperThread.FullTextResult.SaveToFile(SaveDlg.FileName);
               finally

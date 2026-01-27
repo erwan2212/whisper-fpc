@@ -201,7 +201,7 @@ object frmmain: Tfrmmain
     Text = 'cmbdevices'
   end
   object btncapture: TButton
-    Left = 685
+    Left = 680
     Height = 31
     Top = 184
     Width = 94
@@ -228,6 +228,7 @@ object frmmain: Tfrmmain
     top = 408
   end
   object timer_capture: TTimer
+    Enabled = False
     OnTimer = timer_captureTimer
     left = 8
     top = 336

@@ -5,7 +5,7 @@ unit uWhisperThread;
 interface
 
 uses
-  Classes, SysUtils, whisper;
+  Classes, SysUtils, whisper_api,whisper;
 
 type
   TWhisperProgressEvent = procedure(Percent: Integer) of object;
