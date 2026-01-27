@@ -3,7 +3,7 @@ program whisperFP;
 {$mode objfpc}{$H+}
 
 uses
-  Math, classes,windows,SysUtils, whisper, sndfilefp;
+  Math, classes,windows,SysUtils, whisper, whisper_api, sndfilefp;
 
 
 
