@@ -93,9 +93,11 @@ begin
       Halt(1);
     end;
 
- params:=preset_medium;
+ params:=preset_mid;
 
- if paramstr(3)<>'' then params.language :=paramstr(3) else params.language :='auto';
+  params.language :='auto';
+ if paramstr(3)<>'' then params.language :=pchar(paramstr(3));
+
 
  segData.LastEnd := 0.0;
  segData.SegmentIndex :=0;;
