@@ -447,66 +447,6 @@ procedure Tfrmmain.WhisperFinished(Sender: Tobject);
     end;
   end;
 
-{
-procedure main_nothread;
-begin
-
-  cparams := whisper_context_default_params;
-  cparams.use_gpu := true;
-  cparams.gpu_device := 0; // GPU 0
-  cparams.flash_attn := True; // si supporté
-
-  ctx := whisper_init_from_file_with_params(pchar(MODEL_FILE),cparams);
-      if ctx = nil then
-      begin
-        memo1.lines.add('Erreur: impossible de charger le modèle.');
-        Halt(1);
-      end;
-
-   globalparams:=preset_qual;
-   globalparams.language :='en';
-
-   {$i-}
-   assignfile(segData.SRTFile ,WAV_FILE+'.srt');
-   Rewrite(segData.SRTFile);
-   {$i+}
-   if IOResult <> 0 then memo1.lines.add('Erreur E/S : '+ inttostr(IOResult)); // gestion de l’erreur : message, fallback, abort, etc.
-
-   // Callback pour afficher segments + timestamps
-   globalparams.new_segment_callback := @SegmentCallback;
-   globalparams.new_segment_callback_user_data := @segData;
-   //params.progress_callback := @ProgressCallback;
-   //params.progress_callback_user_data := nil;
-
-   // Lecture WAV
-   memo1.lines.add('Lecture WAV…');
-   try
-       ReadWavMono16kv2(WAV_FILE, Samples, nSamples);
-   except
-   on e:exception do
-       begin
-       memo1.lines.add(e.Message );
-       exit;
-       end;
-   end;
-   memo1.lines.add('Nombre d’échantillons : '+ inttostr(nSamples));
-   if nSamples > 0 then memo1.lines.add('Premier échantillon : '+ floattostr(Samples[0]));
-
-   // Transcription
-   memo1.lines.add('Début transcription…');
-   start:=gettickcount64;
-   if whisper_full(ctx, globalparams, @Samples[0], nSamples) <> 0 then memo1.lines.add('Erreur lors de la transcription.');
-   memo1.lines.add('Terminé.');
-   memo1.lines.add('Total: ' + floattostr((GetTickCount64 - start) / 1000) + ' s');
-
-   // Libération
-   whisper_free(ctx);
-
-   //
-   {$i-}closefile(segData.SRTFile );{$i+}
-
-end;
-}
 
 procedure Tfrmmain.btntranscribeClick(Sender: TObject);
 var
