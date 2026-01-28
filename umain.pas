@@ -52,6 +52,7 @@ type
     procedure timer_transcribeTimer(Sender: TObject);
   private
     FRecorder: TBassRecorder;
+    FCapturedText: TStringList;
     FWhisperBuffer: array of Single; // Le buffer qui contient (Overlap + Nouveau bloc)
     FOverlapSize: Integer;          // 8000 pour 0.5s à 16kHz
     procedure WhisperProgress(Percent: Integer);
@@ -522,6 +523,8 @@ begin
 end;
 
 procedure Tfrmmain.btncaptureClick(Sender: TObject);
+var
+  SaveDlg: TSaveDialog;
 begin
   if btnCapture.Caption = 'Démarrer Capture' then
   begin
@@ -542,6 +545,26 @@ begin
     btnCapture.Caption := 'Démarrer Capture';
     timer_capture.Enabled := False; // Arrêt définitif de la surveillance live
     Memo1.Lines.Add('🛑 Capture arrêtée.');
+    // --- PROPOSITION DE SAUVEGARDE DU CUMUL ---
+        if FCapturedText.Count > 0 then
+        begin
+          if MessageDlg('Capture terminée', 'Voulez-vous enregistrer le texte capturé en SRT ?',
+             mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+          begin
+            SaveDlg := TSaveDialog.Create(nil);
+            try
+              SaveDlg.DefaultExt := 'srt';
+              SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
+              SaveDlg.InitialDir := GetCurrentDir;
+              SaveDlg.FileName := 'capture_' + FormatDateTime('hhmmss', Now) + '.srt';
+
+              if SaveDlg.Execute then
+                FCapturedText.SaveToFile(SaveDlg.FileName);
+            finally
+              SaveDlg.Free;
+            end;
+          end;
+        end; //if FCapturedText.Count > 0 then
   end;
 end;
 
@@ -587,6 +610,8 @@ begin
   //
   FRecorder := TBassRecorder.Create;
   listdevices ;
+  //
+  FCapturedText := TStringList.Create;
 end;
 
 procedure Tfrmmain.FormDestroy(Sender: TObject);
@@ -596,6 +621,8 @@ begin
   if Assigned(WhisperLogBuffer) then
     FreeAndNil(WhisperLogBuffer);
 end;
+  //
+  FCapturedText.Free;
 end;
 
 procedure Tfrmmain.timer_captureTimer(Sender: TObject);
@@ -626,7 +653,8 @@ begin
         begin
           // On affiche le texte avec une petite info de perf en fin de ligne
           DisplayTranscription(Format('%s (⚡ %0.2fs)', [FinalText, DureeTraitement]));
-          //DisplayTranscription(FinalText);
+          //
+          FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
         end;
       end;
       //
