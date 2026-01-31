@@ -135,8 +135,15 @@ begin
   end;
 
   // Lancement effectif
-  if Assigned(FEngine.CurrentThread) then
-    FEngine.CurrentThread.Start;
+  // 2. On s'assure que l'index est synchronisé AVANT de démarrer le thread
+    if Assigned(FEngine.CurrentThread) then
+    begin
+      // On force l'index de départ avec la valeur actuelle du réservoir de l'Engine
+      FEngine.CurrentThread.SetStartSegmentIndex(FEngine.TotalSegmentCount);
+
+      // 3. SEULEMENT MAINTENANT on lance le thread
+      FEngine.CurrentThread.Start;
+    end;
 end;
 
 //resampling 16khz+mono
@@ -154,6 +161,9 @@ var
   Decoder: HSTREAM;
   Mixer: HSTREAM;
   Len: QWORD;
+  Info: BASS_CHANNELINFO;
+  Duration: Double;
+  OrigFreq: Cardinal;
 begin
   Result := False;
   ErrorMsg := '';
@@ -169,6 +179,11 @@ begin
   end;
 
   try
+    // --- RÉCUPÉRATION DES INFOS LOG ---
+    // Fréquence d'origine
+    BASS_ChannelGetInfo(Decoder, Info);
+    OrigFreq := Info.freq;
+
     // 2. On crée un MIXER forcé en 16000Hz, Mono, Float
     // C'est ce Mixer qui va servir d'entonnoir parfait pour Whisper
     Mixer := BASS_Mixer_StreamCreate(16000, 1, BASS_STREAM_DECODE or BASS_SAMPLE_FLOAT);
@@ -187,9 +202,14 @@ begin
 
     // 4. On calcule la taille de sortie basée sur la durée réelle du décodeur
     Len := BASS_ChannelGetLength(Decoder, BASS_POS_BYTE);
-    FnFileSamples := Round(BASS_ChannelBytes2Seconds(Decoder, Len) * 16000);
+    Duration := BASS_ChannelBytes2Seconds(Decoder, Len);
+    FnFileSamples := Round(duration * 16000);
 
     SetLength(FFileSamples, FnFileSamples);
+
+    //log
+    if Assigned(FEngine) then
+      FEngine.Log(Format('Source: %d Hz, %d canaux, Durée: %.2f s', [OrigFreq, Info.chans, Duration]));
 
     // 5. On pompe les données DEPUIS LE MIXER
     // Le mixer va forcer le resampling et le mono proprement

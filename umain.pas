@@ -88,6 +88,7 @@ type
     procedure HandleRecorderLog(const Msg: string);
     procedure listdevices;
     procedure DisplayTranscription(const AText: string);
+    procedure LogToMemo(const AMsg: string);
   public
 
   end;
@@ -111,6 +112,20 @@ implementation
 
 
 { Tfrmmain }
+
+procedure Tfrmmain.LogToMemo(const AMsg: string);
+begin
+
+      Memo1.Lines.BeginUpdate;
+      try
+        Memo1.Lines.Add(AMsg);
+      finally
+        Memo1.Lines.EndUpdate;
+      end;
+
+      // Scroll automatique vers le bas
+      SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
+end;
 
 procedure Tfrmmain.DisplayTranscription(const AText: string);
 begin
@@ -261,6 +276,7 @@ begin
   // Affichage du nombre d'échantillons comme avant
   Memo1.Lines.Add('Nombre d’échantillons : ' + IntToStr(FAudioManager.nFileSamples));
 
+  memo1.Lines.Add ('Audio:'+txtaudio.Text);
   memo1.Lines.Add ('Langue:'+cmblang.Text);
   memo1.Lines.Add ('Preset:'+cmbpreset.Text);
   memo1.Lines.Add ('Threads:'+txtthreads.Text);
@@ -295,7 +311,7 @@ var
   SaveDlg: TSaveDialog;
   DeviceIdx: Integer;
 begin
-  if btnCapture.Caption = 'Démarrer Capture' then
+  if btnCapture.Caption = 'Capture' then
   begin
     // 1. Récupération de l'ID du périphérique sélectionné
     DeviceIdx := PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]);
@@ -311,7 +327,7 @@ begin
          chkgpu.Checked
        ) then
     begin
-      btnCapture.Caption := 'Stop Capture';
+      btnCapture.Caption := 'Stop';
       Memo1.Lines.Add('🎤 Capture en cours via AudioManager...');
 
       // On vide le cumul précédent pour une nouvelle session propre
@@ -326,7 +342,7 @@ begin
     // --- ARRÊT ---
     FAudioManager.Stop;
 
-    btnCapture.Caption := 'Démarrer Capture';
+    btnCapture.Caption := 'Capture';
     timer_capture.Enabled := False;
     Memo1.Lines.Add('🛑 Capture arrêtée.');
 
@@ -399,6 +415,7 @@ begin
 
     // 5. CRÉATION DES MOTEURS (L'ordre est important)
     WhisperEngine := TWhisperEngine.Create;
+    WhisperEngine.OnLog := @LogToMemo;
 
     // On passe WhisperEngine au constructeur du manager
     FAudioManager := TAudioCaptureManager.Create(WhisperEngine);
@@ -451,6 +468,10 @@ begin
 
     if LThread.Finished then
     begin
+      // Avant de tuer le thread, on récupère le nombre de segments qu'il a généré
+      // (Index final - Index de départ = nombre de nouveaux segments)
+      WhisperEngine.AddSegments(LThread.FullTextResult.Count);
+      //
       timer_capture.Enabled := False;
       try
         if Assigned(LThread.FullTextResult) and (LThread.FullTextResult.Count > 0) then
@@ -469,7 +490,7 @@ begin
         WhisperThread := nil;
         ProgressBar1.Position := 0;
 
-        if btnCapture.Caption = 'Stop Capture' then
+        if btnCapture.Caption = 'Stop' then
           timer_capture.Enabled := True;
       end;
     end;

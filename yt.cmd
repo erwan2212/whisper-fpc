@@ -7,4 +7,5 @@ if "%~1"=="" (
 set URL=%~1
 
 rem yt-dlp.exe -x --audio-format wav --postprocessor-args "ffmpeg:-ar 16000" %URL%
-yt-dlp.exe --extractor-args "youtube:player_client=android" -x --audio-format wav --postprocessor-args "ffmpeg:-ar 16000" %URL%
+rem yt-dlp.exe --extractor-args "youtube:player_client=android" -x --audio-format wav --postprocessor-args "ffmpeg:-ar 16000" %URL%
+yt-dlp.exe --extractor-args "youtube:player_client=android" -x --audio-format m4a %URL%

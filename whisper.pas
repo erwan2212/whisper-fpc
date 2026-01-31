@@ -65,7 +65,8 @@ begin
 
     text := whisper_full_get_segment_text(ctx, i);
 
-    srtline := Format('[%d] %s --> %s: %s', [i, SecondsToSRTFormat(t0_sec), SecondsToSRTFormat(t1_sec), text]);
+    //srtline := Format('[%d] %s --> %s: %s', [i, SecondsToSRTFormat(t0_sec), SecondsToSRTFormat(t1_sec), text]);
+    srtline := Format('[%d] %s --> %s: %s', [PSegmentData(user_data)^.SegmentIndex, SecondsToSRTFormat(t0_sec), SecondsToSRTFormat(t1_sec), text]);
 
     if Assigned(PSegmentData(user_data)^.FullText) then
       PSegmentData(user_data)^.FullText.Add(SrtLine);

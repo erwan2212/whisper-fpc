@@ -27,6 +27,9 @@ type
     FSegData: TSegmentData;
     FInternalSamples: array of Single;
 
+    FStartSegmentIndex: Integer;
+    FInitialIndex: Integer;
+
     FOnFinished: TWhisperFinishedEvent;
     //FOnProgress: TWhisperProgressEvent;
     //
@@ -39,6 +42,7 @@ type
     procedure DoFinished;
 
   public
+    procedure SetStartSegmentIndex(AValue: Integer);
     // Ajoute cette propriété pour que le Form puisse lire le texte
     property FullTextResult: TStringList read FSegData.FullText;
     // Ajoute celle-ci pour savoir si le fichier a été écrit ou non
@@ -56,6 +60,7 @@ type
       const ASRTFile: string;
       const AUseGPU: Boolean=true;
       const AGPUDevice: Integer=0;
+      const AInitialIndex: Integer=0;
       const Aprompt:string=''
     );
     destructor Destroy; override;
@@ -68,6 +73,13 @@ type
 
 
 implementation
+
+procedure TWhisperThread.SetStartSegmentIndex(AValue: Integer);
+begin
+  FStartSegmentIndex := AValue;
+  // On l'injecte tout de suite dans la structure que le callback utilise
+  FSegData.SegmentIndex := AValue;
+end;
 
 function TWhisperThread.GetIsTerminated: Boolean;
 begin
@@ -113,6 +125,7 @@ constructor TWhisperThread.Create(
   const ASRTFile: string;
   const AUseGPU: Boolean=true;
   const AGPUDevice: Integer=0;
+  const AInitialIndex: Integer=0;
   const Aprompt:string=''
 );
 begin
@@ -123,6 +136,8 @@ begin
   FSamples     := ASamples;
   FSampleCount := ASampleCount;
   FParams      := AParams;
+
+  FInitialIndex := AInitialIndex;
 
   // --- COPIE DE SÉCURITÉ DES SAMPLES ---
     // On crée notre propre stockage pour que les données ne bougent pas
@@ -150,6 +165,7 @@ begin
   FillChar(FSegData, SizeOf(FSegData), 0);
   FSegData.FullText := TStringList.Create;
   FSegData.FileOpened := False;
+  FSegData.SegmentIndex := FInitialIndex; //SegmentIndex
 
   // --- callbacks ---
   FParams.new_segment_callback := @SegmentCallback;
@@ -194,7 +210,8 @@ begin
     end
     else fsegData.FileOpened:=false;
 
-    FSegData.SegmentIndex := 0;
+    //FSegData.SegmentIndex := 0;
+    FSegData.SegmentIndex := FInitialIndex;
 
     FParams.abort_callback := @WhisperAbortCallback;
     FParams.abort_callback_user_data := Self; // On passe l'instance du thread

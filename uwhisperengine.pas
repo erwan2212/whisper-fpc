@@ -1,5 +1,10 @@
 unit uWhisperEngine;
 
+{
+Résumé du flux :
+Engine (Mémoire) -> Thread (Transport) -> Callback (Affichage/Incrémentation) -> Main/Timer (Mise à jour de la Mémoire).
+}
+
 {$mode objfpc}{$H+}
 
 interface
@@ -10,17 +15,27 @@ uses
 type
   TProgressEvent = procedure(Percent: Integer) of object;
   TWhisperDoneEvent = procedure(Sender: TObject) of object;
+  TLogEvent = procedure(const AMsg: string) of object;
 
   TWhisperEngine = class
   private
+    FTotalSegmentCount: Integer; // stocke le "Score Global" qui survit à la destruction des threads
     FCurrentThread: TWhisperThread;
     FOnProgress: TProgressEvent;
     FOnFinished: TWhisperDoneEvent;
+    FOnLog: TLogEvent;
     FLastLang: AnsiString; // Pour garantir la persistance du PChar
     function GetParamsFromPreset(PresetIdx: Integer; const Lang: string; Threads: Integer): whisper_full_params;
   public
     constructor Create;
     destructor Destroy; override;
+
+    // Une méthode pour remettre à zéro quand on clique sur "Start"
+    procedure ResetSession;
+    // Une méthode pour ajouter les segments qu'un thread vient de trouver
+    procedure AddSegments(ACount: Integer);
+
+    property TotalSegmentCount: Integer read FTotalSegmentCount;
 
     procedure StartTranscription(
       const AModel: string;
@@ -36,12 +51,27 @@ type
 
     procedure Stop;
 
+    // Cette méthode sera appelée par les autres classes
+    procedure Log(const AMsg: string);
+    // Cette propriété sera reliée à ton Memo dans le formulaire principal
+    property OnLog: TLogEvent read FOnLog write FOnLog;
+
     property CurrentThread: TWhisperThread read FCurrentThread;
     property OnProgress: TProgressEvent read FOnProgress write FOnProgress;
     property OnFinished: TWhisperDoneEvent read FOnFinished write FOnFinished;
   end;
 
 implementation
+
+procedure TWhisperEngine.ResetSession;
+begin
+  FTotalSegmentCount := 0;
+end;
+
+procedure TWhisperEngine.AddSegments(ACount: Integer);
+begin
+  FTotalSegmentCount := FTotalSegmentCount + ACount;
+end;
 
 constructor TWhisperEngine.Create;
 begin
@@ -52,6 +82,12 @@ destructor TWhisperEngine.Destroy;
 begin
   Stop;
   inherited;
+end;
+
+procedure TWhisperEngine.Log(const AMsg: string);
+begin
+  if Assigned(FOnLog) then
+    FOnLog(AMsg);
 end;
 
 function TWhisperEngine.GetParamsFromPreset(PresetIdx: Integer; const Lang: string; Threads: Integer): whisper_full_params;
@@ -92,6 +128,7 @@ begin
     ASavePath,
     AGPU,
     0,
+    FTotalSegmentCount,
     APrompt
   );
 end;
