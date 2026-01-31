@@ -1,3 +1,9 @@
+Transcribe an audio to text using whisper.
+<br/>
+Audio capture is also possible (and therefore real time transcription.
+<br/>
+Audio input supports wav,oog,aiff,mp2/mp3,aac/m4a.
+<br/><br/><br/>
 get whisper for vulkan <a href="https://erwan.labalec.fr/1.8.3-vulkan.zip">here</a>.
 <br/>
 get the other versions <a href="https://github.com/ggml-org/whisper.cpp/releases">here</a> (standard, blas, cublas).
@@ -6,7 +12,7 @@ get the models <a href="https://huggingface.co/ggerganov/whisper.cpp/tree/main">
 (large or medium if you  have lots of cpu/gpu, small is plenty acceptable processing vs quality wise, base maybe, tiny only for testing).
 <br/>
 <br/>
-ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if your input is not a 16khz mono wav.
+ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if you need to convert your audio (like mono 16khz).
 <br/><br/>
 <img width="835" height="526" alt="image" src="https://github.com/user-attachments/assets/41eff652-582f-4839-b032-7e04801054c8" />
 
