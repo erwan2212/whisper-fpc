@@ -164,7 +164,7 @@ begin
   FillChar(FCtxParams, SizeOf(FCtxParams), 0);
   FCtxParams.use_gpu := AUseGPU;
   FCtxParams.gpu_device := AGPUDevice;
-  FCtxParams.flash_attn := True;
+  FCtxParams.flash_attn := false; //beta
 
 //  Start;
 end;

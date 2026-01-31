@@ -69,7 +69,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="whisperGUI.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -90,6 +90,16 @@
         <Filename Value="whisper_api.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="uwhisperengine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uWhisperEngine"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uaudiocapture.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uAudioCapture"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

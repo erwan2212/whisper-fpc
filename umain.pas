@@ -7,8 +7,39 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, whisper, whisper_api, sndfilefp, uwhisperthread,
-  ubassrecorder;
+  ComCtrls, ExtCtrls, math, windows, whisper, whisper_api, uwhisperthread,
+  ubassrecorder,uWhisperEngine,uAudioCapture;
+
+{
+//
+whisper :
+C'est le fichier d'en-tête (header) qui permet à Pascal de parler à la bibliothèque whisper.dll.
+Il définit les structures de données (comme whisper_context) et les fonctions de base.
+
+whisper_api :
+C'est une couche de simplification.
+Elle encapsule les appels complexes de la DLL pour offrir des fonctions plus faciles à utiliser en Pascal, comme l'initialisation du modèle et le lancement de la transcription avec des paramètres simplifiés.
+//
+uWhisperThread :
+C'est l'ouvrier. Son rôle est d'exécuter la transcription en arrière-plan (dans un thread séparé).
+Cela évite que ton application ne "gèle" (ne réponde plus) pendant que l'IA travaille.
+Il prend les samples audio et génère le texte.
+
+uWhisperEngine :
+C'est le chef de chantier. Il gère le cycle de vie du moteur Whisper.
+Il crée et détruit le thread, gère le chargement du fichier modèle (.bin) et sert de pont entre ton interface et l'ouvrier (le thread).
+//
+ubassrecorder :
+C'est le spécialiste de la capture "Live".
+Il utilise la bibliothèque BASS pour écouter le micro, découper le son en petits morceaux (chunks) et les envoyer au moteur en temps réel.
+uAudioCapture :
+C'est le gestionnaire de ressources audio.
+C'est l'unité que nous venons de blinder. Son rôle est double :
+Gérer le ubassrecorder pour le direct.
+Charger des fichiers (WAV, MP3, M4A) via le Mixer BASS pour garantir que, peu importe la source, Whisper reçoive toujours du 16kHz Mono Float.
+//
+
+}
 
 type
 
@@ -51,18 +82,12 @@ type
     procedure timer_captureTimer(Sender: TObject);
     procedure timer_transcribeTimer(Sender: TObject);
   private
-    FRecorder: TBassRecorder;
     FCapturedText: TStringList;
-    FWhisperBuffer: array of Single; // Le buffer qui contient (Overlap + Nouveau bloc)
-    FOverlapSize: Integer;          // 8000 pour 0.5s à 16kHz
-    procedure WhisperProgress(Percent: Integer);
     procedure WhisperFinished(Sender: Tobject);
     //
     procedure HandleRecorderLog(const Msg: string);
-    procedure OnAudioDataReceived(const Samples: array of Single); // Notre nouveau callback
     procedure listdevices;
     procedure DisplayTranscription(const AText: string);
-    procedure UpdateMemoWithCleanerText(NewText: string);
   public
 
   end;
@@ -70,15 +95,11 @@ type
 
 var
   frmmain: Tfrmmain;
-  //
-  ctx: PWhisperContext;
-  cparams: TWhisperContextParams;
-  globalparams: whisper_full_params;
+  WhisperEngine: TWhisperEngine;
+  FAudioManager:TAudioCaptureManager;
+
   WAV_FILE :string= 'output.wav';
   MODEL_FILE:string = 'ggml-small.bin';
-  segData: TSegmentData;
-  Samples: array of Single;
-  nSamples: Integer;
   start:int64;
   WhisperThread:tWhisperThread;
   WhisperLogBuffer: TStringList; // Le tampon de messages
@@ -117,240 +138,18 @@ var
   DeviceList: TStringList;
   i: Integer;
 begin
-
-
-  FRecorder.OnLog := @HandleRecorderLog;
-  FRecorder.OnAudioChunk := @OnAudioDataReceived;
-
-  // Remplissage de la liste des périphériques
-  DeviceList := FRecorder.GetLoopbackDevices;
+  // On récupère la liste via le manager
+  DeviceList := FAudioManager.Recorder.GetLoopbackDevices;
   try
     cmbDevices.Items.Clear;
     for i := 0 to DeviceList.Count - 1 do
       cmbDevices.Items.AddObject(DeviceList[i], DeviceList.Objects[i]);
 
     if cmbDevices.Items.Count > 0 then
-      cmbDevices.ItemIndex := 0; // Sélectionne le premier par défaut
+      cmbDevices.ItemIndex := 0;
   finally
     DeviceList.Free;
   end;
-end;
-
-procedure Tfrmmain.UpdateMemoWithCleanerText(NewText: string);
-var
-  LastLine: string;
-  WordsNew: TStringList;
-  i, MatchIdx: Integer;
-  CleanText: string;
-begin
-  NewText := Trim(NewText);
-  if NewText = '' then Exit;
-
-  if Memo1.Lines.Count > 0 then
-  begin
-    // On récupère la toute dernière ligne affichée
-    LastLine := LowerCase(Memo1.Lines[Memo1.Lines.Count - 1]);
-
-    WordsNew := TStringList.Create;
-    try
-      WordsNew.Delimiter := ' ';
-      WordsNew.StrictDelimiter := False;
-      WordsNew.DelimitedText := NewText;
-
-      // On cherche si les premiers mots du nouveau texte existent déjà
-      // à la fin de la dernière ligne (on teste les 3 premiers mots)
-      MatchIdx := 0;
-      if WordsNew.Count >= 1 then
-      begin
-        // Si le 1er mot est dans les 20 derniers caractères de la dernière ligne
-        if Pos(LowerCase(WordsNew[0]), LastLine) > (Length(LastLine) - 25) then MatchIdx := 1;
-
-        // Si le 2ème mot suit, on décale encore
-        if (WordsNew.Count >= 2) and (MatchIdx = 1) then
-          if Pos(LowerCase(WordsNew[1]), LastLine) > 0 then MatchIdx := 2;
-      end;
-
-      // On reconstruit le texte sans les mots qui doublonnent
-      CleanText := '';
-      for i := MatchIdx to WordsNew.Count - 1 do
-        CleanText := CleanText + WordsNew[i] + ' ';
-
-      CleanText := Trim(CleanText);
-
-      if CleanText <> '' then
-        Memo1.Lines.Add('🎤 ' + CleanText);
-
-    finally
-      WordsNew.Free;
-    end;
-  end
-  else
-    Memo1.Lines.Add('🎤 ' + NewText);
-
-  // Auto-scroll
-  SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
-end;
-
-//sans overlap buffer
-{
-procedure Tfrmmain.OnAudioDataReceived(const Samples: array of Single);
-var
-  LocalParams: whisper_full_params;
-  MaxAmp: Single;
-  i: Integer;
-  SampleCount: Integer;
-  Timestamp: string;
-begin
-  Timestamp := FormatDateTime('HH:nn:ss', Now);
-  SampleCount := Length(Samples);
-
-  if SampleCount = 0 then Exit;
-
-  // 1. DIAGNOSTIC D'AMPLITUDE
-  MaxAmp := 0;
-  for i := 0 to SampleCount - 1 do
-    if Abs(Samples[i]) > MaxAmp then MaxAmp := Abs(Samples[i]);
-
-  // Retour visuel sur le volume d'entrée
-  ProgressBar1.Position := Round(MaxAmp * 100);
-
-  // Seuil de silence : On sort si c'est trop calme
-  if MaxAmp < 0.001 then Exit;
-
-  // 2. SÉCURITÉ ANTI-SATURATION
-  // On vérifie si Whisper est déjà occupé par la tranche précédente
-  if Assigned(WhisperThread) then
-  begin
-    // Si le thread n'a pas fini, on ignore cette tranche de 3s
-    if not WhisperThread.Finished then Exit;
-
-    // Si par hasard il a fini mais n'est pas encore libéré par le timer_capture,
-    // on attend le prochain passage du timer pour ne pas créer de conflit.
-    Exit;
-  end;
-
-  // 3. PRÉPARATION DES PARAMÈTRES (Adaptation selon ton UI)
-  case cmbpreset.ItemIndex of
-    0: LocalParams := preset_perf;
-    1: LocalParams := preset_mid;
-    2: LocalParams := preset_qual;
-  else
-    LocalParams := preset_mid;
-  end;
-
-  LocalParams.language := PChar(cmblang.Text);
-  LocalParams.n_threads := StrToIntDef(txtthreads.Text, 4);
-  LocalParams.print_progress := 0;
-
-  Memo1.Lines.Add(Format('[%s] 🧠 Analyse flux live (%d samples)...', [Timestamp, SampleCount]));
-
-  // 4. CRÉATION DU THREAD
-  // Note : '' en 5ème paramètre car on ne veut pas de fichier SRT en mode live
-  WhisperThread := TWhisperThread.Create(
-    txtmodel.Text,
-    @samples[0],
-    SampleCount,
-    LocalParams,
-    '',
-    chkgpu.Checked,
-    0,
-    txtPrompt.Text
-  );
-
-  // 5. LANCEMENT DU MOTEUR DE SURVEILLANCE CAPTURE
-  start := GetTickCount64;
-  timer_capture.Enabled := True; // C'est lui qui gérera l'affichage et la libération
-  WhisperThread.Start;
-end;
-}
-
-//avec overlap buffer
-procedure Tfrmmain.OnAudioDataReceived(const Samples: array of Single);
-var
-  LocalParams: whisper_full_params;
-  MaxAmp: Single;
-  i: Integer;
-  SampleCount: Integer;
-  Timestamp: string;
-  CombineCount: Integer;
-begin
-  Timestamp := FormatDateTime('HH:nn:ss', Now);
-  SampleCount := Length(Samples);
-  if SampleCount = 0 then Exit;
-
-  // --- 1. GESTION DE L'OVERLAP (NOUVEAU) ---
-  //OverlapSize := 8000; // 0.5 seconde à 16kHz
-
-  // On combine ce qu'on a déjà dans le buffer avec les nouveaux arrivants
-  CombineCount := Length(FWhisperBuffer) + SampleCount;
-  SetLength(FWhisperBuffer, CombineCount);
-
-  // On déplace les nouveaux samples à la suite de l'overlap existant
-  // On utilise Move pour la rapidité (FPC 3.0 compatible)
-  Move(Samples[0], FWhisperBuffer[CombineCount - SampleCount], SampleCount * SizeOf(Single));
-
-  // --- 2. DIAGNOSTIC D'AMPLITUDE (sur les nouveaux samples uniquement) ---
-  MaxAmp := 0;
-  for i := 0 to SampleCount - 1 do
-    if Abs(Samples[i]) > MaxAmp then MaxAmp := Abs(Samples[i]);
-
-  ProgressBar1.Position := Round(MaxAmp * 100);
-
-  // Seuil de silence
-  if MaxAmp < 0.0015 then
-  begin
-    // Si c'est le silence, on vide quand même l'overlap pour ne pas
-    // répéter un vieux mot quand le son reviendra dans 10 minutes.
-    SetLength(FWhisperBuffer, 0);
-    Exit;
-  end;
-
-  // --- 3. SÉCURITÉ ANTI-SATURATION ---
-  if Assigned(WhisperThread) then
-  begin
-    if not WhisperThread.Finished then Exit;
-    Exit;
-  end;
-
-  // --- 4. PRÉPARATION DES PARAMÈTRES ---
-  case cmbpreset.ItemIndex of
-    0: LocalParams := preset_perf;
-    1: LocalParams := preset_mid;
-    2: LocalParams := preset_qual;
-  else
-    LocalParams := preset_mid;
-  end;
-
-  LocalParams.language := PChar(cmblang.Text);
-  LocalParams.n_threads := StrToIntDef(txtthreads.Text, 4);
-  LocalParams.print_progress := 0;
-
-  // Note : On loggue la taille COMBINÉE (Overlap + Nouveaux)
-  //Memo1.Lines.Add(Format('[%s] 🧠 Analyse flux live (%d samples dont overlap)...', [Timestamp, CombineCount]));
-
-  // --- 5. CRÉATION DU THREAD (On utilise FWhisperBuffer[0] !) ---
-  WhisperThread := TWhisperThread.Create(
-    txtmodel.Text,
-    @FWhisperBuffer[0], // On pointe sur le buffer combiné
-    CombineCount,
-    LocalParams,
-    '',
-    chkgpu.Checked,
-    0,
-    txtPrompt.Text
-  );
-
-  // --- 6. PRÉPARATION DE L'OVERLAP POUR LE PROCHAIN TOUR ---
-  // On ne garde que les 8000 derniers samples pour la prochaine fois
-  if CombineCount > FOverlapSize then
-  begin
-    Move(FWhisperBuffer[CombineCount - FOverlapSize], FWhisperBuffer[0], FOverlapSize * SizeOf(Single));
-    SetLength(FWhisperBuffer, FOverlapSize);
-  end;
-
-  start := GetTickCount64;
-  timer_capture.Enabled := True;
-  WhisperThread.Start;
 end;
 
 procedure MyWhisperLogCallback(level: Integer; const text: PChar; user_data: Pointer); cdecl;
@@ -367,204 +166,190 @@ procedure MyWhisperLogCallback(level: Integer; const text: PChar; user_data: Poi
   end;
 
 
-procedure Tfrmmain.WhisperProgress(Percent: Integer);
-begin
-  ProgressBar1.Position := Percent;
 
-end;
-
-{
-procedure Tfrmmain.WhisperFinished(Sender: Tobject);
-begin
-  try
-      Memo1.Lines.Add('Transcription terminée !');
-      Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
-      ProgressBar1.Position := 100;
-
-      if Assigned(WhisperThread) then
-      begin
-        // On attend une micro-seconde que le thread système soit totalement clos
-        WhisperThread.WaitFor;
-        FreeAndNil(WhisperThread);
-      end;
-    except
-      on E: Exception do ; // On absorbe les éventuels derniers râles de la DLL
-    end;
-end;
-}
 
 procedure Tfrmmain.WhisperFinished(Sender: Tobject);
-  var
-    SaveDlg: TSaveDialog;
-  begin
-    // Cette procédure est appelée par le Timer quand WhisperThread.Finished est vrai
-    try
-      if Assigned(WhisperThread) then
-      begin
-
-        // 1. Gestion des messages d'état
-        if WhisperThread.IsCancelled then
-          Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
-        else
-        begin
-          Memo1.Lines.Add('Transcription terminée !');
-          Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
-          ProgressBar1.Position := 100;
-        end;
-
-        // 2. LOGIQUE DE SECOURS (FALLBACK)
-        // Si le fichier n'a pas pu être ouvert sur le disque mais qu'on a du texte en RAM
-        if (not WhisperThread.IsCancelled) and (not WhisperThread.FileWasOpened) then
-        begin
-          if (WhisperThread.FullTextResult <> nil) and (WhisperThread.FullTextResult.Count > 0) then
-          begin
-            if MessageDlg('Erreur d''écriture',
-               'Le fichier SRT n''a pas pu être créé sur le disque (accès refusé).' + sLineBreak +
-               'Voulez-vous enregistrer le résultat manuellement ?',
-               mtWarning, [mbYes, mbNo], 0) = mrYes then
-            begin
-              SaveDlg := TSaveDialog.Create(nil);
-              try
-                SaveDlg.DefaultExt := 'srt';
-                SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
-                SaveDlg.InitialDir := ExtractFilePath(txtaudio.Text);
-                SaveDlg.InitialDir := ExtractFilePath(txtaudio.Text);
-                // Si le dossier n'existe pas ou est vide, on assure le coup
-                if (SaveDlg.InitialDir = '') or not DirectoryExists(SaveDlg.InitialDir) then
-                  SaveDlg.InitialDir := GetCurrentDir;
-
-                SaveDlg.FileName := ChangeFileExt(ExtractFileName(txtaudio.Text), '') +
-                                    '_' + FormatDateTime('hhmmss', Now) + '.srt';
-                if SaveDlg.Execute then
-                  WhisperThread.FullTextResult.SaveToFile(SaveDlg.FileName);
-              finally
-                SaveDlg.Free;
-              end;
-            end;
-          end;
-        end;
-
-        // 3. Libération propre
-        WhisperThread.WaitFor;
-        FreeAndNil(WhisperThread);
-      end;
-    finally
-      // On remet TOUJOURS le bouton dans l'état initial, même en cas d'erreur
-      btntranscribe.Caption := 'Transcribe';
-      btntranscribe.Enabled := True;
-      timer_transcribe.Enabled := False;
-    end;
-  end;
-
-
-procedure Tfrmmain.btntranscribeClick(Sender: TObject);
-var
-  LocalParams: whisper_full_params;
-begin
-   // --- LOGIQUE D'ARRÊT (STOP) ---
-     if Assigned(WhisperThread) then
-     begin
-       btntranscribe.Enabled := False; // Désactive pour éviter les clics multiples pendant l'arrêt
-       Memo1.Lines.Add('Demande d''arrêt en cours...');
-       WhisperThread.Terminate; // Signal au thread qu'il doit s'arrêter
-       Exit;
-     end;
-
-   memo1.Lines.Clear ;
-   WAV_FILE:=txtaudio.Text ;
-   MODEL_FILE:=txtmodel.Text ;
-   // Lecture WAV
-   memo1.lines.add('Lecture WAV…');
-   try
-       ReadWavMono16kv2(WAV_FILE, Samples, nSamples);
-   except
-   on e:exception do
-       begin
-       memo1.lines.add(e.Message );
-       exit;
-       end;
-   end;
-   memo1.lines.add('Nombre d’échantillons : '+ inttostr(nSamples));
-   //if nSamples > 0 then memo1.lines.add('Premier échantillon : '+ floattostr(Samples[0]));
-
-
-  case cmbpreset.ItemIndex of
-  0:LocalParams := preset_perf;
-  1:LocalParams := preset_mid;
-  2:LocalParams := preset_qual;
-  end;
-  LocalParams.language := pchar(cmblang.Text) ; //'auto'
-  LocalParams.n_threads:=strtoint(txtthreads.Text );
-
-
-  Memo1.Lines.Add ('preset:'+inttostr(cmbpreset.ItemIndex));
-  Memo1.Lines.Add ('language:'+LocalParams.language);
-  Memo1.Lines.Add ('threads:'+inttostr(LocalParams.n_threads));
-
-
-
-  //a revoir : initial_prompt
-
-  WhisperThread:=TWhisperThread.Create(
-    MODEL_FILE ,
-    @samples[0],
-    nSamples,
-    LocalParams,
-    'output.srt',chkgpu.Checked ,0,
-    txtprompt.Text
-  );
-
-  btntranscribe.Caption := 'Stop';
-  timer_transcribe.Enabled := True;
-  start:=gettickcount64;
-
-  WhisperThread.Start ;
-
-end;
-
-procedure Tfrmmain.btncaptureClick(Sender: TObject);
 var
   SaveDlg: TSaveDialog;
 begin
-  if btnCapture.Caption = 'Démarrer Capture' then
-  begin
-    if FRecorder.StartCapture(PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]),10) then
+  try
+    if Assigned(WhisperThread) then
     begin
-      btnCapture.Caption := 'Stop Capture';
-      Memo1.Lines.Add('🎤 Capture en cours...');
-      // On peut activer le timer ici ou attendre le premier chunk audio
-      timer_capture.Enabled := True;
-      //
-      FOverlapSize := 16000;// 1 sec
-      SetLength(FWhisperBuffer, 0);
-    end;
-  end
-  else
-  begin
-    FRecorder.StopCapture;
-    btnCapture.Caption := 'Démarrer Capture';
-    timer_capture.Enabled := False; // Arrêt définitif de la surveillance live
-    Memo1.Lines.Add('🛑 Capture arrêtée.');
-    // --- PROPOSITION DE SAUVEGARDE DU CUMUL ---
-        if FCapturedText.Count > 0 then
+      // 1. Gestion des messages d'état
+      if WhisperThread.IsCancelled then
+        Memo1.Lines.Add('Transcription annulée par l''utilisateur.')
+      else
+      begin
+        Memo1.Lines.Add('Transcription terminée !');
+        Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
+        ProgressBar1.Position := 100;
+      end;
+
+      // 2. LOGIQUE DE SECOURS (Ton code original préservé)
+      if (not WhisperThread.IsCancelled) and (not WhisperThread.FileWasOpened) then
+      begin
+        if (WhisperThread.FullTextResult <> nil) and (WhisperThread.FullTextResult.Count > 0) then
         begin
-          if MessageDlg('Capture terminée', 'Voulez-vous enregistrer le texte capturé en SRT ?',
-             mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+          if MessageDlg('Erreur d''écriture',
+             'Le fichier SRT n''a pas pu être créé sur le disque.' + sLineBreak +
+             'Voulez-vous enregistrer le résultat manuellement ?',
+             mtWarning, [mbYes, mbNo], 0) = mrYes then
           begin
             SaveDlg := TSaveDialog.Create(nil);
             try
               SaveDlg.DefaultExt := 'srt';
               SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
-              SaveDlg.InitialDir := GetCurrentDir;
-              SaveDlg.FileName := 'capture_' + FormatDateTime('hhmmss', Now) + '.srt';
+              SaveDlg.InitialDir := ExtractFilePath(txtaudio.Text);
+              if (SaveDlg.InitialDir = '') or not DirectoryExists(SaveDlg.InitialDir) then
+                SaveDlg.InitialDir := GetCurrentDir;
 
+              SaveDlg.FileName := ChangeFileExt(ExtractFileName(txtaudio.Text), '') +
+                                  '_' + FormatDateTime('hhmmss', Now) + '.srt';
               if SaveDlg.Execute then
-                FCapturedText.SaveToFile(SaveDlg.FileName);
+                WhisperThread.FullTextResult.SaveToFile(SaveDlg.FileName);
             finally
               SaveDlg.Free;
             end;
           end;
-        end; //if FCapturedText.Count > 0 then
+        end;
+      end;
+
+      // 3. LIBÉRATION SÉCURISÉE (C'est ici que ça change)
+      // On met à jour l'UI d'abord
+      btntranscribe.Caption := 'Transcribe';
+      btntranscribe.Enabled := True;
+
+      // Crucial : On demande au MOTEUR de s'arrêter.
+      // Comme c'est lui qui a créé le thread, c'est lui qui doit faire le FreeAndNil.
+      if Assigned(WhisperEngine) then
+        WhisperEngine.Stop;
+
+      // On vide notre variable locale car l'objet est maintenant détruit par le moteur
+      WhisperThread := nil;
+    end;
+  finally
+    // 4. SÉCURITÉ FINALE
+    timer_transcribe.Enabled := False;
+    ProgressBar1.Position := 0;
+  end;
+end;
+
+
+procedure Tfrmmain.btntranscribeClick(Sender: TObject);
+var
+  Err: string;
+begin
+  // --- 1. LOGIQUE D'ARRÊT (Identique à ton code) ---
+  if Assigned(WhisperThread) then
+  begin
+    btntranscribe.Enabled := False;
+    Memo1.Lines.Add('Demande d''arrêt en cours...');
+    WhisperThread.Terminate;
+    Exit;
+  end;
+
+  Memo1.Lines.Clear;
+
+  // --- 2. LECTURE WAV (Code déporté mais logs conservés) ---
+  Memo1.Lines.Add('Lecture WAV…');
+  if not FAudioManager.LoadWavFile3(txtaudio.Text, Err) then
+  begin
+    Memo1.Lines.Add(Err); // Affiche l'exception capturée ou le message d'erreur
+    Exit;
+  end;
+
+  // Affichage du nombre d'échantillons comme avant
+  Memo1.Lines.Add('Nombre d’échantillons : ' + IntToStr(FAudioManager.nFileSamples));
+
+  memo1.Lines.Add ('Langue:'+cmblang.Text);
+  memo1.Lines.Add ('Preset:'+cmbpreset.Text);
+  memo1.Lines.Add ('Threads:'+txtthreads.Text);
+
+  // --- 3. TRANSCRIPTION ---
+  WhisperEngine.StartTranscription(
+    txtmodel.Text,
+    @FAudioManager.FileSamples[0],
+    FAudioManager.nFileSamples,
+    cmbpreset.ItemIndex,
+    cmblang.Text,
+    txtthreads.Text,
+    txtprompt.Text,
+    'output.srt',
+    chkgpu.Checked
+  );
+
+  // Récupération du thread pour le timer "pêcheur"
+  WhisperThread := WhisperEngine.CurrentThread;
+
+  if Assigned(WhisperThread) then
+  begin
+    btntranscribe.Caption := 'Stop';
+    timer_transcribe.Enabled := True;
+    start := GetTickCount64; // Pour le calcul de durée finale
+    WhisperThread.Start;
+  end;
+end;
+
+procedure Tfrmmain.btncaptureClick(Sender: TObject);
+var
+  SaveDlg: TSaveDialog;
+  DeviceIdx: Integer;
+begin
+  if btnCapture.Caption = 'Démarrer Capture' then
+  begin
+    // 1. Récupération de l'ID du périphérique sélectionné
+    DeviceIdx := PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]);
+
+    // 2. On lance via le manager avec tous les paramètres de l'UI
+    if FAudioManager.Start(
+         DeviceIdx,
+         txtmodel.Text,
+         cmblang.Text,
+         txtthreads.Text,
+         txtPrompt.Text,
+         cmbpreset.ItemIndex,
+         chkgpu.Checked
+       ) then
+    begin
+      btnCapture.Caption := 'Stop Capture';
+      Memo1.Lines.Add('🎤 Capture en cours via AudioManager...');
+
+      // On vide le cumul précédent pour une nouvelle session propre
+      FCapturedText.Clear;
+
+      // On active le timer pour surveiller la fin des segments
+      timer_capture.Enabled := True;
+    end;
+  end
+  else
+  begin
+    // --- ARRÊT ---
+    FAudioManager.Stop;
+
+    btnCapture.Caption := 'Démarrer Capture';
+    timer_capture.Enabled := False;
+    Memo1.Lines.Add('🛑 Capture arrêtée.');
+
+    // --- TON CODE DE SAUVEGARDE ORIGINAL (Inchangé) ---
+    if FCapturedText.Count > 0 then
+    begin
+      if MessageDlg('Capture terminée', 'Voulez-vous enregistrer le texte capturé en SRT ?',
+         mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+      begin
+        SaveDlg := TSaveDialog.Create(nil);
+        try
+          SaveDlg.DefaultExt := 'srt';
+          SaveDlg.Filter := 'Fichiers SRT|*.srt|Tous les fichiers|*.*';
+          SaveDlg.InitialDir := GetCurrentDir;
+          SaveDlg.FileName := 'capture_' + FormatDateTime('hhmmss', Now) + '.srt';
+
+          if SaveDlg.Execute then
+            FCapturedText.SaveToFile(SaveDlg.FileName);
+        finally
+          SaveDlg.Free;
+        end;
+      end;
+    end;
   end;
 end;
 
@@ -579,7 +364,7 @@ end;
 procedure Tfrmmain.Button4Click(Sender: TObject);
 begin
   OpenDialog1.InitialDir :=GetCurrentDir ;
-  OpenDialog1.Filter :='audio|*.wav';;
+  OpenDialog1.Filter :='audio|*.wav;*.mp3;*.ogg;*.m4a;*.aac;*.mp2;';;
   OpenDialog1.Execute ;
   txtaudio.Text :=OpenDialog1.FileName ;
 end;
@@ -591,6 +376,7 @@ end;
 
 procedure Tfrmmain.FormCreate(Sender: TObject);
 begin
+  // 1. Tes réglages de sécurité mathématique (indispensables pour les DLL audio/IA)
   SetExceptionMask([
     exInvalidOp,
     exDenormalized,
@@ -599,70 +385,93 @@ begin
     exUnderflow,
     exPrecision
   ]);
-  //
-  txtmodel.Text :='ggml-small.bin';
-  txtaudio.Text :='output.wav';
 
-  //
-  WhisperLogBuffer := TStringList.Create;
-  // On active le callback de log
-  whisper_log_set(@MyWhisperLogCallback, nil);
-  //
-  FRecorder := TBassRecorder.Create;
-  listdevices ;
-  //
-  FCapturedText := TStringList.Create;
+  // 2. Valeurs par défaut de l'interface
+    txtmodel.Text := 'ggml-small.bin';
+    txtaudio.Text := 'output.wav';
+
+    // 3. Initialisation du système de Logs
+    WhisperLogBuffer := TStringList.Create;
+    whisper_log_set(@MyWhisperLogCallback, nil);
+
+    // 4. Initialisation des listes de données
+    FCapturedText := TStringList.Create;
+
+    // 5. CRÉATION DES MOTEURS (L'ordre est important)
+    WhisperEngine := TWhisperEngine.Create;
+
+    // On passe WhisperEngine au constructeur du manager
+    FAudioManager := TAudioCaptureManager.Create(WhisperEngine);
+
+    // 6. Remplissage de la liste des périphériques
+    // On peut encore utiliser le recorder interne du manager pour lister
+    listdevices;
+
 end;
 
 procedure Tfrmmain.FormDestroy(Sender: TObject);
 begin
-  begin
+  timer_transcribe.Enabled := False;
+  timer_capture.Enabled := False;
+  //
   whisper_log_set(nil, nil); // Désactive le callback
-  if Assigned(WhisperLogBuffer) then
-    FreeAndNil(WhisperLogBuffer);
-end;
+  if Assigned(WhisperLogBuffer) then FreeAndNil(WhisperLogBuffer);
   //
   FCapturedText.Free;
+
+  // Libération des moteurs
+  if Assigned(FAudioManager) then FreeAndNil(FAudioManager);
+
+  if Assigned(WhisperEngine) then
+  begin
+    WhisperEngine.Stop;
+    FreeAndNil(WhisperEngine);
+  end;
+
 end;
+
+
 
 procedure Tfrmmain.timer_captureTimer(Sender: TObject);
 var
   LThread: TWhisperThread;
   FinalText: string;
-  DureeTraitement: Double;
 begin
   if [csDestroying, csLoading] * ComponentState <> [] then Exit;
+
+  // On récupère le thread que le Manager a créé dans l'Engine
+  WhisperThread := WhisperEngine.CurrentThread;
 
   LThread := WhisperThread;
 
   if Assigned(LThread) then
   begin
+    // On met à jour la progressbar pendant que ça travaille
     ProgressBar1.Position := LThread.ProgressPercent;
 
     if LThread.Finished then
     begin
-      // 1. CALCUL DE PERFORMANCE
-      // start a été capturé dans OnAudioDataReceived juste avant le thread.start
-      DureeTraitement := (GetTickCount64 - start) / 1000;
-
-      // 2. RÉCUPÉRATION DU TEXTE
-      if Assigned(LThread.FullTextResult) and (LThread.FullTextResult.Count > 0) then
-      begin
-        FinalText := Trim(LThread.FullTextResult.Text);
-        if FinalText <> '' then
+      timer_capture.Enabled := False;
+      try
+        if Assigned(LThread.FullTextResult) and (LThread.FullTextResult.Count > 0) then
         begin
-          // On affiche le texte avec une petite info de perf en fin de ligne
-          DisplayTranscription(Format('%s (⚡ %0.2fs)', [FinalText, DureeTraitement]));
-          //
-          FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
+          FinalText := Trim(LThread.FullTextResult.Text);
+          if FinalText <> '' then
+          begin
+            DisplayTranscription(FinalText);
+            FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
+          end;
         end;
+      finally
+        if Assigned(WhisperEngine) then
+          WhisperEngine.Stop;
+
+        WhisperThread := nil;
+        ProgressBar1.Position := 0;
+
+        if btnCapture.Caption = 'Stop Capture' then
+          timer_capture.Enabled := True;
       end;
-      //
-      //UpdateMemoWithCleanerText(FinalText);
-      // 3. NETTOYAGE
-      LThread.WaitFor;
-      FreeAndNil(WhisperThread);
-      ProgressBar1.Position := 0;
     end;
   end;
 end;
@@ -671,53 +480,47 @@ procedure Tfrmmain.timer_transcribeTimer(Sender: TObject);
 var
   LThread: TWhisperThread;
 begin
-  // 1. Protection contre l'appel du timer pendant la fermeture de l'appli
   if [csDestroying, csLoading] * ComponentState <> [] then Exit;
 
-  // 2. Gestion sécurisée du Thread
-  LThread := WhisperThread; // Copie locale de l'instance
+  LThread := WhisperThread;
   if Assigned(LThread) then
   begin
-    try
-      // On vérifie que l'objet est toujours valide en mémoire (bas niveau)
-      if Pointer(LThread) <> nil then
-        ProgressBar1.Position := LThread.ProgressPercent;
-
-      if LThread.Finished then
-      begin
-        timer_transcribe.Enabled := False;
-        WhisperFinished(LThread);
-      end;
-    except
-      // Si un crash survient ici, on coupe le timer pour arrêter l'hémorragie
+    if LThread.Finished then
+    begin
+      // ON COUPE TOUT DE SUITE
       timer_transcribe.Enabled := False;
+      WhisperFinished(LThread);
       Exit;
+    end;
+
+    try
+      ProgressBar1.Position := LThread.ProgressPercent;
+    except
+      timer_transcribe.Enabled := False;
     end;
   end;
 
-  // 3. Gestion sécurisée des LOGS
-  // On vérifie Assigned ET si la liste n'est pas en train d'être modifiée
+  // LOGS : On ajoute une sécurité pour ne pas bloquer l'UI
   if Assigned(WhisperLogBuffer) and (chklog.Checked) then
   begin
-    try
-      if WhisperLogBuffer.Count > 0 then
-      begin
-        Memo1.Lines.BeginUpdate;
-        try
-          Memo1.Lines.AddStrings(WhisperLogBuffer);
-          WhisperLogBuffer.Clear;
-        finally
-          Memo1.Lines.EndUpdate;
+    if WhisperLogBuffer.Count > 0 then
+    begin
+      Memo1.Lines.BeginUpdate;
+      try
+        // On limite à 50 lignes par cycle pour laisser l'UI respirer
+        while (WhisperLogBuffer.Count > 0) do
+        begin
+          Memo1.Lines.Add(WhisperLogBuffer[0]);
+          WhisperLogBuffer.Delete(0);
+          if Memo1.Lines.Count > 1000 then Memo1.Lines.Delete(0); // Evite l'explosion mémoire du Memo
         end;
+      finally
+        Memo1.Lines.EndUpdate;
         SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
       end;
-    except
-      // On ignore les erreurs de log pour ne pas stopper la transcription
     end;
   end;
 end;
-
-
 
 end.
 

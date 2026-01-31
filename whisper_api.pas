@@ -86,7 +86,7 @@ function whisper_full_get_segment_text(ctx: PWhisperContext; i: Integer): PChar;
 function whisper_full_get_segment_t0(ctx: PWhisperContext; i: Integer): Int64; cdecl; external WHISPER_DLL;
 function whisper_full_get_segment_t1(ctx: PWhisperContext; i: Integer): Int64; cdecl; external WHISPER_DLL;
 procedure whisper_log_set(cb: whisper_log_callback; user_data: Pointer); cdecl; external WHISPER_DLL;
-function whisper_context_default_params: TWhisperContextParams; cdecl; external WHISPER_DLL;
+//function whisper_context_default_params: TWhisperContextParams; cdecl; external WHISPER_DLL;
 
 implementation
 end.
