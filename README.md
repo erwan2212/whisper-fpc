@@ -3,7 +3,7 @@ Transcribe an audio to text using whisper.
 Audio capture is also possible (and therefore real time transcription.
 <br/>
 Audio input supports wav,oog,aiff,mp2/mp3,aac/m4a.
-<br/>
+<br/><br/><br/>
 get whisper for vulkan <a href="https://erwan.labalec.fr/1.8.3-vulkan.zip">here</a>.
 <br/>
 get the other versions <a href="https://github.com/ggml-org/whisper.cpp/releases">here</a> (standard, blas, cublas).
