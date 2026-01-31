@@ -5,7 +5,7 @@ unit whisper;
 interface
 
 uses
-  SysUtils, Classes, whisper_api; // Utilise l'unité de binding
+  SysUtils, Classes,whisper_api; // Utilise l'unité de binding
 
 type
   PSegmentData = ^TSegmentData;

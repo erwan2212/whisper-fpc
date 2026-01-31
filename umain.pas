@@ -7,8 +7,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, whisper, whisper_api, uwhisperthread,
-  ubassrecorder,uWhisperEngine,uAudioCapture;
+  ComCtrls, ExtCtrls, math, windows, whisper_api,   uwhisperthread,
+  uWhisperEngine,uAudioCapture;
 
 {
 //
@@ -32,9 +32,10 @@ Il crée et détruit le thread, gère le chargement du fichier modèle (.bin) et
 ubassrecorder :
 C'est le spécialiste de la capture "Live".
 Il utilise la bibliothèque BASS pour écouter le micro, découper le son en petits morceaux (chunks) et les envoyer au moteur en temps réel.
+
 uAudioCapture :
 C'est le gestionnaire de ressources audio.
-C'est l'unité que nous venons de blinder. Son rôle est double :
+Son rôle est double :
 Gérer le ubassrecorder pour le direct.
 Charger des fichiers (WAV, MP3, M4A) via le Mixer BASS pour garantir que, peu importe la source, Whisper reçoive toujours du 16kHz Mono Float.
 //
