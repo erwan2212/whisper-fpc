@@ -5,7 +5,7 @@ unit uAudioCapture;
 interface
 
 uses
-  Classes, SysUtils, ubassrecorder, uWhisperEngine, whisper_api, windows, bass, bassmix, bass_aac{, sndfilefp};
+  Classes, SysUtils, ubassrecorder, uWhisperEngine;
 
 type
   TSingleArray = array of Single;
@@ -56,6 +56,8 @@ type
   end;
 
 implementation
+
+uses bass, bassmix, bass_aac{, sndfilefp};
 
 constructor TAudioCaptureManager.Create(AEngine: TWhisperEngine);
 begin

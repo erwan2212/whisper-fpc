@@ -53,7 +53,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="462"/>
-        <CursorPos X="24" Y="473"/>
+        <CursorPos X="41" Y="483"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -62,7 +62,6 @@
         <Filename Value="uwhisperthread.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperThread"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="52"/>
         <CursorPos X="35" Y="76"/>
@@ -75,7 +74,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="58"/>
         <CursorPos X="3" Y="89"/>
-        <UsageCount Value="169"/>
+        <UsageCount Value="177"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -89,7 +88,8 @@
       <Unit5>
         <Filename Value="ubassrecorder.pas"/>
         <EditorIndex Value="2"/>
-        <CursorPos Y="100"/>
+        <TopLine Value="19"/>
+        <CursorPos X="23" Y="39"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -97,10 +97,10 @@
         <Filename Value="uwhisperengine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperEngine"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="101"/>
-        <CursorPos X="31" Y="10"/>
-        <UsageCount Value="165"/>
+        <CursorPos X="31" Y="13"/>
+        <UsageCount Value="172"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -108,9 +108,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uAudioCapture"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="117"/>
-        <CursorPos X="31" Y="138"/>
-        <UsageCount Value="38"/>
+        <CursorPos X="43" Y="60"/>
+        <UsageCount Value="45"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -126,7 +125,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="157" Y="41"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit9>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">

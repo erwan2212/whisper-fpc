@@ -3,7 +3,7 @@ unit ubassrecorder;
 interface
 
 uses
-  SysUtils, Classes, windows, bass, basswasapi;
+  SysUtils, Classes;
 
 type
   TAmplitudeEvent = procedure(MaxAmp: Single) of object;
@@ -35,6 +35,8 @@ type
 function WasapiCallback(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
 
 implementation
+
+uses bass, basswasapi;
 
 const BASS_WASAPI_MONO=$100;
 
