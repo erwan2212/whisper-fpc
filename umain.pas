@@ -610,6 +610,8 @@ procedure Tfrmmain.timer_captureTimer(Sender: TObject);
 var
   LThread: TWhisperThread;
   NewPrompt:string;
+  DurationSec:double;
+  AudioSec: Double;
 begin
   if [csDestroying, csLoading] * ComponentState <> [] then Exit;
 
@@ -626,6 +628,13 @@ begin
 
     if LThread.Finished then
     begin
+      //
+       if chklog.Checked then
+          begin
+             DurationSec := (Now - FAudioManager.StartTime) * 24 * 3600;
+             AudioSec := LThread.SampleCount / 16000;
+             Memo1.Lines.Add(Format('⏱️ Traitement : %.2f s (Audio: %.1f s)', [DurationSec, AudioSec]));
+          end;
       // 2. MISE À JOUR DE LA MÉMOIRE ENGINE
       WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
 

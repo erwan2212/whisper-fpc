@@ -32,6 +32,8 @@ type
     FFileSamples: array of Single;
     FnFileSamples: Integer;
 
+    FStartTime : TDateTime;
+
     // Callback interne pour BASS
     procedure OnAudioDataReceived(const Samples: array of Single);
   public
@@ -55,6 +57,8 @@ type
     property CurrentPrompt: string read FPrompt write FPrompt; // Permet de modifier le prompt à la volée
 
     property Recorder: TBassRecorder read FRecorder;
+
+    property StartTime: TDateTime read FStartTime;
   end;
 
 implementation
@@ -134,6 +138,7 @@ begin
 
   // --- TA PRÉPARATION DE L'ENGINE ---
   // On utilise l'engine pour créer le thread
+  FStartTime := Now;
   FEngine.StartTranscription(
     FModelPath,
     @FWhisperBuffer[0],
