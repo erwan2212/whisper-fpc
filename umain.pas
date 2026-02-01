@@ -86,10 +86,10 @@ type
     FCapturedText: TStringList;
     procedure WhisperFinished(Sender: Tobject);
     //
-    procedure HandleRecorderLog(const Msg: string);
     procedure listdevices;
-    procedure DisplayTranscription(const AText: string);
     procedure LogToMemo(const AMsg: string);
+    procedure RefreshDisplayFromThread(AThread: TWhisperThread);
+    procedure DoAmplitudeUpdate(MaxAmp: Single);
   public
 
   end;
@@ -100,8 +100,8 @@ var
   WhisperEngine: TWhisperEngine;
   FAudioManager:TAudioCaptureManager;
 
-  WAV_FILE :string= 'output.wav';
-  MODEL_FILE:string = 'ggml-small.bin';
+  FLastDisplayedIndex: Integer; // À remettre à 0 au clic sur "Capture" ou "Transcribe"
+
   start:int64;
   WhisperThread:tWhisperThread;
   WhisperLogBuffer: TStringList; // Le tampon de messages
@@ -114,11 +114,53 @@ implementation
 
 { Tfrmmain }
 
+procedure Tfrmmain.DoAmplitudeUpdate(MaxAmp: Single);
+var
+  NewPos: Integer;
+begin
+  NewPos := Round(MaxAmp * 100);
+  // Si le nouveau son est plus faible, on descend doucement
+  if NewPos < ProgressBar1.Position then
+    ProgressBar1.Position := ProgressBar1.Position - 5 // Ajuste la vitesse de descente
+  else
+    ProgressBar1.Position := NewPos;
+end;
+
+procedure Tfrmmain.RefreshDisplayFromThread(AThread: TWhisperThread);
+var
+  i: Integer;
+begin
+  if Assigned(AThread) and Assigned(AThread.FullTextResult) then
+  begin
+    if AThread.FullTextResult.Count > FLastDisplayedIndex then
+    begin
+      Memo1.Lines.BeginUpdate;
+      try
+        for i := FLastDisplayedIndex to AThread.FullTextResult.Count - 1 do
+        begin
+          // On ajoute la ligne SRT au Memo
+          Memo1.Lines.Add(AThread.FullTextResult[i]);
+
+          // On conserve ton stockage interne pour la capture
+          if timer_capture.Enabled then
+             FCapturedText.Add(AThread.FullTextResult[i]);
+        end;
+        FLastDisplayedIndex := AThread.FullTextResult.Count;
+      finally
+        Memo1.Lines.EndUpdate;
+        SendMessage(Memo1.Handle, WM_VSCROLL, SB_BOTTOM, 0);
+      end;
+    end;
+  end;
+end;
+
 procedure Tfrmmain.LogToMemo(const AMsg: string);
 begin
+      if AMsg = '' then Exit;
 
       Memo1.Lines.BeginUpdate;
       try
+        //Memo1.Lines.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), AMsg]));
         Memo1.Lines.Add(AMsg);
       finally
         Memo1.Lines.EndUpdate;
@@ -126,27 +168,6 @@ begin
 
       // Scroll automatique vers le bas
       SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
-end;
-
-procedure Tfrmmain.DisplayTranscription(const AText: string);
-begin
-  if AText = '' then Exit;
-
-  Memo1.Lines.BeginUpdate;
-  try
-    // On ajoute l'heure et le texte
-    Memo1.Lines.Add(Format('[%s] 🎤 %s', [FormatDateTime('HH:nn:ss', Now), AText]));
-  finally
-    Memo1.Lines.EndUpdate;
-  end;
-
-  // Scroll automatique vers le bas
-  SendMessage(Memo1.Handle, EM_SCROLLCARET, 0, 0);
-end;
-
-procedure Tfrmmain.HandleRecorderLog(const Msg: string);
-begin
-  Memo1.Lines.Add(Format('[%s] [BASS] %s', [FormatDateTime('HH:nn:ss', Now), Msg]));
 end;
 
 procedure Tfrmmain.listdevices;
@@ -180,9 +201,6 @@ procedure MyWhisperLogCallback(level: Integer; const text: PChar; user_data: Poi
         WhisperLogBuffer.Add(S);
     end;
   end;
-
-
-
 
 procedure Tfrmmain.WhisperFinished(Sender: Tobject);
 var
@@ -266,6 +284,9 @@ begin
 
   Memo1.Lines.Clear;
 
+  FLastDisplayedIndex:=0;
+  FCapturedText.Clear ;
+
   // --- 2. LECTURE WAV (Code déporté mais logs conservés) ---
   Memo1.Lines.Add('Lecture WAV…');
   if not FAudioManager.LoadWavFile3(txtaudio.Text, Err) then
@@ -291,7 +312,7 @@ begin
     cmblang.Text,
     txtthreads.Text,
     txtprompt.Text,
-    'output.srt',
+    'transcribe_' + FormatDateTime('hhmmss', Now) + '.srt',
     chkgpu.Checked
   );
 
@@ -314,6 +335,8 @@ var
 begin
   if btnCapture.Caption = 'Capture' then
   begin
+    FLastDisplayedIndex:=0;
+
     // 1. Récupération de l'ID du périphérique sélectionné
     DeviceIdx := PtrInt(cmbDevices.Items.Objects[cmbDevices.ItemIndex]);
 
@@ -330,6 +353,10 @@ begin
     begin
       btnCapture.Caption := 'Stop';
       Memo1.Lines.Add('🎤 Capture en cours via AudioManager...');
+
+      // --- BRANCHEMENT DU VU-MÈTRE ICI ---
+            if Assigned(FAudioManager.Recorder) then
+              FAudioManager.Recorder.OnAmplitude := @DoAmplitudeUpdate;
 
       // On vide le cumul précédent pour une nouvelle session propre
       FCapturedText.Clear;
@@ -448,8 +475,7 @@ begin
 
 end;
 
-
-
+{
 procedure Tfrmmain.timer_captureTimer(Sender: TObject);
 var
   LThread: TWhisperThread;
@@ -471,7 +497,8 @@ begin
     begin
       // Avant de tuer le thread, on récupère le nombre de segments qu'il a généré
       // (Index final - Index de départ = nombre de nouveaux segments)
-      WhisperEngine.AddSegments(LThread.FullTextResult.Count);
+      //WhisperEngine.AddSegments(LThread.FullTextResult.Count); //avant l'ajout de la duration
+      WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
       //
       timer_capture.Enabled := False;
       try
@@ -480,8 +507,9 @@ begin
           FinalText := Trim(LThread.FullTextResult.Text);
           if FinalText <> '' then
           begin
-            DisplayTranscription(FinalText);
-            FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
+            LogToMemo(FinalText);
+            //FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
+            FCapturedText.Add(FinalText);
           end;
         end;
       finally
@@ -497,6 +525,51 @@ begin
     end;
   end;
 end;
+}
+
+procedure Tfrmmain.timer_captureTimer(Sender: TObject);
+var
+  LThread: TWhisperThread;
+begin
+  if [csDestroying, csLoading] * ComponentState <> [] then Exit;
+
+  WhisperThread := WhisperEngine.CurrentThread;
+  LThread := WhisperThread;
+
+  if Assigned(LThread) then
+  begin
+    ProgressBar1.Position := LThread.ProgressPercent;
+
+    // 1. AFFICHAGE ET STOCKAGE (Ligne par ligne)
+    // Cette fonction s'occupe maintenant d'ajouter à Memo1 ET à FCapturedText
+    RefreshDisplayFromThread(LThread);
+
+    if LThread.Finished then
+    begin
+      // 2. MISE À JOUR DE LA MÉMOIRE ENGINE
+      WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
+
+      // 3. RESET POUR LE PROCHAIN BLOC
+      FLastDisplayedIndex := 0;
+
+      timer_capture.Enabled := False;
+      try
+        // On garde tes sécurités de log et de nettoyage
+        if Assigned(WhisperEngine) then
+          WhisperEngine.Stop;
+
+        WhisperThread := nil;
+        ProgressBar1.Position := 0;
+
+        // On relance la capture si le bouton est toujours sur 'Stop'
+        if btnCapture.Caption = 'Stop' then
+          timer_capture.Enabled := True;
+      finally
+        // Fin de cycle
+      end;
+    end;
+  end;
+end;
 
 procedure Tfrmmain.timer_transcribeTimer(Sender: TObject);
 var
@@ -507,9 +580,11 @@ begin
   LThread := WhisperThread;
   if Assigned(LThread) then
   begin
+    // NOUVEAU : Affiche le texte du fichier au fur et à mesure
+    RefreshDisplayFromThread(LThread);
+
     if LThread.Finished then
     begin
-      // ON COUPE TOUT DE SUITE
       timer_transcribe.Enabled := False;
       WhisperFinished(LThread);
       Exit;
@@ -522,19 +597,19 @@ begin
     end;
   end;
 
-  // LOGS : On ajoute une sécurité pour ne pas bloquer l'UI
+  // On garde ta gestion des LOGS système (erreurs, infos engine) si nécessaire
   if Assigned(WhisperLogBuffer) and (chklog.Checked) then
   begin
     if WhisperLogBuffer.Count > 0 then
     begin
       Memo1.Lines.BeginUpdate;
       try
-        // On limite à 50 lignes par cycle pour laisser l'UI respirer
         while (WhisperLogBuffer.Count > 0) do
         begin
-          Memo1.Lines.Add(WhisperLogBuffer[0]);
+          // On ne log que ce qui n'est pas déjà du SRT pour ne pas doubler
+          Memo1.Lines.Add('LOG: ' + WhisperLogBuffer[0]);
           WhisperLogBuffer.Delete(0);
-          if Memo1.Lines.Count > 1000 then Memo1.Lines.Delete(0); // Evite l'explosion mémoire du Memo
+          if Memo1.Lines.Count > 1000 then Memo1.Lines.Delete(0);
         end;
       finally
         Memo1.Lines.EndUpdate;

@@ -20,6 +20,7 @@ type
   TWhisperEngine = class
   private
     FTotalSegmentCount: Integer; // stocke le "Score Global" qui survit à la destruction des threads
+    FTotalTimeOffset: Single; // Stocke le temps cumulé en secondes
     FCurrentThread: TWhisperThread;
     FOnProgress: TProgressEvent;
     FOnFinished: TWhisperDoneEvent;
@@ -32,9 +33,9 @@ type
 
     // Une méthode pour remettre à zéro quand on clique sur "Start"
     procedure ResetSession;
-    // Une méthode pour ajouter les segments qu'un thread vient de trouver
-    procedure AddSegments(ACount: Integer);
-
+    //
+    procedure AddSegments(ACount: Integer; ADuration: Single); // On ajoute la durée
+    property TotalTimeOffset: Single read FTotalTimeOffset;
     property TotalSegmentCount: Integer read FTotalSegmentCount;
 
     procedure StartTranscription(
@@ -66,11 +67,13 @@ implementation
 procedure TWhisperEngine.ResetSession;
 begin
   FTotalSegmentCount := 0;
+  FTotalTimeOffset := 0; // Reset du temps
 end;
 
-procedure TWhisperEngine.AddSegments(ACount: Integer);
+procedure TWhisperEngine.AddSegments(ACount: Integer; ADuration: Single);
 begin
   FTotalSegmentCount := FTotalSegmentCount + ACount;
+  FTotalTimeOffset := FTotalTimeOffset + ADuration;
 end;
 
 constructor TWhisperEngine.Create;

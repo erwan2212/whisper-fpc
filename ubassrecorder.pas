@@ -40,6 +40,7 @@ uses bass, basswasapi;
 
 const BASS_WASAPI_MONO=$100;
 
+{
 function WasapiCallback1(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
 var
   Samples: PSingle;
@@ -99,6 +100,7 @@ begin
   end;
   Result := 1;
 end;
+}
 
 function WasapiCallback(Buffer: Pointer; Length: LongWord; User: Pointer): LongWord; stdcall;
 var
@@ -106,6 +108,9 @@ var
   Count, i, Step: Integer;
   Recorder: TBassRecorder;
   Info: BASS_WASAPI_INFO;
+  //
+  MaxAmp: Single;
+  CurrentAmp: Single;
 begin
   Result := 1;
   if (Buffer <> nil) and (Length > 0) and (User <> nil) then
@@ -113,6 +118,20 @@ begin
     Recorder := TBassRecorder(User);
     Samples := PSingle(Buffer);
     Count := Length div 4; // Longueur en Float
+
+    // --- DEBUT CALCUL AMPLITUDE ---
+        if Assigned(Recorder.FOnAmplitude) then
+        begin
+          MaxAmp := 0;
+          for i := 0 to Count - 1 do
+          begin
+            CurrentAmp := Abs(Samples[i]);
+            if CurrentAmp > MaxAmp then MaxAmp := CurrentAmp;
+          end;
+          // On envoie la valeur maximale trouvée dans ce petit bloc
+          Recorder.FOnAmplitude(MaxAmp);
+        end;
+        // --- FIN CALCUL AMPLITUDE ---
 
     BASS_WASAPI_GetInfo(Info);
 

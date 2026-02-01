@@ -29,6 +29,7 @@ type
 
     FStartSegmentIndex: Integer;
     FInitialIndex: Integer;
+    FTimeOffset: Single;
 
     FOnFinished: TWhisperFinishedEvent;
     //FOnProgress: TWhisperProgressEvent;
@@ -42,9 +43,12 @@ type
     procedure DoFinished;
 
   public
+    procedure SetTimeOffset(AValue: Single);
     procedure SetStartSegmentIndex(AValue: Integer);
     // Ajoute cette propriété pour que le Form puisse lire le texte
     property FullTextResult: TStringList read FSegData.FullText;
+    //
+    property SampleCount: Integer read FSampleCount;
     // Ajoute celle-ci pour savoir si le fichier a été écrit ou non
     property FileWasOpened: Boolean read FSegData.FileOpened;
     // On expose Terminated qui est normalement protected
@@ -73,6 +77,12 @@ type
 
 
 implementation
+
+procedure TWhisperThread.SetTimeOffset(AValue: Single);
+begin
+  FTimeOffset := AValue;
+  FSegData.TimeOffset := AValue; // On l'injecte pour le callback
+end;
 
 procedure TWhisperThread.SetStartSegmentIndex(AValue: Integer);
 begin

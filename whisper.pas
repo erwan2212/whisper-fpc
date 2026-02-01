@@ -12,6 +12,7 @@ type
   TSegmentData = record
     SRTFile: Text;
     SegmentIndex: Integer;
+    TimeOffset: Single;
     LastEnd: Single;
     FileOpened: Boolean;
     FullText: TStringList;
@@ -57,11 +58,15 @@ begin
 
   for i := s0 to nSeg - 1 do
   begin
+    {
     t0_10ms := whisper_full_get_segment_t0(ctx, i);
     t1_10ms := whisper_full_get_segment_t1(ctx, i);
-
     t0_sec := t0_10ms * 0.01;
     t1_sec := t1_10ms * 0.01;
+    }
+    // On ajoute TimeOffset aux temps relatifs du chunk actuel
+    t0_sec := (whisper_full_get_segment_t0(ctx, i) / 100.0) + PSegmentData(user_data)^.TimeOffset;
+    t1_sec := (whisper_full_get_segment_t1(ctx, i) / 100.0) + PSegmentData(user_data)^.TimeOffset;
 
     text := whisper_full_get_segment_text(ctx, i);
 

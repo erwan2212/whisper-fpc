@@ -142,6 +142,8 @@ begin
     begin
       // On force l'index de départ avec la valeur actuelle du réservoir de l'Engine
       FEngine.CurrentThread.SetStartSegmentIndex(FEngine.TotalSegmentCount);
+      // Injection du temps cumulé
+          FEngine.CurrentThread.SetTimeOffset(FEngine.TotalTimeOffset);
 
       // 3. SEULEMENT MAINTENANT on lance le thread
       FEngine.CurrentThread.Start;
