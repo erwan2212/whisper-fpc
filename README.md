@@ -14,5 +14,6 @@ get the models <a href="https://huggingface.co/ggerganov/whisper.cpp/tree/main">
 <br/>
 ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if you need to convert your audio (like mono 16khz).
 <br/><br/>
-<img width="835" height="526" alt="image" src="https://github.com/user-attachments/assets/41eff652-582f-4839-b032-7e04801054c8" />
+<img width="845" height="584" alt="image" src="https://github.com/user-attachments/assets/31aa91b3-a6f4-4fef-93dd-b4936cb50396" />
+
 
