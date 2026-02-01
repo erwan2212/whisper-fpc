@@ -42,7 +42,7 @@
         <Filename Value="whisperGUI.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="7"/>
-        <CursorPos X="34" Y="12"/>
+        <CursorPos X="36" Y="15"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -53,8 +53,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="323"/>
-        <CursorPos X="49" Y="334"/>
+        <TopLine Value="88"/>
+        <CursorPos X="14" Y="94"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -64,8 +64,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperThread"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="63"/>
-        <CursorPos Y="81"/>
+        <TopLine Value="151"/>
+        <CursorPos X="27" Y="266"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -88,8 +88,8 @@
       <Unit5>
         <Filename Value="ubassrecorder.pas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="83"/>
-        <CursorPos X="42" Y="101"/>
+        <TopLine Value="105"/>
+        <CursorPos X="77" Y="12"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -98,8 +98,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperEngine"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="49"/>
-        <CursorPos X="23" Y="70"/>
+        <TopLine Value="33"/>
+        <CursorPos Y="41"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit6>
@@ -108,9 +108,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uAudioCapture"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="125"/>
-        <CursorPos Y="139"/>
-        <UsageCount Value="82"/>
+        <TopLine Value="96"/>
+        <CursorPos X="9" Y="126"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -132,123 +132,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="umain.pas"/>
-        <Caret Line="135" Column="55" TopLine="113"/>
+        <Caret Line="526" Column="81" TopLine="498"/>
       </Position1>
       <Position2>
         <Filename Value="umain.pas"/>
-        <Caret Line="370" Column="83" TopLine="350"/>
+        <Caret Line="86" Column="18" TopLine="70"/>
       </Position2>
       <Position3>
         <Filename Value="umain.pas"/>
-        <Caret Line="301" Column="16" TopLine="275"/>
+        <Caret Line="133" Column="27" TopLine="105"/>
       </Position3>
       <Position4>
         <Filename Value="umain.pas"/>
-        <Caret Line="7" Column="63" TopLine="3"/>
+        <Caret Line="344" Column="20" TopLine="316"/>
       </Position4>
       <Position5>
         <Filename Value="umain.pas"/>
-        <Caret Line="86" Column="18" TopLine="58"/>
+        <Caret Line="5" Column="14"/>
       </Position5>
       <Position6>
         <Filename Value="umain.pas"/>
-        <Caret Line="133" Column="27" TopLine="105"/>
+        <Caret Line="102" Column="22" TopLine="74"/>
       </Position6>
       <Position7>
         <Filename Value="umain.pas"/>
-        <Caret Line="344" Column="20" TopLine="316"/>
+        <Caret Line="122" Column="58" TopLine="94"/>
       </Position7>
       <Position8>
         <Filename Value="umain.pas"/>
-        <Caret Line="360" Column="21" TopLine="332"/>
+        <Caret Line="126" Column="37" TopLine="98"/>
       </Position8>
       <Position9>
         <Filename Value="umain.pas"/>
-        <Caret Line="373" Column="26" TopLine="345"/>
+        <Caret Line="135" Column="28" TopLine="107"/>
       </Position9>
       <Position10>
         <Filename Value="umain.pas"/>
-        <Caret Line="424" Column="18" TopLine="396"/>
+        <Caret Line="274" Column="22" TopLine="246"/>
       </Position10>
       <Position11>
-        <Filename Value="umain.pas"/>
-        <Caret Line="447" Column="16" TopLine="419"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="14" Column="35" TopLine="7"/>
       </Position11>
       <Position12>
-        <Filename Value="umain.pas"/>
-        <Caret Line="493" Column="28" TopLine="465"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="15" Column="17" TopLine="7"/>
       </Position12>
       <Position13>
-        <Filename Value="umain.pas"/>
-        <Caret Line="494" Column="26" TopLine="466"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="30" Column="79" TopLine="7"/>
       </Position13>
       <Position14>
-        <Filename Value="umain.pas"/>
-        <Caret Line="526" Column="81" TopLine="498"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="58" Column="38" TopLine="39"/>
       </Position14>
       <Position15>
-        <Filename Value="umain.pas"/>
-        <Caret Line="86" Column="18" TopLine="70"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="63" Column="28" TopLine="39"/>
       </Position15>
       <Position16>
-        <Filename Value="umain.pas"/>
-        <Caret Line="133" Column="27" TopLine="105"/>
+        <Filename Value="ubassrecorder.pas"/>
+        <Caret Line="131" Column="40" TopLine="107"/>
       </Position16>
       <Position17>
         <Filename Value="umain.pas"/>
-        <Caret Line="344" Column="20" TopLine="316"/>
+        <Caret Line="94" Column="51" TopLine="79"/>
       </Position17>
       <Position18>
         <Filename Value="umain.pas"/>
-        <Caret Line="5" Column="14"/>
+        <Caret Line="334" Column="49" TopLine="323"/>
       </Position18>
       <Position19>
         <Filename Value="umain.pas"/>
-        <Caret Line="102" Column="22" TopLine="74"/>
+        <Caret Line="8" Column="41"/>
       </Position19>
       <Position20>
         <Filename Value="umain.pas"/>
-        <Caret Line="122" Column="58" TopLine="94"/>
+        <Caret Line="355" Column="44" TopLine="344"/>
       </Position20>
       <Position21>
         <Filename Value="umain.pas"/>
-        <Caret Line="126" Column="37" TopLine="98"/>
+        <Caret Line="336" Column="3" TopLine="331"/>
       </Position21>
       <Position22>
-        <Filename Value="umain.pas"/>
-        <Caret Line="135" Column="28" TopLine="107"/>
+        <Filename Value="uaudiocapture.pas"/>
+        <Caret Line="315" Column="44" TopLine="289"/>
       </Position22>
       <Position23>
-        <Filename Value="umain.pas"/>
-        <Caret Line="274" Column="22" TopLine="246"/>
+        <Filename Value="uwhisperengine.pas"/>
+        <Caret Line="41" Column="14" TopLine="26"/>
       </Position23>
       <Position24>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="14" Column="35" TopLine="7"/>
+        <Filename Value="uwhisperengine.pas"/>
+        <Caret Line="73" Column="18" TopLine="62"/>
       </Position24>
       <Position25>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="15" Column="17" TopLine="7"/>
+        <Filename Value="uwhisperthread.pas"/>
+        <Caret Line="234" Column="34" TopLine="223"/>
       </Position25>
       <Position26>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="30" Column="79" TopLine="7"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="125" Column="34" TopLine="106"/>
       </Position26>
       <Position27>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="58" Column="38" TopLine="39"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="575" Column="21" TopLine="559"/>
       </Position27>
       <Position28>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="63" Column="28" TopLine="39"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="102" Column="3" TopLine="84"/>
       </Position28>
       <Position29>
-        <Filename Value="ubassrecorder.pas"/>
-        <Caret Line="131" Column="40" TopLine="107"/>
+        <Filename Value="uaudiocapture.pas"/>
+        <Caret Line="314" Column="31" TopLine="290"/>
       </Position29>
       <Position30>
         <Filename Value="umain.pas"/>
-        <Caret Line="94" Column="51" TopLine="79"/>
+        <Caret Line="141" Column="5" TopLine="108"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

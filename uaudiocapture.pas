@@ -52,6 +52,8 @@ type
     property FileSamples: TSingleArray read FFileSamples;
     property nFileSamples: Integer read FnFileSamples;
 
+    property CurrentPrompt: string read FPrompt write FPrompt; // Permet de modifier le prompt à la volée
+
     property Recorder: TBassRecorder read FRecorder;
   end;
 
@@ -101,12 +103,27 @@ begin
 
   // (Note : La gestion de la ProgressBar restera dans l'UI via le Timer ou un event)
 
+  {
   // Ton seuil de silence
   if MaxAmp < 0.0005 then //0.0015
   begin
     SetLength(FWhisperBuffer, 0);
     Exit;
   end;
+  }
+
+  if MaxAmp < 0.0005 then
+    begin
+      // Si on a déjà des données, on ne garde QUE l'overlap pour la suite
+      // pour que la reprise ne soit pas brutale
+      if Length(FWhisperBuffer) > FOverlapSize then
+      begin
+        Move(FWhisperBuffer[Length(FWhisperBuffer) - FOverlapSize], FWhisperBuffer[0], FOverlapSize * SizeOf(Single));
+        SetLength(FWhisperBuffer, FOverlapSize);
+      end;
+      // On sort sans lancer Whisper (on économise le CPU/GPU)
+      Exit;
+    end;
 
   // --- TA SÉCURITÉ ANTI-SATURATION ---
   if Assigned(FEngine.CurrentThread) then

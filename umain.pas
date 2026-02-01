@@ -90,6 +90,8 @@ type
     procedure LogToMemo(const AMsg: string);
     procedure RefreshDisplayFromThread(AThread: TWhisperThread);
     procedure DoAmplitudeUpdate(MaxAmp: Single);
+    function GetSlidingContext(MaxChars: Integer): string;
+    function CleanDuplicate(const OldLine, NewText: string): string;
   public
 
   end;
@@ -113,6 +115,83 @@ implementation
 
 
 { Tfrmmain }
+
+function Tfrmmain.CleanDuplicate(const OldLine, NewText: string): string;
+var
+  PureOldText, Word: string;
+  WordsNew: TStringList;
+  P, i, j, MatchCount: Integer;
+  IsMatch: Boolean;
+begin
+  Result := NewText;
+  if (OldLine = '') or (NewText = '') then Exit;
+
+  // 1. Extraire le texte pur de la ligne SRT précédente (après le ": ")
+  PureOldText := OldLine;
+  P := Pos(': ', PureOldText);
+  if P > 0 then
+    Delete(PureOldText, 1, P + 1);
+  PureOldText := Trim(PureOldText);
+
+  // 2. Découper le NOUVEAU texte en mots via une StringList (plus simple que Split en FPC)
+  WordsNew := TStringList.Create;
+  try
+    WordsNew.Delimiter := ' ';
+    WordsNew.DelimitedText := NewText;
+
+    // 3. On tente de trouver si les premiers mots de NewText sont à la fin de PureOldText
+    // On vérifie de 5 mots descendre à 1
+    for i := 5 downto 1 do
+    begin
+      if WordsNew.Count < i then Continue;
+
+      // On construit la chaîne des 'i' premiers mots de NewText
+      Word := '';
+      for j := 0 to i - 1 do
+        Word := Word + WordsNew[j] + ' ';
+      Word := Trim(Word);
+
+      // On regarde si PureOldText se termine par cette suite de mots
+      // On utilise LowerCase pour être insensible à la casse
+      if Pos(LowerCase(Word), LowerCase(PureOldText)) > (Length(PureOldText) - Length(Word) - 2) then
+      begin
+        // Trouvé ! On reconstruit le résultat sans les 'i' premiers mots
+        Result := '';
+        for j := i to WordsNew.Count - 1 do
+          Result := Result + WordsNew[j] + ' ';
+        Result := Trim(Result);
+        Break;
+      end;
+    end;
+  finally
+    WordsNew.Free;
+  end;
+end;
+
+function Tfrmmain.GetSlidingContext(MaxChars: Integer): string;
+var
+  i, P: Integer;
+  Line, Acc: string;
+begin
+  Result := '';
+  Acc := '';
+  for i := FCapturedText.Count - 1 downto 0 do
+  begin
+    Line := FCapturedText[i];
+
+    // NETTOYAGE : On cherche la fin du timestamp "-->"
+    // Un segment SRT ressemble à : [Index] 00:00:00,000 --> 00:00:10,000: Le texte
+    P := Pos(': ', Line);
+    if P > 0 then
+      Delete(Line, 1, P + 1); // On ne garde que ce qui est après le ":"
+
+    if Length(Acc) + Length(Line) < MaxChars then
+      Acc := Line + ' ' + Acc
+    else
+      Break;
+  end;
+  Result := Trim(Acc);
+end;
 
 procedure Tfrmmain.DoAmplitudeUpdate(MaxAmp: Single);
 var
@@ -530,6 +609,7 @@ end;
 procedure Tfrmmain.timer_captureTimer(Sender: TObject);
 var
   LThread: TWhisperThread;
+  NewPrompt:string;
 begin
   if [csDestroying, csLoading] * ComponentState <> [] then Exit;
 
@@ -548,6 +628,10 @@ begin
     begin
       // 2. MISE À JOUR DE LA MÉMOIRE ENGINE
       WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
+
+      //slide context
+      NewPrompt := GetSlidingContext(250);
+      FAudioManager.CurrentPrompt := NewPrompt;
 
       // 3. RESET POUR LE PROCHAIN BLOC
       FLastDisplayedIndex := 0;
