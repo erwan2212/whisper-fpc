@@ -115,54 +115,106 @@ implementation
 
 
 { Tfrmmain }
+function StripPunc(const S: string): string;
+var c: char;
+begin
+  Result := '';
+  for c in S do
+    if c in ['a'..'z', 'A'..'Z', '0'..'9', ' '] then Result := Result + c;
+  Result := LowerCase(Trim(Result));
+end;
 
 function Tfrmmain.CleanDuplicate(const OldLine, NewText: string): string;
 var
-  PureOldText, Word: string;
+  PureOldText, WordToMatch: string;
   WordsNew: TStringList;
-  P, i, j, MatchCount: Integer;
-  IsMatch: Boolean;
+  P, i, j, StartIdx: Integer;
+  MaxCheck: Integer;
+  FoundMatch: Boolean;
+
+  // Fonction locale pour nettoyer la ponctuation et normaliser
+  function StripPunc(const S: string): string;
+  var c: char;
+  begin
+    Result := '';
+    for c in S do
+      if c in ['a'..'z', 'A'..'Z', '0'..'9', ' '] then
+        Result := Result + c;
+    Result := LowerCase(Trim(Result));
+    // Remplace les doubles espaces par des simples
+    while Pos('  ', Result) > 0 do Result := StringReplace(Result, '  ', ' ', [rfReplaceAll]);
+  end;
+
 begin
   Result := NewText;
-  if (OldLine = '') or (NewText = '') then Exit;
+  FoundMatch := False;
 
-  // 1. Extraire le texte pur de la ligne SRT précédente (après le ": ")
+  if (OldLine = '') or (Trim(NewText) = '') then Exit;
+
+  // 1. On prépare le texte de référence (le bloc précédent)
   PureOldText := OldLine;
   P := Pos(': ', PureOldText);
-  if P > 0 then
-    Delete(PureOldText, 1, P + 1);
-  PureOldText := Trim(PureOldText);
+  if P > 0 then Delete(PureOldText, 1, P + 1);
+  PureOldText := StripPunc(PureOldText);
 
-  // 2. Découper le NOUVEAU texte en mots via une StringList (plus simple que Split en FPC)
   WordsNew := TStringList.Create;
   try
     WordsNew.Delimiter := ' ';
+    WordsNew.StrictDelimiter := False;
     WordsNew.DelimitedText := NewText;
 
-    // 3. On tente de trouver si les premiers mots de NewText sont à la fin de PureOldText
-    // On vérifie de 5 mots descendre à 1
-    for i := 5 downto 1 do
+    if chklog.Checked then
+      Memo1.Lines.Add(Format('🔍 Debug : Fin précédente : "...%s"', [Copy(PureOldText, Length(PureOldText)-25, 25)]));
+
+    // 2. Stratégie de recherche
+    MaxCheck := 10;
+    if WordsNew.Count < MaxCheck then MaxCheck := WordsNew.Count;
+
+    // On va tenter de matcher les mots, d'abord en partant du mot 0, puis du mot 1
+    for StartIdx := 0 to 1 do
     begin
-      if WordsNew.Count < i then Continue;
+      if FoundMatch then Break;
+      if WordsNew.Count <= StartIdx + 2 then Continue;
 
-      // On construit la chaîne des 'i' premiers mots de NewText
-      Word := '';
-      for j := 0 to i - 1 do
-        Word := Word + WordsNew[j] + ' ';
-      Word := Trim(Word);
-
-      // On regarde si PureOldText se termine par cette suite de mots
-      // On utilise LowerCase pour être insensible à la casse
-      if Pos(LowerCase(Word), LowerCase(PureOldText)) > (Length(PureOldText) - Length(Word) - 2) then
+      for i := MaxCheck downto 2 do //downto 1 ?
       begin
-        // Trouvé ! On reconstruit le résultat sans les 'i' premiers mots
-        Result := '';
-        for j := i to WordsNew.Count - 1 do
-          Result := Result + WordsNew[j] + ' ';
-        Result := Trim(Result);
-        Break;
+        if (StartIdx + i) > WordsNew.Count then Continue;
+
+        // Construction de la chaîne de test
+        WordToMatch := '';
+        for j := StartIdx to (StartIdx + i - 1) do
+          WordToMatch := WordToMatch + WordsNew[j] + ' ';
+
+        WordToMatch := StripPunc(WordToMatch);
+        if WordToMatch = '' then Continue;
+
+        // Recherche dans la fin du texte précédent
+        P := Pos(WordToMatch, PureOldText);
+
+        // On vérifie si le match est dans les 40 derniers caractères du bloc précédent
+        if (P > 0) and (P > (Length(PureOldText) - Length(WordToMatch) - 40)) then
+        begin
+          // On reconstruit le texte en coupant tout ce qui précède la fin du match
+          Result := '';
+          for j := (StartIdx + i) to WordsNew.Count - 1 do
+            Result := Result + WordsNew[j] + ' ';
+          Result := Trim(Result);
+
+          if chklog.Checked then
+          begin
+             Memo1.Lines.Add(Format('✅ MATCH [%d mots] : "%s"', [i, WordToMatch]));
+             if Result = '' then Memo1.Lines.Add('   👉 Segment ignoré (100% doublon)');
+          end;
+
+          FoundMatch := True;
+          Break;
+        end;
       end;
     end;
+
+    if (not FoundMatch) and chklog.Checked then
+       Memo1.Lines.Add('❌ Aucun doublon détecté.');
+
   finally
     WordsNew.Free;
   end;
@@ -205,6 +257,7 @@ begin
     ProgressBar1.Position := NewPos;
 end;
 
+
 procedure Tfrmmain.RefreshDisplayFromThread(AThread: TWhisperThread);
 var
   i: Integer;
@@ -232,6 +285,51 @@ begin
     end;
   end;
 end;
+
+{
+procedure Tfrmmain.RefreshDisplayFromThread(AThread: TWhisperThread);
+var
+  i: Integer;
+  sLine: string;
+begin
+  if Assigned(AThread) and Assigned(AThread.FullTextResult) then
+  begin
+    if AThread.FullTextResult.Count > FLastDisplayedIndex then
+    begin
+      Memo1.Lines.BeginUpdate;
+      try
+        for i := FLastDisplayedIndex to AThread.FullTextResult.Count - 1 do
+        begin
+          sLine := AThread.FullTextResult[i];
+
+          // --- ANTI-DUPLICATE (C'est ici que ça se passe) ---
+          // On nettoie le segment s'il s'agit du début d'un nouveau bloc (i=0)
+          if (i = 0) and (FCapturedText.Count > 0) then
+          begin
+            // On compare la nouvelle ligne avec la toute dernière stockée
+            sLine := CleanDuplicate(FCapturedText[FCapturedText.Count - 1], sLine);
+          end;
+
+          // On n'ajoute que s'il reste du texte (pour éviter les lignes vides)
+          if Trim(sLine) <> '' then
+          begin
+            // On ajoute la ligne (éventuellement nettoyée) au Memo
+            Memo1.Lines.Add(sLine);
+
+            // On conserve ton stockage interne pour la capture
+            if timer_capture.Enabled then
+                FCapturedText.Add(sLine);
+          end;
+        end;
+        FLastDisplayedIndex := AThread.FullTextResult.Count;
+      finally
+        Memo1.Lines.EndUpdate;
+        SendMessage(Memo1.Handle, WM_VSCROLL, SB_BOTTOM, 0);
+      end;
+    end;
+  end;
+end;
+}
 
 procedure Tfrmmain.LogToMemo(const AMsg: string);
 begin
@@ -427,7 +525,9 @@ begin
          txtthreads.Text,
          txtPrompt.Text,
          cmbpreset.ItemIndex,
-         chkgpu.Checked
+         chkgpu.Checked,
+         12, //secs = 10 default
+         1*16000 //16000 multiple - 1*16000 default
        ) then
     begin
       btnCapture.Caption := 'Stop';

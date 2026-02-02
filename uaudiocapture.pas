@@ -42,7 +42,8 @@ type
 
     // Méthode pour démarrer la capture avec tes paramètres
     function Start(DeviceIdx: Integer; const AModel, ALang, AThreads, APrompt: string;
-                  Preset: Integer; UseGPU: Boolean): Boolean;
+                                        Preset: Integer; UseGPU: Boolean;
+                                        AChunkSize: Integer; AOverlapSize: Integer): Boolean;
     procedure Stop;
 
     // Nouvelle méthode pour le mode fichier
@@ -71,7 +72,9 @@ begin
   FRecorder := TBassRecorder.Create;
   // On branche ton callback
   FRecorder.OnAudioChunk := @OnAudioDataReceived;
-  FOverlapSize := 16000; // Ta valeur par défaut (1 sec à 16kHz)
+  // On initialise à 0 ou on laisse tomber cette ligne,
+  // car Start() viendra écraser cette valeur.
+  FOverlapSize := 0;
   //
   BASS_PluginLoad(PChar(WideString('bass_aac.dll')), BASS_UNICODE);
 end;
@@ -325,7 +328,8 @@ end;
 }
 
 function TAudioCaptureManager.Start(DeviceIdx: Integer; const AModel, ALang, AThreads, APrompt: string;
-                                   Preset: Integer; UseGPU: Boolean): Boolean;
+                                    Preset: Integer; UseGPU: Boolean;
+                                    AChunkSize: Integer; AOverlapSize: Integer): Boolean;
 begin
   FModelPath := AModel;
   FLang := ALang;
@@ -334,7 +338,10 @@ begin
   FPresetIdx := Preset;
   FUseGPU := UseGPU;
 
-  Result := FRecorder.StartCapture(DeviceIdx, 10);
+  // On stocke l'overlap pour l'utiliser dans OnAudioDataReceived
+  FOverlapSize := AOverlapSize;
+
+  Result := FRecorder.StartCapture(DeviceIdx, AChunkSize);
 end;
 
 procedure TAudioCaptureManager.Stop;
