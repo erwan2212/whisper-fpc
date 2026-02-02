@@ -182,6 +182,7 @@ object frmmain: Tfrmmain
     Top = 88
     Width = 697
     TabOrder = 13
+    Visible = False
   end
   object Label6: TLabel
     Left = 24
@@ -190,6 +191,7 @@ object frmmain: Tfrmmain
     Width = 49
     Caption = 'Prompt'
     ParentColor = False
+    Visible = False
   end
   object cmbdevices: TComboBox
     Left = 80
