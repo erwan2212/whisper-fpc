@@ -1,6 +1,6 @@
 Transcribe an audio to text using whisper.
 <br/>
-Audio capture is also possible (and therefore real time transcription.
+Audio capture is also possible (and therefore real time transcription), including audio overlap and cycling context (todo : anti duplicate).
 <br/>
 Audio input supports wav,oog,aiff,mp2/mp3,aac/m4a.
 <br/><br/><br/>
