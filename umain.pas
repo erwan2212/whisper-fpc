@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, whisper_api,   uwhisperthread,
+  ComCtrls, ExtCtrls, math, windows, RegExpr, whisper_api,   uwhisperthread,
   uWhisperEngine,uAudioCapture;
 
 {
@@ -90,7 +90,9 @@ type
     procedure LogToMemo(const AMsg: string);
     procedure RefreshDisplayFromThread(AThread: TWhisperThread);
     procedure DoAmplitudeUpdate(MaxAmp: Single);
-    function GetSlidingContext(MaxChars: Integer): string;
+    function GetSlidingContext1(MaxChars: Integer): string;
+    function GetRawTextOnly(MaxSearchRange: Integer): string;
+    function GetSlidingContext2(TargetChars: Integer): string;
     function CleanDuplicate(const OldLine, NewText: string): string;
   public
 
@@ -220,7 +222,83 @@ begin
   end;
 end;
 
-function Tfrmmain.GetSlidingContext(MaxChars: Integer): string;
+function Tfrmmain.GetRawTextOnly(MaxSearchRange: Integer): string;
+var
+  i, P: Integer;
+  Line, PureText: string;
+begin
+  Result := '';
+  for i := FCapturedText.Count - 1 downto 0 do
+  begin
+    Line := FCapturedText[i];
+    P := Pos(': ', Line);
+    if P > 0 then
+      PureText := Copy(Line, P + 2, Length(Line))
+    else
+      PureText := Line;
+
+    Result := PureText + ' ' + Result;
+    if Length(Result) > MaxSearchRange then Break;
+  end;
+  Result := Trim(Result);
+end;
+
+function Tfrmmain.GetSlidingContext2(TargetChars: Integer): string;
+var
+  RawText, Sentence: string;
+  Regex: TRegExpr;
+  Sentences: TStringList;
+  i, SpacePos: Integer;
+begin
+  Result := '';
+
+  // On récupère une base brute large (500-600 chars) pour avoir du choix
+  // On utilise TargetChars * 2 pour avoir assez de phrases complètes en réserve
+  RawText := GetRawTextOnly(TargetChars * 2);
+  if RawText = '' then Exit;
+
+  Regex := TRegExpr.Create;
+  Sentences := TStringList.Create;
+  try
+    // Regex pour isoler chaque phrase se terminant par une ponctuation
+    //Regex.Expression := '([^.?!]+[.?!])';
+    Regex.Expression := '([^.?!]+[.?!](\s|$))'; //la ponctuation est suivie d'un espace (\s) ou de la fin de la chaîne ($), ce qui évite de couper au milieu d'un nombre (ex: 9.36).
+
+    if Regex.Exec(RawText) then
+    begin
+      repeat
+        Sentences.Add(Trim(Regex.Match[1]));
+      until not Regex.ExecNext;
+    end;
+
+    // CHALLENGE : On remplit le contexte en partant de la fin (plus récent)
+    // On s'arrête juste avant de dépasser TargetChars
+    for i := Sentences.Count - 1 downto 0 do
+    begin
+      Sentence := Sentences[i] + ' ';
+      if Length(Result) + Length(Sentence) <= TargetChars then
+        Result := Sentence + Result
+      else
+        Break;
+    end;
+
+    // FALLBACK : Si la Regex n'a rien trouvé de probant (phrase trop courte ou absente)
+    // on prend les TargetChars derniers caractères de façon brute
+    if (Length(Result) < (TargetChars div 2)) then
+    begin
+      Result := Copy(RawText, Length(RawText) - TargetChars + 1, TargetChars);
+      SpacePos := Pos(' ', Result);
+      if SpacePos > 0 then Delete(Result, 1, SpacePos);
+    end;
+
+  finally
+    Regex.Free;
+    Sentences.Free;
+  end;
+  Result := Trim(Result);
+end;
+
+function Tfrmmain.GetSlidingContext1(MaxChars: Integer): string;
 var
   i, P: Integer;
   Line, Acc: string;
@@ -739,7 +817,7 @@ begin
       WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
 
       //slide context
-      NewPrompt := GetSlidingContext(250);
+      NewPrompt := GetSlidingContext2(250);
       FAudioManager.CurrentPrompt := NewPrompt;
 
       // 3. RESET POUR LE PROCHAIN BLOC
