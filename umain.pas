@@ -7,8 +7,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, RegExpr, whisper_api,   uwhisperthread,
-  uWhisperEngine,uAudioCapture;
+  ComCtrls, ExtCtrls, math, windows, RegExpr, IniFiles,
+  whisper_api,   uwhisperthread, uWhisperEngine,uAudioCapture;
 
 {
 //
@@ -94,6 +94,8 @@ type
     function GetRawTextOnly(MaxSearchRange: Integer): string;
     function GetSlidingContext2(TargetChars: Integer): string;
     function CleanDuplicate(const OldLine, NewText: string): string;
+    procedure LoadSettings;
+    procedure SaveSettings;
   public
 
   end;
@@ -124,6 +126,57 @@ begin
   for c in S do
     if c in ['a'..'z', 'A'..'Z', '0'..'9', ' '] then Result := Result + c;
   Result := LowerCase(Trim(Result));
+end;
+
+procedure Tfrmmain.SaveSettings;
+var
+  Ini: TIniFile;
+begin
+  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
+  try
+    Ini.WriteString('Settings', 'LastModel', txtmodel.Text);
+    Ini.WriteInteger('Settings', 'Preset', cmbpreset.ItemIndex);
+    Ini.WriteInteger('Settings', 'Language', cmblang.ItemIndex);
+
+    // Sauvegarde du nom du périphérique audio
+    if cmbdevices.ItemIndex <> -1 then
+      Ini.WriteString('Settings', 'LastDevice', cmbdevices.Text);
+  finally
+    Ini.Free;
+  end;
+end;
+
+procedure Tfrmmain.LoadSettings;
+var
+  Ini: TIniFile;
+  LastModel, LastDevice: string;
+  Idx: Integer;
+begin
+  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
+  try
+    // 1. Modèle
+    LastModel := Ini.ReadString('Settings', 'LastModel', 'ggml-small.bin');
+    if FileExists(LastModel) then txtmodel.Text := LastModel
+    else txtmodel.Text := 'ggml-small.bin';
+
+    // 2. Presets et Langue
+    cmbpreset.ItemIndex := Ini.ReadInteger('Settings', 'Preset', 1);
+    cmblang.ItemIndex := Ini.ReadInteger('Settings', 'Language', 0);
+
+    // 3. Périphérique Audio
+    LastDevice := Ini.ReadString('Settings', 'LastDevice', '');
+    if LastDevice <> '' then
+    begin
+      // On cherche le nom dans la liste chargée par listdevices
+      Idx := cmbdevices.Items.IndexOf(LastDevice);
+      if Idx <> -1 then
+        cmbdevices.ItemIndex := Idx
+      else if cmbdevices.Items.Count > 0 then
+        cmbdevices.ItemIndex := 0; // Fallback sur le premier si non trouvé
+    end;
+  finally
+    Ini.Free;
+  end;
 end;
 
 function Tfrmmain.CleanDuplicate(const OldLine, NewText: string): string;
@@ -709,10 +762,15 @@ begin
     // On peut encore utiliser le recorder interne du manager pour lister
     listdevices;
 
+    //
+    LoadSettings;
+
 end;
 
 procedure Tfrmmain.FormDestroy(Sender: TObject);
 begin
+  SaveSettings;
+  //
   timer_transcribe.Enabled := False;
   timer_capture.Enabled := False;
   //
@@ -817,7 +875,8 @@ begin
       WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
 
       //slide context
-      NewPrompt := GetSlidingContext2(250);
+      NewPrompt := GetSlidingContext2(300); //250 before
+      memo1.Lines.Add (newprompt);
       FAudioManager.CurrentPrompt := NewPrompt;
 
       // 3. RESET POUR LE PROCHAIN BLOC
