@@ -876,7 +876,7 @@ begin
 
       //slide context
       NewPrompt := GetSlidingContext2(250); //250 before
-      memo1.Lines.Add (newprompt);
+      //memo1.Lines.Add (newprompt);
       FAudioManager.CurrentPrompt := NewPrompt;
 
       // 3. RESET POUR LE PROCHAIN BLOC
