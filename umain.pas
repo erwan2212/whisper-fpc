@@ -875,7 +875,7 @@ begin
       WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
 
       //slide context
-      NewPrompt := GetSlidingContext2(300); //250 before
+      NewPrompt := GetSlidingContext2(250); //250 before
       memo1.Lines.Add (newprompt);
       FAudioManager.CurrentPrompt := NewPrompt;
 

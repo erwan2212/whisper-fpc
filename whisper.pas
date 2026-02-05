@@ -97,7 +97,7 @@ begin
   Result.beam_search_patience := -1.0;
   Result.temperature := 0.0;
   Result.temperature_inc := 0.2;
-  Result.n_max_text_ctx := 448;
+  Result.n_max_text_ctx := 128*5;
   Result.no_speech_thold := 0.6;
   Result.logprob_thold := -1.0;
   Result.entropy_thold := 2.4;
@@ -112,7 +112,7 @@ begin
   Result.beam_search_patience := -1.0;
   Result.temperature := 0.0;
   Result.temperature_inc := 0.2;
-  Result.n_max_text_ctx := 256;
+  Result.n_max_text_ctx := 128*3;
   Result.no_speech_thold := 0.6;
   Result.logprob_thold := -1.0;
   Result.entropy_thold := 2.4;
