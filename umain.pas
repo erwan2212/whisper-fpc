@@ -47,34 +47,37 @@ type
   { Tfrmmain }
 
   Tfrmmain = class(TForm)
-    Button1: TButton;
     btntranscribe: TButton;
     btncapture: TButton;
     Button3: TButton;
     Button4: TButton;
-    chklog: TCheckBox;
     chkgpu: TCheckBox;
+    chklog: TCheckBox;
+    cmbdevices: TComboBox;
     cmblang: TComboBox;
     cmbpreset: TComboBox;
-    cmbdevices: TComboBox;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Memo1: TMemo;
+    ProgressBar1: TProgressBar;
     timer_capture: TTimer;
     txtaudio: TEdit;
-    txtprompt: TEdit;
     txtmodel: TEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    Memo1: TMemo;
+    txtprompt: TEdit;
     OpenDialog1: TOpenDialog;
-    ProgressBar1: TProgressBar;
     timer_transcribe: TTimer;
     txtthreads: TEdit;
     procedure btncaptureClick(Sender: TObject);
     procedure btntranscribeClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure chklogChange(Sender: TObject);
@@ -636,6 +639,11 @@ begin
   end;
 end;
 
+procedure Tfrmmain.Button1Click(Sender: TObject);
+begin
+
+end;
+
 procedure Tfrmmain.btncaptureClick(Sender: TObject);
 var
   SaveDlg: TSaveDialog;
@@ -764,6 +772,9 @@ begin
 
     //
     LoadSettings;
+    //
+    //Self.Font.Name := 'Segoe UI';
+    //Self.Font.Size := 9; // Taille standard Windows moderne
 
 end;
 
