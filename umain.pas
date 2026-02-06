@@ -773,8 +773,66 @@ begin
     //
     LoadSettings;
     //
-    //Self.Font.Name := 'Segoe UI';
-    //Self.Font.Size := 9; // Taille standard Windows moderne
+    // Police moderne
+    Self.Font.Name := 'Segoe UI';
+    Self.Font.Size := 10; // Couleur de fond douce (clair moderne)
+    //Self.Color := RGB(245, 245, 247); // gris très clair façon Fluent Design
+// --- GROUPBOX MODERNES ----------------------------------------------------
+GroupBox1.Color := clWhite;
+GroupBox1.Font.Style := [fsBold];
+GroupBox1.Font.Color := RGB(60,60,60);
+GroupBox1.BorderSpacing.Around := 8;
+GroupBox2.Color := clWhite;
+GroupBox2.Font.Style := [fsBold];
+GroupBox2.Font.Color := RGB(60,60,60);
+GroupBox2.BorderSpacing.Around := 8;
+GroupBox3.Color := clWhite;
+GroupBox3.Font.Style := [fsBold];
+GroupBox3.Font.Color := RGB(60,60,60);
+GroupBox3.BorderSpacing.Around := 8;
+// --- BOUTONS --------------------------------------------------------------
+BtnTranscribe.Font.Name := 'Segoe UI Semibold';
+BtnTranscribe.Font.Size := 10;
+BtnTranscribe.Color := RGB(0, 120, 215);
+BtnTranscribe.Font.Color := clWhite;
+BtnTranscribe.Cursor := crHandPoint;
+BtnCapture.Font.Name := 'Segoe UI';
+BtnCapture.Font.Size := 10;
+BtnCapture.Color := RGB(230, 230, 230);
+BtnCapture.Font.Color := clBlack;
+BtnCapture.Cursor := crHandPoint;
+// --- CHECKBOXES -----------------------------------------------------------
+chkgpu.Font.Color := RGB(50,50,50);
+chklog.Font.Color := RGB(50,50,50);
+// --- COMBOS ---------------------------------------------------------------
+cmblang.BorderSpacing.Around := 4;
+cmbpreset.BorderSpacing.Around := 4;
+cmbdevices.BorderSpacing.Around := 4;
+cmblang.Color := clWhite;
+cmbpreset.Color := clWhite;
+cmbdevices.Color := clWhite;
+// --- EDITS ----------------------------------------------------------------
+txtaudio.Color := clWhite;
+txtaudio.BorderSpacing.Around := 4;
+txtmodel.Color := clWhite;
+txtmodel.BorderSpacing.Around := 4;
+txtprompt.Color := clWhite;
+txtprompt.BorderSpacing.Around := 4;
+// --- LABELS ---------------------------------------------------------------
+Label1.Font.Color := RGB(60,60,60);
+Label2.Font.Color := RGB(60,60,60);
+Label3.Font.Color := RGB(60,60,60);
+Label4.Font.Color := RGB(60,60,60);
+Label5.Font.Color := RGB(60,60,60);
+Label6.Font.Color := RGB(60,60,60);
+Label7.Font.Color := RGB(60,60,60);
+// --- MEMO (sortie transcription) ------------------------------------------
+Memo1.Font.Name := 'Consolas';
+Memo1.Font.Size := 10;
+Memo1.Color := RGB(250,250,250);
+Memo1.BorderStyle := bsSingle;
+// --- PROGRESS BAR ---------------------------------------------------------
+ProgressBar1.BorderSpacing.Around := 6;
 
 end;
 

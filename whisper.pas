@@ -117,6 +117,10 @@ begin
   Result.logprob_thold := -1.0;
   Result.entropy_thold := 2.4;
   Result.n_threads := 4;
+  //
+  Result.suppress_blank := 1;
+  Result.suppress_nst := 1;
+
 end;
 
 function preset_perf: whisper_full_params;
