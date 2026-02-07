@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, RegExpr, IniFiles,
+  ComCtrls, ExtCtrls, math, windows, strutils, RegExpr, IniFiles,
   whisper_api,   uwhisperthread, uWhisperEngine,uAudioCapture;
 
 {
@@ -110,6 +110,7 @@ var
   FAudioManager:TAudioCaptureManager;
 
   FLastDisplayedIndex: Integer; // À remettre à 0 au clic sur "Capture" ou "Transcribe"
+  Fduration: double;
 
   start:int64;
   WhisperThread:tWhisperThread;
@@ -122,6 +123,16 @@ implementation
 
 
 { Tfrmmain }
+function FormatSeconds(Seconds: Double): string;
+var
+  m, s: Integer;
+begin
+  m := Trunc(Seconds) div 60;
+  s := Trunc(Seconds) mod 60;
+  Result := Format('%dm %ds', [m, s]);
+end;
+
+
 function StripPunc(const S: string): string;
 var c: char;
 begin
@@ -516,6 +527,10 @@ procedure MyWhisperLogCallback(level: Integer; const text: PChar; user_data: Poi
 procedure Tfrmmain.WhisperFinished(Sender: Tobject);
 var
   SaveDlg: TSaveDialog;
+  TotalWords: Integer;
+  ProcessingTimeSec: Double;
+  RealTimeRatio: Double;
+  WPM: double;
 begin
   try
     if Assigned(WhisperThread) then
@@ -526,7 +541,15 @@ begin
       else
       begin
         Memo1.Lines.Add('Transcription terminée !');
-        Memo1.Lines.Add('Total: ' + FloatToStr((GetTickCount64 - start) / 1000) + ' s');
+        ProcessingTimeSec:=(GetTickCount64 - start) / 1000;
+        TotalWords := WordCount(WhisperThread.FullTextResult.Text, [' ', #9, #10, #13]);
+        WPM := (TotalWords / Fduration) * 60;
+        RealTimeRatio := Fduration / ProcessingTimeSec;
+        //
+        Memo1.Lines.Add(Format('Traitement : %.1f s | Audio : %.1f s', [ProcessingTimeSec, Fduration]));
+        Memo1.Lines.Add(Format('Volume : %d mots (Débit : %.1f WPM)', [TotalWords, WPM]));
+        Memo1.Lines.Add(Format('Vitesse : %.2f x Real-Time', [RealTimeRatio]));
+        //
         ProgressBar1.Position := 100;
       end;
 
@@ -596,6 +619,7 @@ begin
   Memo1.Lines.Clear;
 
   FLastDisplayedIndex:=0;
+  Fduration:=0;
   FCapturedText.Clear ;
 
   // --- 2. LECTURE WAV (Code déporté mais logs conservés) ---
@@ -605,6 +629,7 @@ begin
     Memo1.Lines.Add(Err); // Affiche l'exception capturée ou le message d'erreur
     Exit;
   end;
+  Fduration:=FAudioManager.Duration ;
 
   // Affichage du nombre d'échantillons comme avant
   Memo1.Lines.Add('Nombre d’échantillons : ' + IntToStr(FAudioManager.nFileSamples));
@@ -858,58 +883,6 @@ begin
   end;
 
 end;
-
-{
-procedure Tfrmmain.timer_captureTimer(Sender: TObject);
-var
-  LThread: TWhisperThread;
-  FinalText: string;
-begin
-  if [csDestroying, csLoading] * ComponentState <> [] then Exit;
-
-  // On récupère le thread que le Manager a créé dans l'Engine
-  WhisperThread := WhisperEngine.CurrentThread;
-
-  LThread := WhisperThread;
-
-  if Assigned(LThread) then
-  begin
-    // On met à jour la progressbar pendant que ça travaille
-    ProgressBar1.Position := LThread.ProgressPercent;
-
-    if LThread.Finished then
-    begin
-      // Avant de tuer le thread, on récupère le nombre de segments qu'il a généré
-      // (Index final - Index de départ = nombre de nouveaux segments)
-      //WhisperEngine.AddSegments(LThread.FullTextResult.Count); //avant l'ajout de la duration
-      WhisperEngine.AddSegments(LThread.FullTextResult.Count, LThread.SampleCount / 16000);
-      //
-      timer_capture.Enabled := False;
-      try
-        if Assigned(LThread.FullTextResult) and (LThread.FullTextResult.Count > 0) then
-        begin
-          FinalText := Trim(LThread.FullTextResult.Text);
-          if FinalText <> '' then
-          begin
-            LogToMemo(FinalText);
-            //FCapturedText.Add(Format('[%s] %s', [FormatDateTime('HH:nn:ss', Now), FinalText]));
-            FCapturedText.Add(FinalText);
-          end;
-        end;
-      finally
-        if Assigned(WhisperEngine) then
-          WhisperEngine.Stop;
-
-        WhisperThread := nil;
-        ProgressBar1.Position := 0;
-
-        if btnCapture.Caption = 'Stop' then
-          timer_capture.Enabled := True;
-      end;
-    end;
-  end;
-end;
-}
 
 procedure Tfrmmain.timer_captureTimer(Sender: TObject);
 var

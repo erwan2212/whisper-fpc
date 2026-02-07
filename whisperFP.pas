@@ -80,11 +80,12 @@ begin
   if paramstr(1)<>'' then MODEL_FILE :=paramstr(1);
   if paramstr(2)<>'' then WAV_FILE :=paramstr(2);
 
-  cparams := whisper_context_default_params;
+  //cparams := whisper_context_default_params;
+  fillchar(cparams,sizeof(TWhisperContextParams),0);
 
     cparams.use_gpu := true;
     cparams.gpu_device := 0; // GPU 0
-    cparams.flash_attn := True; // si supporté
+    cparams.flash_attn := false; // si supporté
 
     ctx := whisper_init_from_file_with_params(pchar(MODEL_FILE),cparams);
     if ctx = nil then
@@ -101,7 +102,7 @@ begin
  segData.LastEnd := 0.0;
  segData.SegmentIndex :=0;;
 
- assignfile(segData.SRTFile ,WAV_FILE+'.srt');
+ assignfile(segData.SRTFile ,'transcribe'+'_' + FormatDateTime('hhmmss', Now) + '.srt');
  {$i-}
  Rewrite(segData.SRTFile);
  {$i+}

@@ -34,6 +34,8 @@ type
 
     FStartTime : TDateTime;
 
+    FDuration: Double;
+
     // Callback interne pour BASS
     procedure OnAudioDataReceived(const Samples: array of Single);
   public
@@ -60,6 +62,8 @@ type
     property Recorder: TBassRecorder read FRecorder;
 
     property StartTime: TDateTime read FStartTime;
+
+    property Duration: double read FDuration;
   end;
 
 implementation
@@ -191,7 +195,7 @@ var
   Mixer: HSTREAM;
   Len: QWORD;
   Info: BASS_CHANNELINFO;
-  Duration: Double;
+  LDuration: Double;
   OrigFreq: Cardinal;
 begin
   Result := False;
@@ -231,14 +235,15 @@ begin
 
     // 4. On calcule la taille de sortie basée sur la durée réelle du décodeur
     Len := BASS_ChannelGetLength(Decoder, BASS_POS_BYTE);
-    Duration := BASS_ChannelBytes2Seconds(Decoder, Len);
-    FnFileSamples := Round(duration * 16000);
+    LDuration := BASS_ChannelBytes2Seconds(Decoder, Len);
+    FnFileSamples := Round(LDuration * 16000);
 
     SetLength(FFileSamples, FnFileSamples);
 
+    FDuration:=LDuration;
     //log
     if Assigned(FEngine) then
-      FEngine.Log(Format('Source: %d Hz, %d canaux, Durée: %.2f s', [OrigFreq, Info.chans, Duration]));
+      FEngine.Log(Format('Source: %d Hz, %d canaux, Durée: %.2f s', [OrigFreq, Info.chans, LDuration]));
 
     // 5. On pompe les données DEPUIS LE MIXER
     // Le mixer va forcer le resampling et le mono proprement

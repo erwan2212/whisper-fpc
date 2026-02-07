@@ -11,9 +11,6 @@
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
     </General>
-    <VersionInfo>
-      <StringTable ProductVersion=""/>
-    </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="Default" Default="True"/>
       <Item2 Name="Debug">
@@ -79,6 +76,7 @@
         <Filename Value="ucapture.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmmain"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Ucapture"/>
       </Unit1>

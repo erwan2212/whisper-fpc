@@ -96,12 +96,13 @@ begin
   //Sur un modèle Medium, cela peut faire gagner 1 seconde précieuse sans perte de qualité visible.
   Result.beam_search_patience := -1.0;
   Result.temperature := 0.0;
-  Result.temperature_inc := 0.2;
+  Result.temperature_inc := 0.4;
   Result.n_max_text_ctx := 128*5;
   Result.no_speech_thold := 0.6;
   Result.logprob_thold := -1.0;
-  Result.entropy_thold := 2.4;
+  Result.entropy_thold := 2.2;
   Result.n_threads := 4;
+  Result.suppress_nst := 1;
 end;
 
 function preset_mid: whisper_full_params;
@@ -129,11 +130,12 @@ begin
   Result.strategy := 0; // WHISPER_SAMPLING_GREEDY
   Result.temperature := 0.0;
   Result.temperature_inc := 0.0;
-  Result.n_max_text_ctx := 50;
+  Result.n_max_text_ctx := 128*1;
   Result.no_speech_thold := 0.6;
   Result.logprob_thold := -1.0;
   Result.entropy_thold := 2.4;
   Result.n_threads := 4;
+  Result.suppress_nst := 1;
 end;
 
 function preset_def: whisper_full_params;

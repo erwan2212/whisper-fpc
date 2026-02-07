@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ubassrecorder,bass, basswasapi;
+  ComCtrls, ubassrecorder;
 
 type
 
