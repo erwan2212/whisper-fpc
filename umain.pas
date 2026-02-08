@@ -149,6 +149,7 @@ begin
   Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
   try
     Ini.WriteString('Settings', 'LastModel', txtmodel.Text);
+    Ini.WriteString('Settings', 'LastAudio', txtaudio.Text);
     Ini.WriteInteger('Settings', 'Preset', cmbpreset.ItemIndex);
     Ini.WriteInteger('Settings', 'Language', cmblang.ItemIndex);
 
@@ -163,15 +164,19 @@ end;
 procedure Tfrmmain.LoadSettings;
 var
   Ini: TIniFile;
-  LastModel, LastDevice: string;
+  LastModel, LastAudio, LastDevice: string;
   Idx: Integer;
 begin
   Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
   try
-    // 1. Modèle
+    // 1. Modèle & Audio
     LastModel := Ini.ReadString('Settings', 'LastModel', 'ggml-small.bin');
     if FileExists(LastModel) then txtmodel.Text := LastModel
     else txtmodel.Text := 'ggml-small.bin';
+
+    LastAudio := Ini.ReadString('Settings', 'LastAudio', 'output.wav');
+    if FileExists(LastAudio) then txtaudio.Text := LastAudio
+    else txtaudio.Text := 'output.wav';
 
     // 2. Presets et Langue
     cmbpreset.ItemIndex := Ini.ReadInteger('Settings', 'Preset', 1);
