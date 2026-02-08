@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, math, windows, strutils, RegExpr, IniFiles,
+  ComCtrls, ExtCtrls, Buttons, math, windows, strutils, RegExpr, IniFiles,
   whisper_api,   uwhisperthread, uWhisperEngine,uAudioCapture;
 
 {
@@ -47,8 +47,6 @@ type
   { Tfrmmain }
 
   Tfrmmain = class(TForm)
-    btntranscribe: TButton;
-    btncapture: TButton;
     Button3: TButton;
     Button4: TButton;
     chkgpu: TCheckBox;
@@ -68,6 +66,8 @@ type
     Label7: TLabel;
     Memo1: TMemo;
     ProgressBar1: TProgressBar;
+    btntranscribe: TSpeedButton;
+    btncapture: TSpeedButton;
     timer_capture: TTimer;
     txtaudio: TEdit;
     txtmodel: TEdit;
@@ -612,6 +612,8 @@ procedure Tfrmmain.btntranscribeClick(Sender: TObject);
 var
   Err: string;
 begin
+  if lowercase(btncapture.Caption) ='stop' then exit;
+
   // --- 1. LOGIQUE D'ARRÊT (Identique à ton code) ---
   if Assigned(WhisperThread) then
   begin
@@ -669,6 +671,10 @@ begin
   end;
 end;
 
+
+
+
+
 procedure Tfrmmain.Button1Click(Sender: TObject);
 begin
 
@@ -679,6 +685,8 @@ var
   SaveDlg: TSaveDialog;
   DeviceIdx: Integer;
 begin
+   if lowercase(btntranscribe.Caption) ='stop' then exit;
+
   if btnCapture.Caption = 'Capture' then
   begin
     FLastDisplayedIndex:=0;
@@ -744,6 +752,9 @@ begin
     end;
   end;
 end;
+
+
+
 
 procedure Tfrmmain.Button3Click(Sender: TObject);
 begin
@@ -823,13 +834,13 @@ GroupBox3.BorderSpacing.Around := 8;
 // --- BOUTONS --------------------------------------------------------------
 BtnTranscribe.Font.Name := 'Segoe UI Semibold';
 BtnTranscribe.Font.Size := 10;
-BtnTranscribe.Color := RGB(0, 120, 215);
-BtnTranscribe.Font.Color := clWhite;
+btnTranscribe.Color := RGB(0,120,215); // Bleu Fluent
+btnTranscribe.Font.Color := clWhite;
 BtnTranscribe.Cursor := crHandPoint;
 BtnCapture.Font.Name := 'Segoe UI';
 BtnCapture.Font.Size := 10;
-BtnCapture.Color := RGB(230, 230, 230);
-BtnCapture.Font.Color := clBlack;
+btnCapture.Color := RGB(200,40,40); // Rouge moderne
+btnCapture.Font.Color := clWhite;
 BtnCapture.Cursor := crHandPoint;
 // --- CHECKBOXES -----------------------------------------------------------
 chkgpu.Font.Color := RGB(50,50,50);

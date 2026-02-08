@@ -12,21 +12,12 @@ object frmmain: Tfrmmain
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '1.8.2.0'
-  object btntranscribe: TButton
-    Left = 320
-    Height = 31
-    Top = 592
-    Width = 94
-    Caption = 'Transcribe'
-    OnClick = btntranscribeClick
-    TabOrder = 0
-  end
   object txtprompt: TEdit
     Left = 81
     Height = 28
     Top = 120
     Width = 697
-    TabOrder = 1
+    TabOrder = 0
     Visible = False
   end
   object Label6: TLabel
@@ -38,15 +29,6 @@ object frmmain: Tfrmmain
     ParentColor = False
     Visible = False
   end
-  object btncapture: TButton
-    Left = 424
-    Height = 31
-    Top = 592
-    Width = 94
-    Caption = 'Capture'
-    OnClick = btncaptureClick
-    TabOrder = 2
-  end
   object GroupBox1: TGroupBox
     Left = 25
     Height = 112
@@ -55,7 +37,7 @@ object frmmain: Tfrmmain
     ClientHeight = 87
     ClientWidth = 819
     ParentColor = False
-    TabOrder = 3
+    TabOrder = 1
     object Label1: TLabel
       Left = 16
       Height = 20
@@ -114,7 +96,7 @@ object frmmain: Tfrmmain
     Width = 823
     ClientHeight = 87
     ClientWidth = 819
-    TabOrder = 4
+    TabOrder = 2
     object Label3: TLabel
       Left = 16
       Height = 20
@@ -222,7 +204,7 @@ object frmmain: Tfrmmain
     Width = 823
     ClientHeight = 311
     ClientWidth = 819
-    TabOrder = 5
+    TabOrder = 3
     object Memo1: TMemo
       Left = 8
       Height = 272
@@ -238,6 +220,26 @@ object frmmain: Tfrmmain
       Width = 798
       TabOrder = 1
     end
+  end
+  object btntranscribe: TSpeedButton
+    Left = 320
+    Height = 28
+    Top = 592
+    Width = 94
+    Caption = 'Transcribe'
+    Flat = True
+    Transparent = False
+    OnClick = btntranscribeClick
+  end
+  object btncapture: TSpeedButton
+    Left = 424
+    Height = 28
+    Top = 592
+    Width = 94
+    Caption = 'Capture'
+    Flat = True
+    Transparent = False
+    OnClick = btncaptureClick
   end
   object timer_transcribe: TTimer
     Enabled = False
