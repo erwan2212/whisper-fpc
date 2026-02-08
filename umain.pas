@@ -760,7 +760,7 @@ procedure Tfrmmain.Button3Click(Sender: TObject);
 begin
   OpenDialog1.InitialDir :=GetCurrentDir ;
   OpenDialog1.Filter :='model|*.bin';;
-  OpenDialog1.Execute ;
+  if OpenDialog1.Execute=false then exit ;
   txtmodel.Text :=OpenDialog1.FileName ;
 end;
 
@@ -768,7 +768,7 @@ procedure Tfrmmain.Button4Click(Sender: TObject);
 begin
   OpenDialog1.InitialDir :=GetCurrentDir ;
   OpenDialog1.Filter :='audio|*.wav;*.mp3;*.ogg;*.m4a;*.aac;*.mp2;';;
-  OpenDialog1.Execute ;
+  if OpenDialog1.Execute=false then exit ;
   txtaudio.Text :=OpenDialog1.FileName ;
 end;
 
