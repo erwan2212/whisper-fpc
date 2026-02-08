@@ -16,7 +16,8 @@ ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if you ne
 <br/><br/>
 <img width="859" height="675" alt="image" src="https://github.com/user-attachments/assets/b1846f33-480e-4e19-96d3-fe5ce12252a9" />
 <br/><br/>
-<img width="1112" height="726" alt="image" src="https://github.com/user-attachments/assets/cf64141c-cae8-45ad-b33e-bf37c95634ee" />
+<img width="1093" height="812" alt="image" src="https://github.com/user-attachments/assets/c1b34881-9090-41db-963d-ccd4fa5174fe" />
+
 
 
 
