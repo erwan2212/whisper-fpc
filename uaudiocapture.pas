@@ -74,7 +74,7 @@ constructor TAudioCaptureManager.Create(AEngine: TWhisperEngine);
 begin
   FEngine := AEngine;
   FRecorder := TBassRecorder.Create;
-  // On branche ton callback
+  // On branche le callback
   FRecorder.OnAudioChunk := @OnAudioDataReceived;
   // On initialise à 0 ou on laisse tomber cette ligne,
   // car Start() viendra écraser cette valeur.
@@ -100,14 +100,14 @@ begin
   SampleCount := Length(Samples);
   if SampleCount = 0 then Exit;
 
-  // --- TON CODE D'OVERLAP EXACT ---
+  // --- CODE D'OVERLAP ---
   CombineCount := Length(FWhisperBuffer) + SampleCount;
   SetLength(FWhisperBuffer, CombineCount);
 
   // Utilisation de Move pour la rapidité comme dans ton code
   Move(Samples[0], FWhisperBuffer[CombineCount - SampleCount], SampleCount * SizeOf(Single));
 
-  // --- TON DIAGNOSTIC D'AMPLITUDE ---
+  // --- DIAGNOSTIC D'AMPLITUDE ---
   MaxAmp := 0;
   for i := 0 to SampleCount - 1 do
     if Abs(Samples[i]) > MaxAmp then MaxAmp := Abs(Samples[i]);
@@ -136,14 +136,14 @@ begin
       Exit;
     end;
 
-  // --- TA SÉCURITÉ ANTI-SATURATION ---
+  // --- SÉCURITÉ ANTI-SATURATION ---
   if Assigned(FEngine.CurrentThread) then
   begin
     if not FEngine.CurrentThread.Finished then Exit;
     // On ne fait rien de plus, le moteur gérera le nettoyage
   end;
 
-  // --- TA PRÉPARATION DE L'ENGINE ---
+  // --- PRÉPARATION DE L'ENGINE ---
   // On utilise l'engine pour créer le thread
   FStartTime := Now;
   FEngine.StartTranscription(
@@ -158,7 +158,7 @@ begin
     FUseGPU
   );
 
-  // --- TA LOGIQUE DE DÉPLACEMENT D'OVERLAP ---
+  // --- LOGIQUE DE DÉPLACEMENT D'OVERLAP ---
   if CombineCount > FOverlapSize then
   begin
     Move(FWhisperBuffer[CombineCount - FOverlapSize], FWhisperBuffer[0], FOverlapSize * SizeOf(Single));
@@ -283,7 +283,7 @@ begin
 
   try
     // --- OPTIONNEL MAIS CONSEILLÉ ---
-    // Si tu veux forcer le Mono 16kHz via BASS au cas où le fichier source n'est pas bon
+    // Si on veut forcer le Mono 16kHz via BASS au cas où le fichier source n'est pas bon
     // Stream := BASS_Mixer_StreamCreate(16000, 1, BASS_STREAM_DECODE or BASS_SAMPLE_FLOAT);
     // BASS_Mixer_StreamAddChannel(Stream, SourceStream, BASS_MIXER_CHAN_BUFFER);
 

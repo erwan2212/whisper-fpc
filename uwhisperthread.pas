@@ -231,7 +231,6 @@ begin
 
 
   finally
-      // --- ÉTAPE CRUCIALE ---
       // On coupe les ponts avant de libérer le contexte
       FParams.new_segment_callback := nil;
       FParams.progress_callback := nil;

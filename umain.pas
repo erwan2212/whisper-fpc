@@ -436,50 +436,6 @@ begin
   end;
 end;
 
-{
-procedure Tfrmmain.RefreshDisplayFromThread(AThread: TWhisperThread);
-var
-  i: Integer;
-  sLine: string;
-begin
-  if Assigned(AThread) and Assigned(AThread.FullTextResult) then
-  begin
-    if AThread.FullTextResult.Count > FLastDisplayedIndex then
-    begin
-      Memo1.Lines.BeginUpdate;
-      try
-        for i := FLastDisplayedIndex to AThread.FullTextResult.Count - 1 do
-        begin
-          sLine := AThread.FullTextResult[i];
-
-          // --- ANTI-DUPLICATE (C'est ici que ça se passe) ---
-          // On nettoie le segment s'il s'agit du début d'un nouveau bloc (i=0)
-          if (i = 0) and (FCapturedText.Count > 0) then
-          begin
-            // On compare la nouvelle ligne avec la toute dernière stockée
-            sLine := CleanDuplicate(FCapturedText[FCapturedText.Count - 1], sLine);
-          end;
-
-          // On n'ajoute que s'il reste du texte (pour éviter les lignes vides)
-          if Trim(sLine) <> '' then
-          begin
-            // On ajoute la ligne (éventuellement nettoyée) au Memo
-            Memo1.Lines.Add(sLine);
-
-            // On conserve ton stockage interne pour la capture
-            if timer_capture.Enabled then
-                FCapturedText.Add(sLine);
-          end;
-        end;
-        FLastDisplayedIndex := AThread.FullTextResult.Count;
-      finally
-        Memo1.Lines.EndUpdate;
-        SendMessage(Memo1.Handle, WM_VSCROLL, SB_BOTTOM, 0);
-      end;
-    end;
-  end;
-end;
-}
 
 procedure Tfrmmain.LogToMemo(const AMsg: string);
 begin
@@ -558,7 +514,7 @@ begin
         ProgressBar1.Position := 100;
       end;
 
-      // 2. LOGIQUE DE SECOURS (Ton code original préservé)
+      // 2. LOGIQUE DE SECOURS
       if (not WhisperThread.IsCancelled) and (not WhisperThread.FileWasOpened) then
       begin
         if (WhisperThread.FullTextResult <> nil) and (WhisperThread.FullTextResult.Count > 0) then
@@ -587,12 +543,12 @@ begin
         end;
       end;
 
-      // 3. LIBÉRATION SÉCURISÉE (C'est ici que ça change)
+      // 3. LIBÉRATION SÉCURISÉE
       // On met à jour l'UI d'abord
       btntranscribe.Caption := 'Transcribe';
       btntranscribe.Enabled := True;
 
-      // Crucial : On demande au MOTEUR de s'arrêter.
+      // On demande au MOTEUR de s'arrêter.
       // Comme c'est lui qui a créé le thread, c'est lui qui doit faire le FreeAndNil.
       if Assigned(WhisperEngine) then
         WhisperEngine.Stop;
@@ -614,7 +570,7 @@ var
 begin
   if lowercase(btncapture.Caption) ='stop' then exit;
 
-  // --- 1. LOGIQUE D'ARRÊT (Identique à ton code) ---
+  // --- 1. LOGIQUE D'ARRÊT ---
   if Assigned(WhisperThread) then
   begin
     btntranscribe.Enabled := False;
@@ -629,7 +585,7 @@ begin
   Fduration:=0;
   FCapturedText.Clear ;
 
-  // --- 2. LECTURE WAV (Code déporté mais logs conservés) ---
+  // --- 2. LECTURE WAV ---
   Memo1.Lines.Add('Lecture WAV…');
   if not FAudioManager.LoadWavFile3(txtaudio.Text, Err) then
   begin
@@ -730,7 +686,7 @@ begin
     timer_capture.Enabled := False;
     Memo1.Lines.Add('🛑 Capture arrêtée.');
 
-    // --- TON CODE DE SAUVEGARDE ORIGINAL (Inchangé) ---
+    // --- CODE DE SAUVEGARDE ---
     if FCapturedText.Count > 0 then
     begin
       if MessageDlg('Capture terminée', 'Voulez-vous enregistrer le texte capturé en SRT ?',
@@ -779,7 +735,7 @@ end;
 
 procedure Tfrmmain.FormCreate(Sender: TObject);
 begin
-  // 1. Tes réglages de sécurité mathématique (indispensables pour les DLL audio/IA)
+  // 1. réglages de sécurité mathématique (indispensables pour les DLL audio/IA)
   SetExceptionMask([
     exInvalidOp,
     exDenormalized,
@@ -917,7 +873,7 @@ begin
     ProgressBar1.Position := LThread.ProgressPercent;
 
     // 1. AFFICHAGE ET STOCKAGE (Ligne par ligne)
-    // Cette fonction s'occupe maintenant d'ajouter à Memo1 ET à FCapturedText
+    // Cette fonction s'occupe d'ajouter à Memo1 ET à FCapturedText
     RefreshDisplayFromThread(LThread);
 
     if LThread.Finished then
@@ -968,7 +924,7 @@ begin
   LThread := WhisperThread;
   if Assigned(LThread) then
   begin
-    // NOUVEAU : Affiche le texte du fichier au fur et à mesure
+    // Affiche le texte du fichier au fur et à mesure
     RefreshDisplayFromThread(LThread);
 
     if LThread.Finished then
@@ -985,7 +941,7 @@ begin
     end;
   end;
 
-  // On garde ta gestion des LOGS système (erreurs, infos engine) si nécessaire
+  // gestion des LOGS système (erreurs, infos engine) si nécessaire
   if Assigned(WhisperLogBuffer) and (chklog.Checked) then
   begin
     if WhisperLogBuffer.Count > 0 then

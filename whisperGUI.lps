@@ -41,6 +41,7 @@
       <Unit0>
         <Filename Value="whisperGUI.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <CursorPos X="11" Y="21"/>
         <UsageCount Value="207"/>
@@ -52,9 +53,8 @@
         <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="598"/>
-        <CursorPos X="36" Y="615"/>
+        <TopLine Value="934"/>
+        <CursorPos X="62" Y="951"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -64,8 +64,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperThread"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="136"/>
-        <CursorPos X="16" Y="32"/>
+        <TopLine Value="243"/>
+        <CursorPos Y="234"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -73,7 +73,7 @@
         <Filename Value="whisper_api.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="19"/>
+        <TopLine Value="58"/>
         <CursorPos X="39" Y="63"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
@@ -83,7 +83,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWhisperEngine"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="110"/>
+        <TopLine Value="122"/>
         <CursorPos X="17" Y="129"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
@@ -93,23 +93,23 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uAudioCapture"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="215"/>
-        <CursorPos X="26" Y="243"/>
+        <TopLine Value="324"/>
+        <CursorPos X="18" Y="286"/>
         <UsageCount Value="227"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="whisper.pas"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="90"/>
-        <CursorPos X="16" Y="112"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="21"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="ubassrecorder.pas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="183"/>
+        <TopLine Value="212"/>
         <CursorPos X="29" Y="201"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
@@ -118,7 +118,7 @@
         <Filename Value="basswasapi.pas"/>
         <UnitName Value="BassWASAPI"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="21"/>
+        <TopLine Value="124"/>
         <CursorPos X="3" Y="38"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>

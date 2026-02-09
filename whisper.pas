@@ -18,7 +18,6 @@ type
     FullText: TStringList;
   end;
 
-// On garde TES noms de fonctions originaux pour ne rien casser
 function SecondsToSRTFormat(sec: Single): string;
 procedure SegmentCallback(ctx: PWhisperContext; state: PWhisperState; n_new: Integer; user_data: Pointer); cdecl;
 
