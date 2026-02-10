@@ -14,6 +14,8 @@ get the models <a href="https://huggingface.co/ggerganov/whisper.cpp/tree/main">
 <br/>
 ffmpeg binaries <a href="https://www.gyan.dev/ffmpeg/builds/">here</a> if you need to convert your audio (like mono 16khz).
 <br/><br/>
+<a href="https://deepwiki.com/erwan2212/whisper-fpc">deepwiki</a>
+<br/><br/>
 <img width="859" height="675" alt="image" src="https://github.com/user-attachments/assets/b1846f33-480e-4e19-96d3-fe5ce12252a9" />
 <br/><br/>
 Benchmark of multiple transcriptions/presets by Gemini<br/>
